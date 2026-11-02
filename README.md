@@ -193,3 +193,17 @@ tools/       af_fetch, update_report, rules_report, fingerprint, af_survey
 tests/       run_all + test files per module or feature, synthetic Army Forge data
 docs/        USER_GUIDE
 ```
+
+## Disclaimer
+
+Grimdark Future, Army Forge and all associated names, rules and army book
+content are the property of OPR Games (One Page Rules). GrimDarkOracle is an
+unofficial, non-commercial fan tool and is not endorsed by, sponsored by or
+affiliated with OPR Games. The Army Forge data is downloaded by each user for
+personal use and is never distributed with this program; it remains the
+property of its owner, and users agree to use it in accordance with the Army
+Forge terms of use and the copyright laws in force in their country.
+
+The software is provided "as is", without warranty of any kind (see `LICENSE`,
+sections 15 and 16): the author accepts no liability for its use or for the
+results it produces.
