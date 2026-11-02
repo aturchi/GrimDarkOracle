@@ -1,0 +1,356 @@
+{
+ "rules": [
+  {
+   "id": "17crjK7P6_w6",
+   "name": "AP",
+   "description": "Synthetic placeholder for AP.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "3FeiOe3krHMa",
+   "name": "Aircraft",
+   "description": "Synthetic placeholder for Aircraft.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "6mJw5IdqSqNC",
+   "name": "Ambush",
+   "description": "Synthetic placeholder for Ambush.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "GRuFoZiyjY5f",
+   "name": "Artillery",
+   "description": "Synthetic placeholder for Artillery.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "FF5ddXgx75lI",
+   "name": "Assault",
+   "description": "Synthetic placeholder for Assault.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "Naqc5mga9Uha",
+   "name": "Bane",
+   "description": "Synthetic placeholder for Bane.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "ywXKQKPOLjTF",
+   "name": "Banner",
+   "description": "Synthetic placeholder for Banner.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "w_vX0mi58KKt",
+   "name": "Blast",
+   "description": "Synthetic placeholder for Blast.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "0bcGY4Xr4NE0",
+   "name": "Brace",
+   "description": "Synthetic placeholder for Brace.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "47CAqf7ySlfc",
+   "name": "Caster",
+   "description": "Synthetic placeholder for Caster.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "c45Fw0D2oGOk",
+   "name": "Counter",
+   "description": "Synthetic placeholder for Counter.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "_mrPya5SXSqW",
+   "name": "Deadly",
+   "description": "Synthetic placeholder for Deadly.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "KdgwlPb8LuD2",
+   "name": "Fast",
+   "description": "Synthetic placeholder for Fast.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "dIQ3SGl2J2Ew",
+   "name": "Fear",
+   "description": "Synthetic placeholder for Fear.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "2atvlmICQSCV",
+   "name": "Fearless",
+   "description": "Synthetic placeholder for Fearless.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "-QJdqJEKjIpE",
+   "name": "Flying",
+   "description": "Synthetic placeholder for Flying.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "JoOCVPx1xT1G",
+   "name": "Furious",
+   "description": "Synthetic placeholder for Furious.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "T08VkBuVmNZ_",
+   "name": "Hero",
+   "description": "Synthetic placeholder for Hero.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "HWtnPV9LQF1D",
+   "name": "Immobile",
+   "description": "Synthetic placeholder for Immobile.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "62-mYKVM9MLd",
+   "name": "Impact",
+   "description": "Synthetic placeholder for Impact.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "8Ck9GAwUK824",
+   "name": "Indirect",
+   "description": "Synthetic placeholder for Indirect.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "9042COVrLCsI",
+   "name": "Limited",
+   "description": "Synthetic placeholder for Limited.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "qrG_DXJez5Dg",
+   "name": "Musician",
+   "description": "Synthetic placeholder for Musician.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "_T07iXWo4VwJ",
+   "name": "Parry",
+   "description": "Synthetic placeholder for Parry.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "8KujvrTG8k9p",
+   "name": "Regeneration",
+   "description": "Synthetic placeholder for Regeneration.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "H9E9PIWpGRdw",
+   "name": "Relentless",
+   "description": "Synthetic placeholder for Relentless.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "Zx4mWN0SbmK8",
+   "name": "Reliable",
+   "description": "Synthetic placeholder for Reliable.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "cavWDboL4ubs",
+   "name": "Rending",
+   "description": "Synthetic placeholder for Rending.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "FAMbscK5vhSu",
+   "name": "Scout",
+   "description": "Synthetic placeholder for Scout.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "IEJp3a4vE0CB",
+   "name": "Shred",
+   "description": "Synthetic placeholder for Shred.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "Ldhtmr4H8b6G",
+   "name": "Slow",
+   "description": "Synthetic placeholder for Slow.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "4Q1owB6yNFz1",
+   "name": "Spell Amplifier",
+   "description": "Synthetic placeholder for Spell Amplifier.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "9jyvRoBODD-O",
+   "name": "Stealth",
+   "description": "Synthetic placeholder for Stealth.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "JSKVyurtWIyW",
+   "name": "Strider",
+   "description": "Synthetic placeholder for Strider.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "5v6oaGfrdf29",
+   "name": "Surge",
+   "description": "Synthetic placeholder for Surge.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "8Hjy54TYtwb7",
+   "name": "Takedown",
+   "description": "Synthetic placeholder for Takedown.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "umbiz4tnEyF8",
+   "name": "Thrust",
+   "description": "Synthetic placeholder for Thrust.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "a0YtInGiUDd6",
+   "name": "Tough",
+   "description": "Synthetic placeholder for Tough.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  },
+  {
+   "id": "aogQZcOOQrDI",
+   "name": "Transport",
+   "description": "Synthetic placeholder for Transport.",
+   "enabledGameSystems": [
+    2
+   ],
+   "coreType": 1
+  }
+ ],
+ "traits": []
+}

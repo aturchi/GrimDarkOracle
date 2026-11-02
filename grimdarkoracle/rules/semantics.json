@@ -1,0 +1,4997 @@
+{
+ "format": "grimdarkoracle-semantics/1",
+ "game_version": "3.6.0",
+ "game": {
+  "quality_auto_success": 6,
+  "quality_auto_fail": 1,
+  "cover_defense_bonus": 1,
+  "fatigue_hit_on": 6,
+  "morale_half": 0.5
+ },
+ "rules": {
+  "17crjK7P6_w6": {
+   "name": "AP",
+   "text_sha1": "9fb1ea33d92804d960a62bcfe868f604a7fa0f61",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": "X"
+    }
+   ],
+   "alias_sha1": {
+    "CQes0mDvF4bV": "bc5af774c819dc8b91c6b244583727dac105439a"
+   }
+  },
+  "3FeiOe3krHMa": {
+   "name": "Aircraft",
+   "text_sha1": "4e67b0f58fe0317b6868e4bd2353300a167fe992",
+   "impl": "native:action_limit",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": -1,
+     "side": "defender"
+    },
+    {
+     "primitive": "range_mod",
+     "value": -12,
+     "side": "defender"
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   },
+   "note": "Advance only, can't be charged; the to-hit and range penalties are composed effects. Other movement limits are not combat maths.",
+   "params": {
+    "actions": [
+     "advance"
+    ],
+    "chargeable": false
+   }
+  },
+  "6mJw5IdqSqNC": {
+   "name": "Ambush",
+   "text_sha1": "e8b76b220f38708bafd727865937c38af720bc74",
+   "impl": "no_combat_effect"
+  },
+  "rJSSHbaRMID4": {
+   "name": "Ambush Beacon",
+   "text_sha1": "071a377d2dbaf5b52f4cc23d24360408ccdda11d",
+   "impl": "no_combat_effect"
+  },
+  "efmjJPTe0Yzd": {
+   "name": "Anti-Cover",
+   "text_sha1": "04be4b488053584215734cbdd4da3b70341a8ae5",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ignore_cover",
+     "value": true
+    }
+   ]
+  },
+  "74RjQ1k41DoO": {
+   "name": "Armor",
+   "text_sha1": "6f73e4e78a349b0c228e8cac3c6963e1c5ffab6b",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "defense_set",
+     "value": "X",
+     "side": "defender",
+     "scope": "model"
+    }
+   ]
+  },
+  "GRuFoZiyjY5f": {
+   "name": "Artillery",
+   "text_sha1": "6e87827b55f8b2a9d1dff8823d58c1dfd831ba19",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": 1,
+     "conditions": {
+      "action": "hold"
+     }
+    },
+    {
+     "primitive": "hit_mod",
+     "value": -1,
+     "side": "defender",
+     "conditions": {
+      "most_models": true,
+      "not_moved": true
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "shooting",
+    "range_over": 12
+   }
+  },
+  "FF5ddXgx75lI": {
+   "name": "Assault",
+   "text_sha1": "523fdbd2c27b0587180148e46089a37cd1234553",
+   "impl": "native:assault"
+  },
+  "Naqc5mga9Uha": {
+   "name": "Bane",
+   "text_sha1": "fb7c04094848c157854852487b47b99ab326867a",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ignore_regen",
+     "value": true
+    },
+    {
+     "primitive": "reroll_defense_6",
+     "value": true
+    }
+   ]
+  },
+  "XoDRL2xVEnVf": {
+   "name": "Bane in Melee Aura",
+   "text_sha1": "8048f22a97ca902f119dfd51c871364a6feda261",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "Naqc5mga9Uha"
+     },
+     "scope": "unit"
+    }
+   ],
+   "conditions": {
+    "attack": "melee"
+   },
+   "note": "This model and its unit."
+  },
+  "ba6LlbpoLkSu": {
+   "name": "Bane when Shooting Aura",
+   "text_sha1": "ead2cd2d2b3099a8642397f1da6f7500b651e307",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "Naqc5mga9Uha"
+     },
+     "scope": "unit"
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   },
+   "note": "This model and its unit."
+  },
+  "ywXKQKPOLjTF": {
+   "name": "Banner",
+   "text_sha1": "f57b4ca9d5f6b595446d6f805f87bbfff7995d07",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "morale_mod",
+     "value": 1,
+     "scope": "unit"
+    }
+   ],
+   "note": "Morale Tests triggered by shooting or melee (not by spells).",
+   "conditions": {
+    "morale_from_combat": true
+   }
+  },
+  "w_vX0mi58KKt": {
+   "name": "Blast",
+   "text_sha1": "2ffe007a7861476af37d1cc0663a0dd20616217a",
+   "impl": "native:blast"
+  },
+  "0bcGY4Xr4NE0": {
+   "name": "Brace",
+   "text_sha1": "599a44127e532db31e2ff84c145c8dbc3aa5db2b",
+   "impl": "native:brace"
+  },
+  "FRVSAjasmFSF": {
+   "name": "Bravery Aura",
+   "text_sha1": "5400f851b0bf96bae3f284dfae07404a10b58fde",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "morale_mod",
+     "value": 1,
+     "scope": "unit"
+    }
+   ]
+  },
+  "47CAqf7ySlfc": {
+   "name": "Caster",
+   "text_sha1": "cf0acc862449ca4747d19d4beb5542c4a1638444",
+   "impl": "native:caster",
+   "params": {
+    "cast_on": 4
+   }
+  },
+  "c45Fw0D2oGOk": {
+   "name": "Counter",
+   "text_sha1": "ae3e3f6ee2120e4336bbf726453b947597c25b4b",
+   "impl": "native:counter"
+  },
+  "Aw2kbPkBywee": {
+   "name": "Counter in Melee Aura",
+   "text_sha1": "951b42075934cc13d43b09b30af80e3a6d1b160e",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "c45Fw0D2oGOk"
+     },
+     "scope": "unit"
+    }
+   ],
+   "conditions": {
+    "attack": "melee"
+   },
+   "note": "This model and its unit."
+  },
+  "Hdm9ry6kJvzb": {
+   "name": "Crossing Strike",
+   "text_sha1": "f9bcfd5623eb6aff6ffa52567fe5c7e149120f1d",
+   "impl": "native:crossing_strike"
+  },
+  "n8Uql4fyd5AX": {
+   "name": "Cumbersome",
+   "text_sha1": "95ddbc2a3c3b25a040845d645f3115019568b811",
+   "impl": "native:action_limit",
+   "note": "Hold / Advance only, no shooting after Advance.",
+   "params": {
+    "actions": [
+     "hold",
+     "advance"
+    ],
+    "shoot_when_moving": false
+   }
+  },
+  "_mrPya5SXSqW": {
+   "name": "Deadly",
+   "text_sha1": "cef8401562a68b7851b16cf5e6096d6a048a7467",
+   "impl": "native:deadly"
+  },
+  "ySpZadCu08yk": {
+   "name": "Enhanced Precision Marksman",
+   "text_sha1": "967858a417b2f2916c71f3d3b635084fd3ac0673",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": 1,
+     "scope": "model"
+    }
+   ],
+   "conditions": {
+    "attack": "shooting",
+    "range_within": 9,
+    "has_rule": "lwWYwB3HRTPi"
+   },
+   "note": "Completes Precision Marksman within 9\": +1 always, never +2.",
+   "alias_sha1": {
+    "dXr70idM6Vjk": "165caea1d47915db388ed02a23c905f4ab621c18"
+   }
+  },
+  "R4q13TqqwTPC": {
+   "name": "Enhanced Targeting Visor Aura",
+   "text_sha1": "3f5a501e29ac74b4cce099a758ad7bbab689b298",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "ySpZadCu08yk"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "O_sf2rsHA7rD": {
+   "name": "Evasive",
+   "text_sha1": "2fa35c086a382caf1c5cf486c85ba57983d9a388",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": -1,
+     "side": "defender"
+    }
+   ],
+   "conditions": {
+    "most_models": true
+   }
+  },
+  "KdgwlPb8LuD2": {
+   "name": "Fast",
+   "text_sha1": "567bbb257254b54777b789a202d5bb6e77e25487",
+   "impl": "no_combat_effect"
+  },
+  "dIQ3SGl2J2Ew": {
+   "name": "Fear",
+   "text_sha1": "d3005e8945fbd3e71792aa028607fc6f7325770f",
+   "impl": "native:fear"
+  },
+  "2atvlmICQSCV": {
+   "name": "Fearless",
+   "text_sha1": "0b003e5b0bc27137627bc14674e4879caae22275",
+   "impl": "native:fearless",
+   "params": {
+    "pass_on": 4
+   }
+  },
+  "-QJdqJEKjIpE": {
+   "name": "Flying",
+   "text_sha1": "f2aed618ce0c59a527d5c9a565ebd94bad0e17a6",
+   "impl": "no_combat_effect"
+  },
+  "IyLY1212wacW": {
+   "name": "Fortified",
+   "text_sha1": "c744732efd982fa8dbc84d8117fb0dd42f350610",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": -1,
+     "side": "defender"
+    }
+   ],
+   "conditions": {
+    "most_models": true
+   },
+   "alias_sha1": {
+    "CrwJ8yvfjSc6": "c744732efd982fa8dbc84d8117fb0dd42f350610",
+    "D7ChSWl5R2We": "c744732efd982fa8dbc84d8117fb0dd42f350610"
+   }
+  },
+  "B-9jnnFp54f9": {
+   "name": "Fortified Aura",
+   "text_sha1": "c0ae877d06cb2cb4ad48ec829cb1444504388bbc",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "IyLY1212wacW"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "JoOCVPx1xT1G": {
+   "name": "Furious",
+   "text_sha1": "89c020e00734952a96ca13b73d436f8b80790fe0",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "extra_hit_on_6",
+     "value": 1
+    }
+   ],
+   "conditions": {
+    "attack": "melee",
+    "charging": true
+   }
+  },
+  "bjt7_iCtmOK7": {
+   "name": "Good Shot",
+   "text_sha1": "2231a7901a49e0acab232b675f96e1a2558d243e",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": 1,
+     "scope": "model"
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   }
+  },
+  "T08VkBuVmNZ_": {
+   "name": "Hero",
+   "text_sha1": "ffa3dddd573c6abb5b989b2ed8f6af5719af6e20",
+   "impl": "native:hero"
+  },
+  "rkGri9GAybaZ": {
+   "name": "Hit & Run Shooter",
+   "text_sha1": "530b54c1ff0a4870a303774d1c0c61895dc647fa",
+   "impl": "no_combat_effect"
+  },
+  "rVZfbTlIyt7L": {
+   "name": "Hit & Run Shooter Aura",
+   "text_sha1": "64e93aca5b0e59d819e06bea56f209733fe9504e",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "rkGri9GAybaZ"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "HWtnPV9LQF1D": {
+   "name": "Immobile",
+   "text_sha1": "deab187fb3d788777c2f332c5b1d5502b1d162a7",
+   "impl": "native:action_limit",
+   "note": "Hold only.",
+   "params": {
+    "actions": [
+     "hold"
+    ]
+   }
+  },
+  "62-mYKVM9MLd": {
+   "name": "Impact",
+   "text_sha1": "4f7f79f295c566c787f8ebe38d87851ec1fd85bf",
+   "impl": "native:impact",
+   "params": {
+    "hit_on": 2
+   }
+  },
+  "QWzGAg9RpE2D": {
+   "name": "Increased Shooting Range Aura",
+   "text_sha1": "b4495516dea657779b988ee896c9f43daed18b55",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "range_mod",
+     "value": 6,
+     "scope": "unit"
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   }
+  },
+  "8Ck9GAwUK824": {
+   "name": "Indirect",
+   "text_sha1": "9cdf3b9d8f97e6e0b1cc75fa6ceb679d9764e1c6",
+   "impl": "native:indirect"
+  },
+  "9042COVrLCsI": {
+   "name": "Limited",
+   "text_sha1": "5c8a4ee5355e87b8c3a02db9021feb7d49470298",
+   "impl": "native:limited"
+  },
+  "1TMBPe40kx2b": {
+   "name": "Melee Shrouding",
+   "text_sha1": "1019ddb7a78358df8b627500412ca308aac4d32c",
+   "impl": "no_combat_effect"
+  },
+  "0dZak5jae8F0": {
+   "name": "Melee Shrouding Aura",
+   "text_sha1": "fc0bc2a9f91929091b278d8c87726b8e41232b38",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "1TMBPe40kx2b"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "mETdyZ__yMVj": {
+   "name": "Mend",
+   "text_sha1": "b91e533ebe46ca84e403c1bab0cabd5ae7cf8a28",
+   "impl": "no_combat_effect",
+   "note": "Heals between attacks: no effect on the attack maths."
+  },
+  "qrG_DXJez5Dg": {
+   "name": "Musician",
+   "text_sha1": "cc4194021ffe9d7e8f9135ba627877403d3773f9",
+   "impl": "no_combat_effect"
+  },
+  "_T07iXWo4VwJ": {
+   "name": "Parry",
+   "text_sha1": "2e9e6719f692d6dc38377568bf31cbbc53c2eded",
+   "impl": "native:parry",
+   "params": {
+    "ignore_on": 6
+   }
+  },
+  "af-WuhTCCUVk": {
+   "name": "Piercing Shooting Mark",
+   "text_sha1": "1a71ef38a6cef0edebb69de8332666e079ef1ed5",
+   "impl": "native:mark",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 1
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   }
+  },
+  "09SoiR1HuW7u": {
+   "name": "Precise",
+   "text_sha1": "3c5fb1d78e1eb18afe7d341763eeedb1d7c1a3ef",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": 1
+    }
+   ]
+  },
+  "lwWYwB3HRTPi": {
+   "name": "Precision Marksman",
+   "text_sha1": "ba3258f127b70d00fc04f15ca24c08a82f1c087f",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": 1,
+     "scope": "model"
+    }
+   ],
+   "conditions": {
+    "attack": "shooting",
+    "range_over": 9
+   },
+   "alias_sha1": {
+    "hjaNnUHsY3f5": "ba3258f127b70d00fc04f15ca24c08a82f1c087f"
+   }
+  },
+  "lOJdfdPgbhdT": {
+   "name": "Precision Spotter",
+   "text_sha1": "63ca7a5dde008b3a0f78555bedd6b538481c330f",
+   "impl": "native:spotter"
+  },
+  "1qiGNqpxKb24": {
+   "name": "Puncture",
+   "text_sha1": "2205038dc289d1e6013fc769e1662063e2b9ff0d",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ignore_regen",
+     "value": true
+    },
+    {
+     "primitive": "ap_mod",
+     "value": 2,
+     "conditions": {
+      "target_defense_max": 3
+     }
+    }
+   ]
+  },
+  "fB2hm0la8zl1": {
+   "name": "Ranged Slayer",
+   "text_sha1": "93509ab40b55a27eb0eb42ff6678e19144791d04",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 2,
+     "scope": "model"
+    }
+   ],
+   "conditions": {
+    "attack": "shooting",
+    "action": "hold",
+    "target_tough_min": 3
+   }
+  },
+  "sScPMcGqrk5Q": {
+   "name": "Ranged Slayer Aura",
+   "text_sha1": "d1bf422d10251ae8a133920649c629767227f758",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "fB2hm0la8zl1"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "qsx__9Cz3au_": {
+   "name": "Rapid Rush",
+   "text_sha1": "1394c4882976d5f5c550bdb23896c56caf727de0",
+   "impl": "no_combat_effect"
+  },
+  "RDFhn43ktRx8": {
+   "name": "Rapid Rush Aura",
+   "text_sha1": "a7a08aa8d5db43da03a28d36ab197004e427438c",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "qsx__9Cz3au_"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "zjzB46LX-QDg": {
+   "name": "Re-Deployment",
+   "text_sha1": "3c855c6baa6042c887e8eb6ccab73ba498b7eb5d",
+   "impl": "no_combat_effect"
+  },
+  "8KujvrTG8k9p": {
+   "name": "Regeneration",
+   "text_sha1": "6fc6a4a1c236ed8cbd76801f074ad0904626f98e",
+   "impl": "native:regeneration",
+   "params": {
+    "ignore_on": 5
+   }
+  },
+  "V3YzPPkZm8at": {
+   "name": "Regeneration Aura",
+   "text_sha1": "11721fec2bf1c59f0dccc81fb998b22250cb39e8",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "8KujvrTG8k9p"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "H9E9PIWpGRdw": {
+   "name": "Relentless",
+   "text_sha1": "448ef035489907073fa2c2108fde5ec684378717",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "extra_hit_on_6",
+     "value": 1
+    }
+   ],
+   "conditions": {
+    "attack": "shooting",
+    "range_over": 9
+   }
+  },
+  "Zx4mWN0SbmK8": {
+   "name": "Reliable",
+   "text_sha1": "a75bb8feadd58c27ef0bcdeeafdeeb40595eae2f",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "quality_set",
+     "value": 2
+    }
+   ]
+  },
+  "cavWDboL4ubs": {
+   "name": "Rending",
+   "text_sha1": "ff7e43b4ff77a3950de7d7f122e001fbbc56783e",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ignore_regen",
+     "value": true
+    },
+    {
+     "primitive": "ap_on_6",
+     "value": 4
+    }
+   ]
+  },
+  "FAMbscK5vhSu": {
+   "name": "Scout",
+   "text_sha1": "ed2c8ae4bced6b9679c9c21ec238922661cae913",
+   "impl": "no_combat_effect"
+  },
+  "IEJp3a4vE0CB": {
+   "name": "Shred",
+   "text_sha1": "f484290c9cd0c7ea869ebe1c41831e9e417d7a0b",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "extra_wound_on_def_1",
+     "value": 1
+    }
+   ]
+  },
+  "Ldhtmr4H8b6G": {
+   "name": "Slow",
+   "text_sha1": "ad6cd1b72e3d30cc48d409f1ea3df5eac6eb9157",
+   "impl": "no_combat_effect"
+  },
+  "9o03izVMZ-Xl": {
+   "name": "Smash",
+   "text_sha1": "8f60377a567a3f15a71bad29909f2b672c71f125",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "reroll_defense_6",
+     "value": true
+    }
+   ],
+   "conditions": {
+    "range_over_half": true
+   }
+  },
+  "4Q1owB6yNFz1": {
+   "name": "Spell Amplifier",
+   "text_sha1": "27697da418a660da7e4d9e1eb5a6d5033511e1b5",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "cast_mod",
+     "value": 1
+    }
+   ]
+  },
+  "j93FkLXMCk8v": {
+   "name": "Steadfast",
+   "text_sha1": "ee5ec3b82fcce3473cf608367b5d851f3883116e",
+   "impl": "no_combat_effect",
+   "note": "Shaken recovery at the start of a round: no effect on the attack maths.",
+   "alias_sha1": {
+    "741uN_Qma5mL": "ee5ec3b82fcce3473cf608367b5d851f3883116e",
+    "RSVMS71PNbZF": "ee5ec3b82fcce3473cf608367b5d851f3883116e"
+   }
+  },
+  "9jyvRoBODD-O": {
+   "name": "Stealth",
+   "text_sha1": "314c1e98487f8523f09dfb81069e34fbdba3cf4a",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": -1,
+     "side": "defender"
+    }
+   ],
+   "conditions": {
+    "attack": "shooting",
+    "range_over": 9,
+    "most_models": true
+   }
+  },
+  "8haZ36fXvnzn": {
+   "name": "Stealth Aura",
+   "text_sha1": "62f8df7da2cb75a2933eee5caf327dd4bbcd1115",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "9jyvRoBODD-O"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "JSKVyurtWIyW": {
+   "name": "Strider",
+   "text_sha1": "fcb9cb24b50b12b9b5d23427b5d78b1607343085",
+   "impl": "no_combat_effect"
+  },
+  "5v6oaGfrdf29": {
+   "name": "Surge",
+   "text_sha1": "52ab08e9de7317c34982909fb56d2465cabf9ca7",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "extra_hit_on_6",
+     "value": 1
+    }
+   ]
+  },
+  "8Hjy54TYtwb7": {
+   "name": "Takedown",
+   "text_sha1": "fba0407597f664e21b48f818d3141d9f035142fb",
+   "impl": "native:takedown"
+  },
+  "umbiz4tnEyF8": {
+   "name": "Thrust",
+   "text_sha1": "ce6300aef9b8937b7ed07267f3d59f824b68f570",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": 1
+    },
+    {
+     "primitive": "ap_mod",
+     "value": 1
+    }
+   ],
+   "conditions": {
+    "attack": "melee",
+    "charging": true
+   }
+  },
+  "a0YtInGiUDd6": {
+   "name": "Tough",
+   "text_sha1": "55c400d0ed1ec33cfaf3463b4682d04b64b3cf8e",
+   "impl": "native:tough"
+  },
+  "aogQZcOOQrDI": {
+   "name": "Transport",
+   "text_sha1": "a6e13fb310c0368b1c197c58652922983c64b335",
+   "impl": "no_combat_effect",
+   "note": "Transports are not tracked."
+  },
+  "QXyt-zV_bjpg": {
+   "name": "Unstoppable",
+   "text_sha1": "1bca407501eeb322636571ecd731649827f0324d",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ignore_regen",
+     "value": true
+    },
+    {
+     "primitive": "ignore_negative_mods",
+     "value": true
+    }
+   ]
+  },
+  "Q-wmfZ69HqBX": {
+   "name": "Unstoppable Mark",
+   "text_sha1": "4de36a41be32aad1f6cfedee0b80e24a1594e63f",
+   "impl": "native:mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "QXyt-zV_bjpg"
+     }
+    }
+   ]
+  },
+  "r8OBuam8nRXP": {
+   "name": "Vanguard",
+   "text_sha1": "b8a1a542c691cca780fa7dbdead640ceedb594a3",
+   "impl": "no_combat_effect",
+   "alias_sha1": {
+    "gzKDP8xc6MCQ": "b8a1a542c691cca780fa7dbdead640ceedb594a3"
+   }
+  },
+  "z4QuSO_AxqDr": {
+   "name": "Versatile Expert",
+   "text_sha1": "e84d9829e90e0b31f5725caac6b1e6d6dd7257e8",
+   "impl": "native:versatile",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 1,
+     "scope": "model"
+    },
+    {
+     "primitive": "hit_mod",
+     "value": 1,
+     "scope": "model"
+    }
+   ]
+  },
+  "y47PXwakTSji": {
+   "name": "Versatile Reach",
+   "text_sha1": "e104b748cd7c8cb05f79c646ac4d62fd893004c3",
+   "impl": "native:versatile",
+   "effects": [
+    {
+     "primitive": "range_mod",
+     "value": 4,
+     "conditions": {
+      "attack": "shooting"
+     }
+    }
+   ],
+   "note": "Other choice: +2\" when charging (movement only)."
+  },
+  "ayuikxkmDOmq": {
+   "name": "Versatile Reach Aura",
+   "text_sha1": "db98bca029c4495b3b9edba43e3ccdd6e0f38668",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "y47PXwakTSji"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "0TfnG5G4JEv0": {
+   "name": "Anti-Regen",
+   "text_sha1": "3e2f6aec6304a30c5057ae1aef4d6374e61625d7",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ignore_regen",
+     "value": true
+    }
+   ]
+  },
+  "TTL5RNmwotoh": {
+   "name": "Melee Slayer",
+   "text_sha1": "b48608c043dd41199f260e2bcf0d5a981df4af6c",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 2,
+     "scope": "model"
+    }
+   ],
+   "conditions": {
+    "attack": "melee",
+    "charging": true,
+    "target_tough_min": 3
+   },
+   "note": "Charger's strikes only."
+  },
+  "C6MzEy1CnxTs": {
+   "name": "Repel Ambushers",
+   "text_sha1": "37207f0352b46feecf6a1372524aab98e2eed48d",
+   "impl": "no_combat_effect"
+  },
+  "h9JsgD38BRjI": {
+   "name": "Bounding",
+   "text_sha1": "96fafd8eb2edf14bbf640b6f858d309d25ce58ae",
+   "impl": "no_combat_effect"
+  },
+  "CK9TIa7vdehO": {
+   "name": "Furious Aura",
+   "text_sha1": "ce10d5cbc03ee2ed66051dd63a12d79bd3ecc5bf",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "JoOCVPx1xT1G"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "Tdyu4Tn-rFN6": {
+   "name": "Scout Aura",
+   "text_sha1": "612377111e5fe2072769445ac8f15f36eeabc5b2",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "FAMbscK5vhSu"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "zGew9XZT2rUm": {
+   "name": "Relentless Aura",
+   "text_sha1": "5dd655c8f14d7b1a4c0c4b85fd9269d32aee1bcc",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "H9E9PIWpGRdw"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "ePlgVfji1dy6": {
+   "name": "Steadfast Aura",
+   "text_sha1": "fd430779aa793a99ecf88d5605104e118df7df4b",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "j93FkLXMCk8v"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "gOFh4u_LGrwP": {
+   "name": "Ambush Aura",
+   "text_sha1": "622f76c72de35bf68806d142c1d81a38456cf6db",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "6mJw5IdqSqNC"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "SKzm-kqi1h2Q": {
+   "name": "Delayed Action",
+   "text_sha1": "ebba7dae6e997de3101c2693c70081ab97472a9e",
+   "impl": "no_combat_effect"
+  },
+  "LtPyHi_-DHf4": {
+   "name": "Teleport",
+   "text_sha1": "767b599c221c9134aa6de8e1f14212bc52ac467b",
+   "impl": "no_combat_effect"
+  },
+  "kQVze0GRY3R9": {
+   "name": "Agile",
+   "text_sha1": "960fa601fd08d7244f4d7a0a27865c4516f75c32",
+   "impl": "no_combat_effect",
+   "alias_sha1": {
+    "NEYp25CGvZl3": "960fa601fd08d7244f4d7a0a27865c4516f75c32"
+   }
+  },
+  "djJahpu0Ciut": {
+   "name": "Infiltrate",
+   "text_sha1": "445f03741542ee5215fa94d45ec0ac956c44ade5",
+   "impl": "no_combat_effect"
+  },
+  "ZHykLbU6nUWl": {
+   "name": "Spawn",
+   "text_sha1": "3bc9937abe6215e05ad6641b64f206dabd249ee3",
+   "impl": "no_combat_effect",
+   "note": "The placed unit is not tracked."
+  },
+  "-eXDDTCrrQ6n": {
+   "name": "Dodge",
+   "text_sha1": "b9ba8bc1a79f152733aaacf51951622ea02cd49a",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": -1,
+     "side": "defender"
+    }
+   ],
+   "conditions": {
+    "attack": "melee",
+    "most_models": true,
+    "not_fatigued": true
+   },
+   "note": "Not Impact hits."
+  },
+  "BOqSaZoY3ewJ": {
+   "name": "Imprecise",
+   "text_sha1": "17d77996b7736edd108b41751e829ab2e4101cef",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": -1
+    }
+   ]
+  },
+  "B5RGOPajK6Lr": {
+   "name": "Precision Fighter Aura",
+   "text_sha1": "3151aa07ca4d7617f0030bbba7bcfa86ed11ca60",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": 1,
+     "scope": "unit"
+    }
+   ],
+   "conditions": {
+    "attack": "melee"
+   },
+   "note": "This model and its unit."
+  },
+  "1cykqbg4xn6o": {
+   "name": "Rapid Charge Aura",
+   "text_sha1": "7e558340b8e6b82a0c1b1bde0837a0223c99ee87",
+   "impl": "no_combat_effect"
+  },
+  "8HWdOwMYcI0p": {
+   "name": "Sergeant",
+   "text_sha1": "00b8c205a54156e0bc7c5c6d31737cf3bfcb342b",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 1,
+     "scope": "model"
+    }
+   ]
+  },
+  "fWjDp-LZmYln": {
+   "name": "Bounding Aura",
+   "text_sha1": "4c4732fb64391ee3327349ee0bf3402b13a8ed13",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "h9JsgD38BRjI"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "yis0utoPMclv": {
+   "name": "Lustbound",
+   "text_sha1": "960fa601fd08d7244f4d7a0a27865c4516f75c32",
+   "impl": "no_combat_effect"
+  },
+  "DhLjIDRrWz6-": {
+   "name": "Piercing Charge",
+   "text_sha1": "4c6da57df36bbd98c4eecab1396d60d627297dd5",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 1,
+     "scope": "model"
+    }
+   ],
+   "conditions": {
+    "attack": "melee",
+    "charging": true
+   },
+   "note": "Charger's strikes only."
+  },
+  "L--qMjlm2g4Q": {
+   "name": "Piercing Charge Aura",
+   "text_sha1": "d14b72d745d2d63458c4e350fabb203b3fe13ba3",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "DhLjIDRrWz6-"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "dlk9Q7howUDr": {
+   "name": "Piercing Marksman",
+   "text_sha1": "dc0aeb6e31ed9becce3566350b47280b50dd3ccb",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 1,
+     "scope": "model"
+    }
+   ],
+   "conditions": {
+    "attack": "shooting",
+    "range_over": 9
+   }
+  },
+  "1m7a9ADI-D_g": {
+   "name": "Piercing Marksman Aura",
+   "text_sha1": "b42e7a0cef8e2d2f6edd29ca0a153b720f1ea452",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "dlk9Q7howUDr"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "wsqfB0fq69eG": {
+   "name": "Shielded",
+   "text_sha1": "f25bbee117838e69bf145fabbd024f5c3df16101",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "defense_mod",
+     "value": 1,
+     "side": "defender",
+     "conditions": {
+      "attack": "shooting"
+     }
+    },
+    {
+     "primitive": "defense_mod",
+     "value": 1,
+     "side": "defender",
+     "conditions": {
+      "attack": "melee"
+     }
+    }
+   ],
+   "conditions": {
+    "most_models": true
+   },
+   "note": "Hits not from spells = shooting and melee."
+  },
+  "ZW_Zv-kkBt2q": {
+   "name": "Shielded Aura",
+   "text_sha1": "4624c45f0d6245a17fb677a461b322955400ad87",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "wsqfB0fq69eG"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "muH3OhuC6eK4": {
+   "name": "Shred in Melee Aura",
+   "text_sha1": "2784c27392e4575a5154fb73c480344a97d3e48d",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "IEJp3a4vE0CB"
+     },
+     "scope": "unit"
+    }
+   ],
+   "conditions": {
+    "attack": "melee"
+   },
+   "note": "This model and its unit."
+  },
+  "nr0R125ptwEZ": {
+   "name": "Teleport Aura",
+   "text_sha1": "3dff1946921d760a4f43589ee704320fc2376bb0",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "LtPyHi_-DHf4"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "rqBYj1yANC3J": {
+   "name": "Unique Hero",
+   "text_sha1": "b36c82c0e7f523cc3315c528c04bda6593d33ccb",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "T08VkBuVmNZ_"
+     }
+    }
+   ],
+   "note": "Counts as having Hero; Hero and once per army are read by name in the data layer."
+  },
+  "zVconc6Qb-g9": {
+   "name": "Heavy Impact",
+   "text_sha1": "12a11487cbd82a3ba5c7daed230fecce94586581",
+   "impl": "native:impact",
+   "params": {
+    "hit_on": 2,
+    "ap": 1
+   }
+  },
+  "ad6BHtI2eeX0": {
+   "name": "Pierce",
+   "text_sha1": "157d5bad2df066eff508243bea7573cbdc56880c",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ignore_defense_bonus",
+     "value": true
+    },
+    {
+     "primitive": "ap_mod",
+     "value": 1,
+     "conditions": {
+      "range_over_half": true
+     }
+    }
+   ]
+  },
+  "okU8qW-h2rau": {
+   "name": "Ranged Shrouding",
+   "text_sha1": "09dd0e824776b0c0e32655f3835fb8f8e07bf882",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "range_mod",
+     "value": -4,
+     "side": "defender"
+    },
+    {
+     "primitive": "range_floor",
+     "value": 6,
+     "side": "defender"
+    }
+   ],
+   "conditions": {
+    "attack": "shooting",
+    "most_models": true
+   }
+  },
+  "oZewV0wGuebE": {
+   "name": "Ranged Shrouding Aura",
+   "text_sha1": "e8ef012555e343d88f955a23e81b5efbd2868f5d",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "okU8qW-h2rau"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "h-Cj1XrX00JE": {
+   "name": "Spell Resistance",
+   "text_sha1": "b12453d1281fdc1460f1084c21a4ba5d98b21da8",
+   "impl": "native:ward",
+   "params": {
+    "ignore_on": 6,
+    "spell_ignore_on": 2
+   },
+   "note": "Wounds from spells 2+, others 6+."
+  },
+  "b7V48Z1W-EfP": {
+   "name": "Spell Resistance Aura",
+   "text_sha1": "d4b4f256629228ad44c7d12f9887a4123703f24a",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "h-Cj1XrX00JE"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "AlIZbh-afBYi": {
+   "name": "Protected",
+   "text_sha1": "a26bdb4964c7e11361c79a2119539e9a51cda26b",
+   "impl": "native:ward",
+   "params": {
+    "ignore_on": 6
+   },
+   "alias_sha1": {
+    "Y_WeXWwLtX6z": "a26bdb4964c7e11361c79a2119539e9a51cda26b"
+   }
+  },
+  "O_wrvW7FiJWX": {
+   "name": "Plaguebound",
+   "text_sha1": "a26bdb4964c7e11361c79a2119539e9a51cda26b",
+   "impl": "native:ward",
+   "params": {
+    "ignore_on": 6
+   }
+  },
+  "4mB0rwGnMVgJ": {
+   "name": "Changebound",
+   "text_sha1": "708765c36710dc12d4e5dc32d3c66a7511ed05be",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": -1,
+     "side": "defender",
+     "conditions": {
+      "attack": "shooting",
+      "range_over": 9
+     }
+    },
+    {
+     "primitive": "hit_mod",
+     "value": -1,
+     "side": "defender",
+     "conditions": {
+      "attack": "melee",
+      "charge_over": 6
+     }
+    }
+   ],
+   "conditions": {
+    "most_models": true
+   }
+  },
+  "jbhpErfecvEY": {
+   "name": "Warbound",
+   "text_sha1": "6c2b5574329d9f5224e9e0aeab1135707e270433",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "extra_wound_on_def_1",
+     "value": 1,
+     "scope": "model",
+     "conditions": {
+      "attack": "shooting",
+      "range_over": 9
+     }
+    },
+    {
+     "primitive": "extra_wound_on_def_1",
+     "value": 1,
+     "scope": "model",
+     "conditions": {
+      "attack": "melee",
+      "charge_over": 6
+     }
+    }
+   ]
+  },
+  "eXtrmDIR9dEp": {
+   "name": "Versatile Defense",
+   "text_sha1": "b7a4a38ffb7786af7c15cda1320fefbe2c054f4e",
+   "impl": "native:versatile",
+   "effects": [
+    {
+     "primitive": "defense_mod",
+     "value": 1,
+     "side": "defender",
+     "conditions": {
+      "attack": "shooting",
+      "range_over": 9
+     }
+    },
+    {
+     "primitive": "defense_mod",
+     "value": 1,
+     "side": "defender",
+     "conditions": {
+      "attack": "melee",
+      "charge_over": 6
+     }
+    },
+    {
+     "primitive": "hit_mod",
+     "value": -1,
+     "side": "defender",
+     "conditions": {
+      "attack": "shooting",
+      "range_over": 9
+     }
+    },
+    {
+     "primitive": "hit_mod",
+     "value": -1,
+     "side": "defender",
+     "conditions": {
+      "attack": "melee",
+      "charge_over": 6
+     }
+    }
+   ],
+   "conditions": {
+    "most_models": true
+   },
+   "params": {
+    "choices": [
+     [
+      "+1 Defense",
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      "-1 to hit",
+      [
+       2,
+       3
+      ]
+     ]
+    ]
+   },
+   "note": "The target's pick; none = the best for it."
+  },
+  "UQ7FtljwqNvy": {
+   "name": "Versatile Defense Aura",
+   "text_sha1": "36d03ebc02baaff91cc432867de7f7764656c87f",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "eXtrmDIR9dEp"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "CCShas9-9K4N": {
+   "name": "Ambushing Piercing Shot",
+   "text_sha1": "7bfe59e36589ecb69a4bb974daea62d8af717191",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 1,
+     "scope": "model"
+    }
+   ],
+   "conditions": {
+    "attack": "shooting",
+    "ambushed_this_round": true
+   },
+   "note": "Counts as Ambush (no combat effect)."
+  },
+  "eyMkgYDVrP7C": {
+   "name": "Takedown Strike",
+   "text_sha1": "629d0ba3b32ca9e590cbe070a30d2489ee0c389c",
+   "impl": "native:rule_weapon",
+   "note": "A Limited weapon added by name in data.rule_weapons."
+  },
+  "rH1nxpq0qLmE": {
+   "name": "Takedown Shot",
+   "text_sha1": "3703541d572010dfe68e853a53fbba7375e99aef",
+   "impl": "native:rule_weapon",
+   "note": "A Limited weapon added by name in data.rule_weapons."
+  },
+  "nLQCr5OiSlYz": {
+   "name": "Caster Group",
+   "text_sha1": "b103d8c50c370e7c7c12ff16696d4359d01ca0d2",
+   "impl": "native:caster_group",
+   "note": "Caster(X), X = models holding it; unspent tokens lost at the end of the round."
+  },
+  "WNMH1ZiQXSz-": {
+   "name": "Spell Conduit",
+   "text_sha1": "76c3ffba56e13caee546074298a7d38845457e1b",
+   "impl": "native:spell_conduit",
+   "params": {
+    "cast_mod": 1
+   },
+   "note": "The casting input 'via Spell Conduit'."
+  },
+  "ynbkYi-zak_C": {
+   "name": "Regeneration Buff",
+   "text_sha1": "52bf94dbcfbbd5ffb696e297f99799cd0df4bf59",
+   "impl": "native:buff",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "8KujvrTG8k9p"
+     }
+    }
+   ],
+   "note": "A friendly unit gets Regeneration once."
+  },
+  "cnKvLv8ErzIc": {
+   "name": "Stealth Buff",
+   "text_sha1": "2777565e91140d8b27aca5e3aad57f9a4f82808b",
+   "impl": "native:buff",
+   "params": {
+    "attack": "shooting"
+   },
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "9jyvRoBODD-O"
+     }
+    }
+   ],
+   "note": "A friendly unit gets Stealth once."
+  },
+  "O_ZtH22AAORQ": {
+   "name": "Precision Target",
+   "text_sha1": "173db29bace530f0100842d1037051dc86dfc0c3",
+   "impl": "native:mark",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": 1
+    }
+   ],
+   "note": "Tokens never used up; X units, once per game (the player's)."
+  },
+  "i40cKJoXJ7zm": {
+   "name": "Unpredictable",
+   "text_sha1": "8c79f1760e554dc1190b4405dd1c59a9566aaf68",
+   "impl": "native:unpredictable",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 1,
+     "scope": "model"
+    },
+    {
+     "primitive": "hit_mod",
+     "value": 1,
+     "scope": "model"
+    }
+   ],
+   "params": {
+    "choices": [
+     [
+      "1-3: AP(+1)",
+      [
+       0
+      ]
+     ],
+     [
+      "4-6: +1 to hit",
+      [
+       1
+      ]
+     ]
+    ],
+    "odds": [
+     3,
+     3
+    ]
+   },
+   "note": "One die per unit and attack."
+  },
+  "DEeVIJcfNfS6": {
+   "name": "Unpredictable Fighter",
+   "text_sha1": "eca59ef8b9cf52dfa78fc165231726920111c2a9",
+   "impl": "native:unpredictable",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 1,
+     "scope": "model"
+    },
+    {
+     "primitive": "hit_mod",
+     "value": 1,
+     "scope": "model"
+    }
+   ],
+   "params": {
+    "choices": [
+     [
+      "1-3: AP(+1)",
+      [
+       0
+      ]
+     ],
+     [
+      "4-6: +1 to hit",
+      [
+       1
+      ]
+     ]
+    ],
+    "odds": [
+     3,
+     3
+    ]
+   },
+   "note": "One die per unit and attack.",
+   "conditions": {
+    "attack": "melee"
+   }
+  },
+  "eOGs64JpVsP3": {
+   "name": "Unpredictable Shooter",
+   "text_sha1": "c590029fa92a431d8c124d2f9e43aa57ac06ed36",
+   "impl": "native:unpredictable",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 1,
+     "scope": "model"
+    },
+    {
+     "primitive": "hit_mod",
+     "value": 1,
+     "scope": "model"
+    }
+   ],
+   "params": {
+    "choices": [
+     [
+      "1-3: AP(+1)",
+      [
+       0
+      ]
+     ],
+     [
+      "4-6: +1 to hit",
+      [
+       1
+      ]
+     ]
+    ],
+    "odds": [
+     3,
+     3
+    ]
+   },
+   "note": "One die per unit and attack.",
+   "conditions": {
+    "attack": "shooting"
+   }
+  },
+  "8zBpM3Wjey08": {
+   "name": "Unpredictable Fighter Aura",
+   "text_sha1": "01829f8fdddf8e2d26b505096b97bc15b90a5fa4",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "DEeVIJcfNfS6"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "Ql2vwvAiWaor": {
+   "name": "Unpredictable Shooter Aura",
+   "text_sha1": "b3b2909e3ae6309ce8cefd504bc8ec306539c40e",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "eOGs64JpVsP3"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "hnsVQyx3ylMf": {
+   "name": "Ravage",
+   "text_sha1": "977e096ebf610199b88d6749994dbec1ef1b5457",
+   "impl": "native:wound_dice",
+   "params": {
+    "on": 6,
+    "trigger": "melee"
+   },
+   "note": "A first weapon of X wound dice, data.rule_weapons."
+  },
+  "paOPFddMOffa": {
+   "name": "Crossing Attack",
+   "text_sha1": "c23f8f43c07c0062942dadf836d28f932dbcde57",
+   "impl": "native:wound_dice",
+   "params": {
+    "on": 6,
+    "trigger": "crossing"
+   },
+   "note": "X wound dice in a crossing attack."
+  },
+  "zCjAFXut7Gsg": {
+   "name": "Retaliate",
+   "text_sha1": "efed716f6cefeed1a90fa79864f472b352a3e166",
+   "impl": "native:retaliate",
+   "note": "X hits on the striking unit per wound, after each melee phase."
+  },
+  "a6Ze2uaBlNHX": {
+   "name": "Mind Control",
+   "text_sha1": "f746804faeb7c24f98a4371295039d61a59e767b",
+   "impl": "no_combat_effect",
+   "note": "A Morale Test outside an attack: no effect on the attack maths."
+  },
+  "oQeo-g4E0-SK": {
+   "name": "Spell Drain",
+   "text_sha1": "f9ca53651a6817da2ea7f20e6f8de6a383a93bd1",
+   "impl": "no_combat_effect",
+   "note": "A Morale Test outside an attack: no effect on the attack maths."
+  },
+  "MK_o4HpuB-pL": {
+   "name": "Dangerous Terrain Debuff",
+   "text_sha1": "0058dcf8eb297affd66be5e5d8edd4c6d0314be2",
+   "impl": "no_combat_effect",
+   "note": "Terrain: no effect on the attack maths."
+  },
+  "Ww4ehASqnek0": {
+   "name": "Scourge",
+   "text_sha1": "d9d61739993a7b13f77a8ad6d79acb6d0bb5c3db",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "scourge",
+     "value": 2
+    }
+   ],
+   "note": "Melee result exact; shooting Morale reading (b)."
+  },
+  "27DHOeVHMwrj": {
+   "name": "Slayer",
+   "text_sha1": "418f2708d86b49d5f3531807d69baac4eeb7f229",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 2,
+     "scope": "model",
+     "conditions": {
+      "attack": "shooting",
+      "action": "hold"
+     }
+    },
+    {
+     "primitive": "ap_mod",
+     "value": 2,
+     "scope": "model",
+     "conditions": {
+      "attack": "melee",
+      "charging": true
+     }
+    }
+   ],
+   "conditions": {
+    "target_tough_min": 3
+   }
+  },
+  "zTfg9msVpfJ0": {
+   "name": "Guarded",
+   "text_sha1": "d90534e96a9bf7936fd769bcfd253b82dc711344",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "defense_mod",
+     "value": 1,
+     "side": "defender",
+     "conditions": {
+      "attack": "shooting",
+      "range_over": 9
+     }
+    },
+    {
+     "primitive": "defense_mod",
+     "value": 1,
+     "side": "defender",
+     "conditions": {
+      "attack": "melee",
+      "charge_over": 6
+     }
+    }
+   ],
+   "conditions": {
+    "most_models": true
+   },
+   "alias_sha1": {
+    "gD2_znglqhNw": "d90534e96a9bf7936fd769bcfd253b82dc711344"
+   }
+  },
+  "wHfLIdlnEQ1a": {
+   "name": "Entrenched",
+   "text_sha1": "f4acfe0db7d4e2267568b5ad505b691bda80ecec",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": -1,
+     "side": "defender"
+    }
+   ],
+   "conditions": {
+    "attack": "shooting",
+    "range_over": 12,
+    "most_models": true,
+    "not_moved": true
+   },
+   "note": "As Artillery's defensive part."
+  },
+  "-6osYnOq7DGV": {
+   "name": "Counter in Melee",
+   "text_sha1": "2e157e26ef712a198f2c7c25e5b69ef5c43faa01",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "c45Fw0D2oGOk"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "melee"
+   }
+  },
+  "j_GcHkWDO1HP": {
+   "name": "Thrust in Melee",
+   "text_sha1": "0b9e2b3bba7e5f4eacad660b21e85c4ae9e93fa3",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "umbiz4tnEyF8"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "melee"
+   }
+  },
+  "Dpclj8rsDSRd": {
+   "name": "Precision Fighter",
+   "text_sha1": "c3eb89ba19d25a6380b8791712a5100df388fec2",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": 1
+    }
+   ],
+   "conditions": {
+    "attack": "melee"
+   }
+  },
+  "BSztwuL4jI1R": {
+   "name": "Increased Shooting Range",
+   "text_sha1": "9043ef387307ef1d9231e045c236a7039d022812",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "range_mod",
+     "value": 6
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   }
+  },
+  "HmxkJq_My-Ub": {
+   "name": "Rapid Advance",
+   "text_sha1": "8845ae175cdc8acdeb22b3962f78e2960496f077",
+   "impl": "no_combat_effect",
+   "note": "Movement."
+  },
+  "leFm23MTiJxO": {
+   "name": "Swift",
+   "text_sha1": "7601e301e319ce43cff4c5271ad64942cd1c085b",
+   "impl": "no_combat_effect",
+   "note": "Movement (Slow)."
+  },
+  "VRSD2Brj6vAZ": {
+   "name": "Bane Mark",
+   "text_sha1": "204bbbc3dd2b5c88368dcf6e15c79066c589e3a4",
+   "impl": "native:mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "Naqc5mga9Uha"
+     }
+    }
+   ]
+  },
+  "t7gg01oWHQ_n": {
+   "name": "Furious Mark",
+   "text_sha1": "5c9ba29e649f24e713fc1f85d45e47d12428311e",
+   "impl": "native:mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "JoOCVPx1xT1G"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "melee",
+    "charging": true
+   }
+  },
+  "SzljHEX27s-v": {
+   "name": "Increased Shooting Range Mark",
+   "text_sha1": "903d8a24560a41020a46a5136acbcd5e39ce72b8",
+   "impl": "native:mark",
+   "effects": [
+    {
+     "primitive": "range_mod",
+     "value": 6
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   }
+  },
+  "rMMd0maHg-AZ": {
+   "name": "Indirect Mark",
+   "text_sha1": "ce9d4d5fab483ab76c5a59072eda6972404414dd",
+   "impl": "native:mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "8Ck9GAwUK824"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "shooting",
+    "action": "hold"
+   }
+  },
+  "hdAYIH9rfgOk": {
+   "name": "Precision Fighting Mark",
+   "text_sha1": "d0da3206e2e0f2e90ccb7d1275dbe03cb6a9d738",
+   "impl": "native:mark",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": 1
+    }
+   ],
+   "conditions": {
+    "attack": "melee"
+   }
+  },
+  "EJ349mpTVrP5": {
+   "name": "Precision Shooting Mark",
+   "text_sha1": "fd91f04f7494c471a09d21a10033d1c2b74e5152",
+   "impl": "native:mark",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": 1
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   }
+  },
+  "vWhS9N4RI3yY": {
+   "name": "Relentless Mark",
+   "text_sha1": "71ea9a1a381d3d9ca0c33c95932fd8affbce66d8",
+   "impl": "native:mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "H9E9PIWpGRdw"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "shooting",
+    "range_over": 9
+   }
+  },
+  "wttUL4Uv3Rxv": {
+   "name": "Rending Mark",
+   "text_sha1": "39da91f3c10dbdb42d462b1086d181ef66b49a84",
+   "impl": "native:mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "cavWDboL4ubs"
+     }
+    }
+   ]
+  },
+  "WtjO7i-CTM1B": {
+   "name": "Shred Mark",
+   "text_sha1": "28499507cc4ac9eb4f1514e82a75b7ffcd57950d",
+   "impl": "native:mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "IEJp3a4vE0CB"
+     }
+    }
+   ]
+  },
+  "KTetx0KIX3i-": {
+   "name": "Slayer Mark",
+   "text_sha1": "97adc82d31f073be0745ba05e23bd6d07118eb27",
+   "impl": "native:mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "27DHOeVHMwrj"
+     }
+    }
+   ],
+   "note": "Used up by the first friendly attack against the unit, Slayer applying or not."
+  },
+  "iWuTcXAw2-5s": {
+   "name": "Bane in Melee Buff",
+   "text_sha1": "1b79d1e9b5d9ac1cb034c923e32311e2bcc5d303",
+   "impl": "native:buff",
+   "params": {
+    "attack": "melee"
+   },
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "Naqc5mga9Uha"
+     }
+    }
+   ]
+  },
+  "13WU-Xq3Pu8E": {
+   "name": "Furious Buff",
+   "text_sha1": "2b11eff28a27247aa8c7fa682268821cf6a87190",
+   "impl": "native:buff",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "JoOCVPx1xT1G"
+     }
+    }
+   ]
+  },
+  "bX3zgnl1nl5O": {
+   "name": "Guarded Buff",
+   "text_sha1": "ccec47e72e00d381819748842237e27c490621d6",
+   "impl": "native:buff",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "zTfg9msVpfJ0"
+     }
+    }
+   ]
+  },
+  "55Si47u6jTtb": {
+   "name": "Entrenched Buff",
+   "text_sha1": "4cf95afa7dff09f8c642ab5a332a86cd62cf4c95",
+   "impl": "native:buff",
+   "params": {
+    "attack": "shooting"
+   },
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "wHfLIdlnEQ1a"
+     }
+    }
+   ]
+  },
+  "a1ewN99UxVcB": {
+   "name": "Counter in Melee Buff",
+   "text_sha1": "ec000d43742d735d4242ac03f81db5ce47c626c2",
+   "impl": "native:buff",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "-6osYnOq7DGV"
+     }
+    }
+   ],
+   "note": "Once, as every other buff (the text has no \"once\")."
+  },
+  "trV7P42DyQGH": {
+   "name": "Thrust in Melee Buff",
+   "text_sha1": "49a2bfe9291bbb2cb03d12455608eb149cf117db",
+   "impl": "native:buff",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "j_GcHkWDO1HP"
+     }
+    }
+   ]
+  },
+  "JsQeZwM7Mm7P": {
+   "name": "Precision Fighter Buff",
+   "text_sha1": "de92ff1ab93829355d3283f5018c7c23de921d6a",
+   "impl": "native:buff",
+   "params": {
+    "attack": "melee"
+   },
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "Dpclj8rsDSRd"
+     }
+    }
+   ]
+  },
+  "kS5WWHuH6qVe": {
+   "name": "Increased Shooting Range Buff",
+   "text_sha1": "877cd73da7271b42dafbd58917b2151b13e7f198",
+   "impl": "native:buff",
+   "params": {
+    "attack": "shooting"
+   },
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "BSztwuL4jI1R"
+     }
+    }
+   ]
+  },
+  "xs0-u9qrV0xt": {
+   "name": "Rapid Advance Buff",
+   "text_sha1": "425040878413c8e06f07160d6546e6bf0842f6eb",
+   "impl": "no_combat_effect",
+   "note": "Movement."
+  },
+  "XWsun1sjt2ql": {
+   "name": "Rapid Rush Buff",
+   "text_sha1": "eabb41314cb7a0991467426ee8fd95948dfcd2b0",
+   "impl": "no_combat_effect",
+   "note": "Movement."
+  },
+  "_BgATbpwgnxc": {
+   "name": "Swift Buff",
+   "text_sha1": "6fe012c216ee98b0b8d14777f0e3272f6734c74d",
+   "impl": "no_combat_effect",
+   "note": "Movement (Slow)."
+  },
+  "g2KZzBkkelCz": {
+   "name": "Speed Buff",
+   "text_sha1": "e21f52995721b821ed0770208786468ff1176f1a",
+   "impl": "no_combat_effect",
+   "note": "Movement."
+  },
+  "r4zhsx3_3tKJ": {
+   "name": "Speed Debuff",
+   "text_sha1": "a6c18761c8f70bdfc9b63b2b52a2c49ae0b52756",
+   "impl": "no_combat_effect",
+   "note": "Movement."
+  },
+  "iyJMsYhQe6pm": {
+   "name": "Difficult Terrain Debuff",
+   "text_sha1": "a88dab58b709e6efdeb2c16452c5f94d2305d27b",
+   "impl": "no_combat_effect",
+   "note": "Movement."
+  },
+  "pNjLAV6Ena15": {
+   "name": "Bravery Buff",
+   "text_sha1": "f30d20fe1dbee450d4885b96296c5bcd8febe116",
+   "impl": "native:buff",
+   "effects": [
+    {
+     "primitive": "morale_mod",
+     "value": 1
+    }
+   ]
+  },
+  "nNh98rpX_sZv": {
+   "name": "Casting Buff",
+   "text_sha1": "5d47b88bb602e44782cd83f62875ee14ce6116e4",
+   "impl": "native:buff",
+   "effects": [
+    {
+     "primitive": "cast_mod",
+     "value": 1
+    }
+   ],
+   "note": "A friendly model with Caster: its unit's casts."
+  },
+  "kwB4FVytZQXE": {
+   "name": "Precision Attacks Buff",
+   "text_sha1": "35fd86f21c0cdc7062b5047ed5628906ef6b1bb9",
+   "impl": "native:buff",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": 1
+    }
+   ]
+  },
+  "FDI5sLTtr3gC": {
+   "name": "Precision Shooter Buff",
+   "text_sha1": "5588585929329c0133d5d18a11556c0f805073a5",
+   "impl": "native:buff",
+   "params": {
+    "attack": "shooting"
+   },
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": 1,
+     "conditions": {
+      "attack": "shooting"
+     }
+    }
+   ]
+  },
+  "jQ4CmTsoXEnt": {
+   "name": "Defense Debuff",
+   "text_sha1": "29716bd684945ab9cd710d4e6e0943032dec54d0",
+   "impl": "native:debuff",
+   "effects": [
+    {
+     "primitive": "defense_mod",
+     "value": -1,
+     "side": "defender"
+    }
+   ]
+  },
+  "nFo2BlBRhMcH": {
+   "name": "Morale Debuff",
+   "text_sha1": "6e7f394ba58e959369660b2302592a3d9a0b524e",
+   "impl": "native:debuff",
+   "effects": [
+    {
+     "primitive": "morale_mod",
+     "value": -1
+    }
+   ]
+  },
+  "P9T1NvhhYdI9": {
+   "name": "Piercing Debuff",
+   "text_sha1": "198a0d6ffe1437685d39a98d9e70f94944e77a5b",
+   "impl": "native:debuff",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": -1
+    }
+   ]
+  },
+  "1elLRhGK7ETb": {
+   "name": "Precision Debuff",
+   "text_sha1": "c68bca38a1f19f86a0ab6f036036e7019387e8f4",
+   "impl": "native:debuff",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": -1
+    }
+   ]
+  },
+  "ZIv6EGqwQuer": {
+   "name": "Fatigue Debuff",
+   "text_sha1": "85ffd7909c27a99d15242367f5d97d1908191989",
+   "impl": "no_combat_effect",
+   "note": "Fatigued if the test is failed: the Analyzer's Fatigued input."
+  },
+  "Ajazu0ij2v5q": {
+   "name": "Unpredictable Fighter Mark",
+   "text_sha1": "38ece1f97ac8488f37a6be495ecc2fb15de222bd",
+   "impl": "native:mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "DEeVIJcfNfS6"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "melee"
+   }
+  },
+  "Mfyh-86loxnk": {
+   "name": "Unpredictable Shooter Mark",
+   "text_sha1": "334e0df59f0314ef91964eba58c5361582e9bfb5",
+   "impl": "native:mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "eOGs64JpVsP3"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   }
+  },
+  "eU6uz90H82Sw": {
+   "name": "Extended Buff Range",
+   "text_sha1": "255b3d7ae16f2050da4f935888809d684c7a49d7",
+   "impl": "no_combat_effect",
+   "note": "Range of the buffs: the player's."
+  },
+  "4NiNnvh-brLp": {
+   "name": "Anti-Cover Aura",
+   "text_sha1": "0a9f49909a967573d041442fbecc9fff0eabab84",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "efmjJPTe0Yzd"
+     },
+     "scope": "unit"
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   },
+   "note": "This model and its unit."
+  },
+  "OOowoGdbpTCn": {
+   "name": "Evasive Aura",
+   "text_sha1": "31027fe9ef3035b342b2a7269350f161fc383eb0",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "O_sf2rsHA7rD"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "Q9DOQswzCth8": {
+   "name": "Fast Aura",
+   "text_sha1": "4d485e90c7152100bf1812474eddfec00247ec57",
+   "impl": "no_combat_effect",
+   "note": "Movement (the text, not a grant)."
+  },
+  "C0UHMLhvoXXj": {
+   "name": "Fearless Aura",
+   "text_sha1": "132121c64964e026c6a3cc32865ccc6fc0247c34",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "2atvlmICQSCV"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "E5F5-E62wIqI": {
+   "name": "Infiltrate Aura",
+   "text_sha1": "9dc890c44df85392634d41dcf3cd03d470cc78ea",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "djJahpu0Ciut"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "OzqjA_sxgVd5": {
+   "name": "Melee Slayer Aura",
+   "text_sha1": "5ef22dff4040df8e6fc3035d19de9e3789d469d9",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "TTL5RNmwotoh"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "fHq_KESyO1cU": {
+   "name": "Protected Aura",
+   "text_sha1": "0a5027e6a3c10b0984c5add6f2fabdab02ba27a2",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "AlIZbh-afBYi"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "Y37_ydVGvRqL": {
+   "name": "Rapid Advance Aura",
+   "text_sha1": "24d3af9cea3269ebc39cf30562c39da0381df4b0",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "HmxkJq_My-Ub"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "NrzX1LhdJpGR": {
+   "name": "Ravage Aura",
+   "text_sha1": "e0bb52a869f05a9710fc67b0786c6c7c20559b68",
+   "impl": "native:rule_weapon",
+   "note": "Every model of its unit gets Ravage(X+1) in data.rule_weapons."
+  },
+  "VfLmwEDxxLao": {
+   "name": "Strider Aura",
+   "text_sha1": "e2fabb9aca9426e258514d9f8014f5428759988f",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "JSKVyurtWIyW"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "amQphBHWOeJs": {
+   "name": "Swift Aura",
+   "text_sha1": "3d8bcfe1745988fce717d7725b85298c9ef2474c",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "leFm23MTiJxO"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "38s_V6mXkYX-": {
+   "name": "Thrust in Melee Aura",
+   "text_sha1": "edf4ada329db835167a4cb5732aac5078b1e5807",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "umbiz4tnEyF8"
+     },
+     "scope": "unit"
+    }
+   ],
+   "conditions": {
+    "attack": "melee"
+   },
+   "note": "This model and its unit."
+  },
+  "HJtyt929ob_Q": {
+   "name": "Anti-Cover when Shooting Aura",
+   "text_sha1": "0a9f49909a967573d041442fbecc9fff0eabab84",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "efmjJPTe0Yzd"
+     },
+     "scope": "unit"
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   },
+   "note": "This model and its unit."
+  },
+  "3RJ8ZvQphXk5": {
+   "name": "Indirect when Shooting Aura",
+   "text_sha1": "bdd6063a4330369b01e67502a1189d95f7f5470f",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "8Ck9GAwUK824"
+     },
+     "scope": "unit"
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   },
+   "note": "This model and its unit."
+  },
+  "-05w6vRgH2k9": {
+   "name": "Rending in Melee Aura",
+   "text_sha1": "8a6bf1d5b3e4bc49f65880302f3d517ae3c79bda",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "cavWDboL4ubs"
+     },
+     "scope": "unit"
+    }
+   ],
+   "conditions": {
+    "attack": "melee"
+   },
+   "note": "This model and its unit."
+  },
+  "AfGDQgn8r8O1": {
+   "name": "Rending when Shooting Aura",
+   "text_sha1": "c112ce5a823f70f2cb53738b67a4ff4d025757f6",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "cavWDboL4ubs"
+     },
+     "scope": "unit"
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   },
+   "note": "This model and its unit."
+  },
+  "lEFjh4V7XGVV": {
+   "name": "Shred when Shooting Aura",
+   "text_sha1": "257f3ee577c1ec8290b1f1b0780c6ebf8026948f",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "IEJp3a4vE0CB"
+     },
+     "scope": "unit"
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   },
+   "note": "This model and its unit."
+  },
+  "AB3FAl-SEUYP": {
+   "name": "Unstoppable in Melee Aura",
+   "text_sha1": "545009f85617c592dd7d8eddf8b13730751e611b",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "QXyt-zV_bjpg"
+     },
+     "scope": "unit"
+    }
+   ],
+   "conditions": {
+    "attack": "melee"
+   },
+   "note": "This model and its unit."
+  },
+  "KTixuuQ9H7tU": {
+   "name": "Unstoppable when Shooting Aura",
+   "text_sha1": "55cc82f97e12350623e45a06d839ff77b8bc8660",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "QXyt-zV_bjpg"
+     },
+     "scope": "unit"
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   },
+   "note": "This model and its unit."
+  },
+  "wnrz_-SUmR8_": {
+   "name": "Piercing Fighter Aura",
+   "text_sha1": "a04f089efd040cc476d60361cfca96e85efc3e29",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 1,
+     "scope": "unit"
+    }
+   ],
+   "conditions": {
+    "attack": "melee"
+   },
+   "note": "This model and its unit."
+  },
+  "GOPD6AVdvbFf": {
+   "name": "Piercing Shooter Aura",
+   "text_sha1": "0205802ae3b1539ce559e527beb3b83b25b9b7a2",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 1,
+     "scope": "unit"
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   },
+   "note": "This model and its unit."
+  },
+  "ovMK8gJ26T0s": {
+   "name": "Precision Shooter Aura",
+   "text_sha1": "631f2b7529d4ffeae8cc349c0eef054d8ca88eaf",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": 1,
+     "scope": "unit"
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   },
+   "note": "This model and its unit."
+  },
+  "DETPYoIhE98G": {
+   "name": "Precision Charge Aura",
+   "text_sha1": "1f9e549e542880a0bc7c1a8f653369f6e155c22b",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": 1,
+     "scope": "unit"
+    }
+   ],
+   "conditions": {
+    "attack": "melee",
+    "charging": true
+   },
+   "note": "This model and its unit; charger's strikes only."
+  },
+  "sngB_5QsJLaW": {
+   "name": "Precision Charge",
+   "text_sha1": "308ec755adb987997972c217d7d8664927633753",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": 1
+    }
+   ],
+   "conditions": {
+    "attack": "melee",
+    "charging": true
+   },
+   "note": "Charger's strikes only."
+  },
+  "d1E7eizUnPoz": {
+   "name": "Anti-Cover when Shooting",
+   "text_sha1": "9bf90f731bfb1f92ed51a140995eb0f4eb3495c1",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "efmjJPTe0Yzd"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   }
+  },
+  "nstknew-_RL_": {
+   "name": "Rending in Melee",
+   "text_sha1": "01afc572f957508cf3b59447f095e9574c765554",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "cavWDboL4ubs"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "melee"
+   }
+  },
+  "249Oc2_1eOx6": {
+   "name": "Shred in Melee",
+   "text_sha1": "52a26377c648eb86094b9070fa445127d30fc617",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "IEJp3a4vE0CB"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "melee"
+   }
+  },
+  "Y3OebIlS-KTf": {
+   "name": "Shred when Shooting",
+   "text_sha1": "9b9ee5dbae5c63f359c222aa46afecc60aa48923",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "IEJp3a4vE0CB"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   }
+  },
+  "4cIuNtbAfWkF": {
+   "name": "Unstoppable in Melee",
+   "text_sha1": "41a1893f188e1efc8e9f21d2593aed236d05dc2d",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "QXyt-zV_bjpg"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "melee"
+   }
+  },
+  "ZK3FxxpOGNMR": {
+   "name": "Unstoppable when Shooting",
+   "text_sha1": "9d5286764cfce5c3168975be202382ab1d6f91a2",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "QXyt-zV_bjpg"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   }
+  },
+  "aiYEmCuDPUcM": {
+   "name": "Predator",
+   "text_sha1": "8ef544b453108a33b59a489b21b39a7589ea61aa",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "extra_attack_on",
+     "value": 6
+    }
+   ],
+   "note": "Bloodborn is an alias.",
+   "alias_sha1": {
+    "21dbpSjSDeOY": "8ef544b453108a33b59a489b21b39a7589ea61aa",
+    "PBP94ujaST4y": "8ef544b453108a33b59a489b21b39a7589ea61aa",
+    "ypbYeykEKH3C": "8ef544b453108a33b59a489b21b39a7589ea61aa"
+   }
+  },
+  "ql-dzbuQgTT4": {
+   "name": "Enhanced Predator",
+   "text_sha1": "135834bc7411c67f63af4848d6222bc2766b670c",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "extra_attack_on",
+     "value": 5
+    }
+   ],
+   "conditions": {
+    "has_rule": "aiYEmCuDPUcM"
+   },
+   "note": "5-6 instead of 6.",
+   "alias_sha1": {
+    "7QCXafSRhLAS": "f195ec908156e5deffabec06767584e54496481d",
+    "Hzn5j1NxKI8h": "7641221426b5d96c36bbf86077bd5bc2e34ce2a6",
+    "TYEJ10EP0Xq9": "a1109a9fd11ea00fa649b9617eceb1fcc85be499"
+   }
+  },
+  "YMQxz2ssYCBj": {
+   "name": "Shrouded",
+   "text_sha1": "0160e5ad8b9dfb8e5955f0262e2f81e6d55197dd",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "range_mod",
+     "value": -4,
+     "side": "defender"
+    },
+    {
+     "primitive": "range_floor",
+     "value": 6,
+     "side": "defender"
+    }
+   ],
+   "conditions": {
+    "attack": "shooting",
+    "most_models": true
+   },
+   "note": "Darkborn is an alias; the charge part is positional.",
+   "alias_sha1": {
+    "QjUvdTBYv0Nd": "0160e5ad8b9dfb8e5955f0262e2f81e6d55197dd",
+    "df-9jrAw7ytM": "0160e5ad8b9dfb8e5955f0262e2f81e6d55197dd"
+   }
+  },
+  "2hXA8X1Xlrmc": {
+   "name": "Enhanced Shrouded",
+   "text_sha1": "e54d4ca1fbac3439afc879a5509dcf21f482f9ef",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "range_mod",
+     "value": -4,
+     "side": "defender"
+    },
+    {
+     "primitive": "range_floor",
+     "value": 6,
+     "side": "defender"
+    }
+   ],
+   "conditions": {
+    "attack": "shooting",
+    "most_have_rule": "YMQxz2ssYCBj",
+    "most_models": true
+   },
+   "note": "The other -4\" of -8\" (with Shrouded's -4\").",
+   "alias_sha1": {
+    "ZGxUXLWSGkCv": "eacf8692b38885cb054ce32e60f073906ecc1b67",
+    "yaEXlHySt7no": "ddd4f4e7d12706dbd7833f5ce2eb008bab22c540"
+   }
+  },
+  "zu6H7MyN3f8U": {
+   "name": "Warding",
+   "text_sha1": "17733065d6b2a27e3ba409080a39eeb8424e2e03",
+   "impl": "native:ward",
+   "params": {
+    "ignore_on": 6,
+    "spell_ignore_on": 2,
+    "far_only": true
+   },
+   "note": "Knightborn is an alias.",
+   "alias_sha1": {
+    "Lz_ncVgCX5R8": "17733065d6b2a27e3ba409080a39eeb8424e2e03"
+   }
+  },
+  "Anx9Iim2k-Ws": {
+   "name": "Enhanced Warding",
+   "text_sha1": "d0b779dfcfdfe2719b9b3831f7d557ba2019c4f4",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "lift_distance",
+     "value": {
+      "rule": "zu6H7MyN3f8U"
+     }
+    }
+   ],
+   "conditions": {
+    "most_have_rule": "zu6H7MyN3f8U",
+    "most_models": true
+   },
+   "note": "Lifts the over 9\"/6\" conditions of its base rule.",
+   "alias_sha1": {
+    "rUzMGpacephz": "154346dd36d8abc43521c07c83cac6148cad3a5a"
+   }
+  },
+  "9Te72f48wJyw": {
+   "name": "Versatile Warrior",
+   "text_sha1": "e15e9d1619dce4d1360ebdf39198049c5c175e01",
+   "impl": "native:versatile",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 1,
+     "conditions": {
+      "attack": "shooting",
+      "range_over": 9
+     },
+     "scope": "model"
+    },
+    {
+     "primitive": "ap_mod",
+     "value": 1,
+     "conditions": {
+      "attack": "melee",
+      "charge_over": 6
+     },
+     "scope": "model"
+    },
+    {
+     "primitive": "hit_mod",
+     "value": 1,
+     "conditions": {
+      "attack": "shooting",
+      "range_over": 9
+     },
+     "scope": "model"
+    },
+    {
+     "primitive": "hit_mod",
+     "value": 1,
+     "conditions": {
+      "attack": "melee",
+      "charge_over": 6
+     },
+     "scope": "model"
+    }
+   ],
+   "params": {
+    "choices": [
+     [
+      "AP(+1)",
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      "+1 to hit",
+      [
+       2,
+       3
+      ]
+     ]
+    ]
+   },
+   "note": "Watchborn is an alias; the pick is an Analyzer choice.",
+   "alias_sha1": {
+    "iZkU-vhbjhbb": "e15e9d1619dce4d1360ebdf39198049c5c175e01"
+   }
+  },
+  "asZsQqR_73or": {
+   "name": "Enhanced Versatile Warrior",
+   "text_sha1": "9816c07bf3d0508a9d4f0967d9e7372b9e6ea05f",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "lift_distance",
+     "value": {
+      "rule": "9Te72f48wJyw"
+     }
+    }
+   ],
+   "conditions": {
+    "has_rule": "9Te72f48wJyw"
+   },
+   "note": "Lifts the over 9\"/6\" conditions of its base rule.",
+   "alias_sha1": {
+    "rIgfEKIxk1CA": "9816c07bf3d0508a9d4f0967d9e7372b9e6ea05f"
+   }
+  },
+  "5grD2FDFdNSn": {
+   "name": "Piercing Warrior",
+   "text_sha1": "6d4442aa76448fdd372b61b7809586691cd848d9",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 1,
+     "conditions": {
+      "attack": "shooting",
+      "range_over": 9
+     },
+     "scope": "model"
+    },
+    {
+     "primitive": "ap_mod",
+     "value": 1,
+     "conditions": {
+      "attack": "melee",
+      "charge_over": 6
+     },
+     "scope": "model"
+    }
+   ],
+   "note": "Havocbound is an alias.",
+   "alias_sha1": {
+    "wjTOj41tskFD": "6d4442aa76448fdd372b61b7809586691cd848d9"
+   }
+  },
+  "mJiexOF2tUvD": {
+   "name": "Enhanced Piercing Warrior",
+   "text_sha1": "16d026357ad032d49d19e9cb65c5df331f3ec8b6",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "lift_distance",
+     "value": {
+      "rule": "5grD2FDFdNSn"
+     }
+    }
+   ],
+   "conditions": {
+    "has_rule": "5grD2FDFdNSn"
+   },
+   "note": "Lifts the over 9\"/6\" conditions of its base rule.",
+   "alias_sha1": {
+    "ZqYITWnZUc45": "6e67bce2df2e89bf64a354a0b4789320726175d2"
+   }
+  },
+  "_tP0jExjizvc": {
+   "name": "Screened",
+   "text_sha1": "708765c36710dc12d4e5dc32d3c66a7511ed05be",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": -1,
+     "side": "defender",
+     "conditions": {
+      "attack": "shooting",
+      "range_over": 9
+     }
+    },
+    {
+     "primitive": "hit_mod",
+     "value": -1,
+     "side": "defender",
+     "conditions": {
+      "attack": "melee",
+      "charge_over": 6
+     }
+    }
+   ],
+   "conditions": {
+    "most_models": true
+   },
+   "note": "As Changebound.",
+   "alias_sha1": {
+    "S8IZt-d0Sgwk": "708765c36710dc12d4e5dc32d3c66a7511ed05be"
+   }
+  },
+  "95k3zdp_EzoN": {
+   "name": "Enhanced Screened",
+   "text_sha1": "f40fdab34a52d00df53ac94a9634cfb339b06f90",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "lift_distance",
+     "value": {
+      "rule": "_tP0jExjizvc"
+     }
+    }
+   ],
+   "conditions": {
+    "most_have_rule": "_tP0jExjizvc",
+    "most_models": true
+   },
+   "note": "Lifts the over 9\"/6\" conditions of its base rule.",
+   "alias_sha1": {
+    "COaU7nmOC6VG": "f29af033d63665d27ed55082c110418292349cd6",
+    "eYZyOr9wu0jr": "89bbd18ff2c68cd406c8f6d1078b8db77f590914"
+   }
+  },
+  "WHJ8A7LzHUR6": {
+   "name": "Violent",
+   "text_sha1": "6c2b5574329d9f5224e9e0aeab1135707e270433",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "extra_wound_on_def_1",
+     "value": 1,
+     "scope": "model",
+     "conditions": {
+      "attack": "shooting",
+      "range_over": 9
+     }
+    },
+    {
+     "primitive": "extra_wound_on_def_1",
+     "value": 1,
+     "scope": "model",
+     "conditions": {
+      "attack": "melee",
+      "charge_over": 6
+     }
+    }
+   ],
+   "note": "As Warbound.",
+   "alias_sha1": {
+    "jgyVEAzjbDDh": "6c2b5574329d9f5224e9e0aeab1135707e270433"
+   }
+  },
+  "5NeMSSj7-Pp5": {
+   "name": "Enhanced Violent",
+   "text_sha1": "377a4a1059a7e334de20d71407596c390044e0bf",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "lift_distance",
+     "value": {
+      "rule": "WHJ8A7LzHUR6"
+     }
+    }
+   ],
+   "conditions": {
+    "has_rule": "WHJ8A7LzHUR6"
+   },
+   "note": "Lifts the over 9\"/6\" conditions of its base rule.",
+   "alias_sha1": {
+    "5G44ZDmQG-N5": "8c6f2fd636ddb9198c4b1188509c57b25210e4c4",
+    "JQmfgK02rJLK": "f6dcb91f58b3bf6b07fc1864c6feb5ddfbe6f7d1"
+   }
+  },
+  "2Cxml82Ma_3Y": {
+   "name": "Enhanced Protected",
+   "text_sha1": "745b56552a09934bb0f9f69c459733f03d842592",
+   "impl": "native:ward",
+   "params": {
+    "ignore_on": 5,
+    "replaces": "AlIZbh-afBYi"
+   },
+   "note": "5+ instead of Protected's 6+ (Plaguebound is an alias of Protected).",
+   "alias_sha1": {
+    "Bd9ny4MxTiHn": "2c23bfebc41ee7e7cb0fd9d72f875a1d7ef2d689",
+    "ZqewrI-hqAYi": "0bcdb1829abeb67843c40b6263a151d888bc795a"
+   }
+  },
+  "D7SpkY7mQLAe": {
+   "name": "Nimble",
+   "text_sha1": "360148f65246ada906c489551963f03603f75576",
+   "impl": "no_combat_effect",
+   "note": "Movement (Wolfborn is an alias).",
+   "alias_sha1": {
+    "UJ6frPcu1X9m": "360148f65246ada906c489551963f03603f75576",
+    "vfW0pVMUrKQr": "360148f65246ada906c489551963f03603f75576"
+   }
+  },
+  "X4RKFj6JEjzm": {
+   "name": "Enhanced Nimble",
+   "text_sha1": "792e5e4c0d61e60e1c88fe768529b1687aced15b",
+   "impl": "no_combat_effect",
+   "note": "Movement.",
+   "alias_sha1": {
+    "MmLijhHpEF37": "9aeae921a1a4af2439ebf9b31adf7b3161b7af15",
+    "fMa1N3Y3t1uj": "914708ae1759df40d18a521fe303abfe457d5ac9"
+   }
+  },
+  "8Ai6vFN7Ut6E": {
+   "name": "Enhanced Agile",
+   "text_sha1": "d7a558b01eee2a11dacb39625194f6af6e15a477",
+   "impl": "no_combat_effect",
+   "note": "Movement.",
+   "alias_sha1": {
+    "1PSCVoS08kVx": "9b02798c6c6631f615972d29dd7bb08e56851764",
+    "o2l7F3ugQNly": "27efcb68986a7c677eec376c61df33e5454e9b46"
+   }
+  },
+  "0Za4ptEWX5hx": {
+   "name": "Rapid Ambush",
+   "text_sha1": "601b525e85bef61c242181813e56341e6da16113",
+   "impl": "no_combat_effect",
+   "note": "Deployment."
+  },
+  "DHH5wUzR-hlM": {
+   "name": "Enhanced Bloodborn Aura",
+   "text_sha1": "c1a9da43ad796285e048769f01456781333dab4a",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "ql-dzbuQgTT4"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "wC-cYJcNqGqv": {
+   "name": "Enhanced Darkborn Aura",
+   "text_sha1": "21925d8bdff65ff5bc4c3639a04019b9f55cd9d0",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "2hXA8X1Xlrmc"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "wnEVftbtVtw5": {
+   "name": "Enhanced Knightborn Aura",
+   "text_sha1": "ae13e60160ce0f8a9b05315057f5935a40e8c578",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "Anx9Iim2k-Ws"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "QteJvh1g5fgV": {
+   "name": "Enhanced Watchborn Aura",
+   "text_sha1": "ffba4fc3d801958a175118271dc69f5e97a0002e",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "asZsQqR_73or"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "qlZWvJpEDLeD": {
+   "name": "Enhanced Wolfborn Aura",
+   "text_sha1": "5e08f4e3c6b996ec49f307a59803ab920bd9d337",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "X4RKFj6JEjzm"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "Zi1Zgge5ptMw": {
+   "name": "Enhanced Havocbound Aura",
+   "text_sha1": "57fcefb272252fae6248cec44f54f07ef6fe85b1",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "mJiexOF2tUvD"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "nU2aNk56ZJ8H": {
+   "name": "Enhanced Changebound Aura",
+   "text_sha1": "f7ad3569715c6f0cd12e7079c976b6fa74ac2094",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "95k3zdp_EzoN"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "o7GHhVCO4LB1": {
+   "name": "Enhanced Lustbound Aura",
+   "text_sha1": "aa2b51cfb9f9b7e8bc038cc501e39c665ff17f20",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "8Ai6vFN7Ut6E"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "U9p9FtWR84GU": {
+   "name": "Enhanced Plaguebound Aura",
+   "text_sha1": "7dbbae3da198232b6c1662ebc61f7423585bbde5",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "2Cxml82Ma_3Y"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "dNOZEOSJ-DyX": {
+   "name": "Enhanced Warbound Aura",
+   "text_sha1": "f30410f3c134ad1de8d0f79bdb69e2115a9538b6",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "5NeMSSj7-Pp5"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "WcOMD7QgPYXZ": {
+   "name": "Lacerate",
+   "text_sha1": "fceb84ea3f07878b149e0408c31cb32d893db767",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "reroll_defense_6",
+     "value": true
+    }
+   ],
+   "note": "Bane's re-roll without its Regeneration part."
+  },
+  "EgdF_3MSddXR": {
+   "name": "Melee Evasion",
+   "text_sha1": "b43256c5c65f281df2ee1081ab77c7e11690773d",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": -1,
+     "side": "defender"
+    }
+   ],
+   "conditions": {
+    "attack": "melee",
+    "most_models": true
+   }
+  },
+  "uHus35IJKri2": {
+   "name": "Bane when Shooting",
+   "text_sha1": "21a9832137cd07e25ebf6b806c3a1a563f076cdc",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "Naqc5mga9Uha"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   }
+  },
+  "ykPufsAeq8Kw": {
+   "name": "Quick Shot",
+   "text_sha1": "52a61d7e36e7b54754cdfec9131215630854f958",
+   "impl": "no_combat_effect",
+   "note": "Shooting after Rush: the Analyzer's action input (pick Advance)."
+  },
+  "7F4391rzKx2g": {
+   "name": "Obliterate",
+   "text_sha1": "6cb05dc8056b9366f910a7fe2af33693a70b63cd",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ignore_regen",
+     "value": true
+    },
+    {
+     "primitive": "reroll_defense_on",
+     "value": 5,
+     "conditions": {
+      "target_tough_min": 3
+     }
+    }
+   ],
+   "note": "Re-roll of SUCCESSFUL Defense 5-6 vs Tough(3)+ (majority)."
+  },
+  "97aE8SunQBTq": {
+   "name": "Purge",
+   "text_sha1": "08fef9765012d24db74f6e31af83a38e021355d7",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 2
+    }
+   ],
+   "conditions": {
+    "target_shaken_or_fatigued": true
+   },
+   "note": "The target's Analyzer inputs."
+  },
+  "pXs3r4mbwgGj": {
+   "name": "Decimate",
+   "text_sha1": "c5e37bae1fda735e2bb9f2df9f1fbcb25ee8cce1",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "reroll_defense_6",
+     "value": true
+    }
+   ],
+   "conditions": {
+    "target_over_half": true
+   },
+   "note": "At the start of the attack (the Analyzer's starting wounds)."
+  },
+  "MEAjk171GPmF": {
+   "name": "Brutal",
+   "text_sha1": "83a0cad03c384cff3452aa70bbd9400777afb376",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "extra_hit_on_6",
+     "value": 1,
+     "conditions": {
+      "attack": "shooting",
+      "range_over": 9
+     }
+    },
+    {
+     "primitive": "extra_hit_on_6",
+     "value": 1,
+     "conditions": {
+      "attack": "melee",
+      "charge_over": 6
+     }
+    }
+   ],
+   "note": "Devout is an alias.",
+   "alias_sha1": {
+    "cygZBh3MtWs1": "83a0cad03c384cff3452aa70bbd9400777afb376",
+    "gnpURIvLqjw9": "83a0cad03c384cff3452aa70bbd9400777afb376"
+   }
+  },
+  "Nbo5DTQufMoB": {
+   "name": "Enhanced Brutal",
+   "text_sha1": "df93df05efc90fa853dbc3c3276f0f0936fe1e6c",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "lift_distance",
+     "value": {
+      "rule": "MEAjk171GPmF"
+     }
+    }
+   ],
+   "conditions": {
+    "has_rule": "MEAjk171GPmF"
+   },
+   "note": "Lifts the over 9\"/6\" conditions of its base rule.",
+   "alias_sha1": {
+    "B1i8BBWNU3L0": "91c159e14d0456752aa25ceaf597c518b62b4534",
+    "w7sENXkksVpG": "e9c1eb671872e47431df39165baaad4da9bfcc05"
+   }
+  },
+  "LbpquFUyGSZ7": {
+   "name": "Valiant",
+   "text_sha1": "984f918e786721d1c8206864efa6df87daa15e13",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "morale_mod",
+     "value": 1,
+     "conditions": {
+      "attack": "shooting",
+      "range_over": 9
+     }
+    },
+    {
+     "primitive": "morale_mod",
+     "value": 1,
+     "conditions": {
+      "attack": "melee",
+      "charge_over": 6
+     }
+    }
+   ],
+   "conditions": {
+    "most_models": true
+   },
+   "note": "Hive Bond is an alias; the Morale Test reads the attack it follows.",
+   "alias_sha1": {
+    "Sdcb8VAeTxji": "984f918e786721d1c8206864efa6df87daa15e13",
+    "cgCroTrOmiv-": "984f918e786721d1c8206864efa6df87daa15e13"
+   }
+  },
+  "TbjUdR-OJZPw": {
+   "name": "Enhanced Valiant",
+   "text_sha1": "81039179d81e6574b5a6f95698a4c8a68c95a65b",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "lift_distance",
+     "value": {
+      "rule": "LbpquFUyGSZ7"
+     }
+    }
+   ],
+   "conditions": {
+    "most_have_rule": "LbpquFUyGSZ7",
+    "most_models": true
+   },
+   "note": "Lifts the over 9\"/6\" conditions of its base rule.",
+   "alias_sha1": {
+    "4NMqPbqMvE4C": "7720a7eddbfe31d69bd7873ab08edb97f90b138b",
+    "kiXI7plPE_mK": "9cf9052dcd3ba80dc27f9d8f995477cd6483823c"
+   }
+  },
+  "YfecqBW3YoNG": {
+   "name": "Enhanced Fortified",
+   "text_sha1": "d26a7452028acab34f6f1f5b7b92ccf9d08ead45",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": -1,
+     "side": "defender"
+    }
+   ],
+   "conditions": {
+    "most_have_rule": "IyLY1212wacW",
+    "most_models": true
+   },
+   "note": "The other AP(-1) of AP(-2) (Enhanced Guardian is an alias).",
+   "alias_sha1": {
+    "7-nw0-TRmYAv": "b72ce173c655f9556affdad8315fb24dfed5b03c"
+   }
+  },
+  "xeJDKejG4QZN": {
+   "name": "Disintegrate",
+   "text_sha1": "ef4e0971bc36fcb42bffa87a7dcf7df040638d38",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ignore_regen",
+     "value": true
+    },
+    {
+     "primitive": "ap_mod",
+     "value": 2,
+     "conditions": {
+      "target_tough_min": 3
+     }
+    }
+   ]
+  },
+  "RHkw66BqDjUp": {
+   "name": "Fragment",
+   "text_sha1": "f508b4508bdb924033cf1470497fe6e82299c411",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "reroll_defense_on",
+     "value": 5
+    }
+   ],
+   "conditions": {
+    "target_defense_min": 5
+   }
+  },
+  "HMiVg3VVLQv3": {
+   "name": "Piercing Target",
+   "text_sha1": "cb7e9c2c6747ede62052a442e28b0477866b56d8",
+   "impl": "native:mark",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 1
+    }
+   ],
+   "note": "Tokens never used up; X units, once per game (the player's)."
+  },
+  "s4lagBUlnsUE": {
+   "name": "Piercing Growth",
+   "text_sha1": "72f4c338a67ef8cc611d00fd0045b0a853872b17",
+   "impl": "native:versatile",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 1,
+     "scope": "model"
+    },
+    {
+     "primitive": "ap_mod",
+     "value": 2,
+     "scope": "model"
+    }
+   ],
+   "params": {
+    "choices": [
+     [
+      "2-3 tokens: AP(+1)",
+      [
+       0
+      ]
+     ],
+     [
+      "4 tokens: AP(+2)",
+      [
+       1
+      ]
+     ]
+    ]
+   },
+   "note": "The tokens are the player's: the Analyzer's Versatile choice, none = 0-1 tokens."
+  },
+  "3sXTViTVdDhn": {
+   "name": "Predator Aura",
+   "text_sha1": "60b2ffaddd17f10077762d1fd70dee5fb11237dc",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "aiYEmCuDPUcM"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "j1_UP3V8iBI_": {
+   "name": "Enhanced Devout Aura",
+   "text_sha1": "4ee3dd070fbc4afe71b830a048fc8f4277325ce7",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "Nbo5DTQufMoB"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "pxBAv9DNteCA": {
+   "name": "Enhanced Guardian Aura",
+   "text_sha1": "e29c0a9445f5a9e837085e7d046f4b3e2702970e",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "YfecqBW3YoNG"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "Yt2R4sh8SXM0": {
+   "name": "Enhanced Hive Bond Aura",
+   "text_sha1": "a2e3af46508040d436f1f32a6f28c12990a7a945",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "TbjUdR-OJZPw"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "noS8F0WwHtHA": {
+   "name": "Dash",
+   "text_sha1": "05f018eaf65e3f5c8ea5691fa86653607d8ab476",
+   "impl": "no_combat_effect",
+   "note": "Movement."
+  },
+  "UlIf59PuvI53": {
+   "name": "Rapid Charge",
+   "text_sha1": "df6f1726245bbf9cd5d7d1281646edd522d18c0e",
+   "impl": "no_combat_effect",
+   "note": "Movement."
+  },
+  "anyZ2FHtdAVO": {
+   "name": "Hit & Run Fighter",
+   "text_sha1": "dbc2562d869a4107d78a8009dc67d3bec8eaba35",
+   "impl": "no_combat_effect",
+   "note": "Movement after a melee."
+  },
+  "O2Cd7OibBBA5": {
+   "name": "No Retreat",
+   "text_sha1": "2c6c3e00d8042220217cc5b85b4da87733bcfe99",
+   "impl": "native:no_retreat",
+   "note": "A failed test counts as passed; its wounds a Morale outcome."
+  },
+  "vFppagDdH3Vl": {
+   "name": "Regenerative Strength",
+   "text_sha1": "2f7ef47598f78216a7eee5aa41b8419e1df44269",
+   "impl": "native:wound_dice",
+   "params": {
+    "on": 4,
+    "trigger": "melee",
+    "tokens": 6
+   },
+   "note": "One die per token (the Analyzer's menu: tokens gained so far), a first weapon."
+  },
+  "F_1wfmpAyYwT": {
+   "name": "Self-Destruct",
+   "text_sha1": "f4ae306ea9c10163e2f83a2de0de627423cd2665",
+   "impl": "native:self_destruct",
+   "note": "X hits to the enemy after the exchange, the holder removed."
+  },
+  "99DXMN96LnI8": {
+   "name": "Surprise Attack",
+   "text_sha1": "b89924cb3726045e450d4169cd4374a88f287433",
+   "impl": "native:dice_hits",
+   "params": {
+    "on": 2,
+    "ap": 1
+   },
+   "note": "X dice within 6\", each 2+ one hit AP(1), once per game; Infiltrate is deployment."
+  },
+  "GgPKQ4tKFRIC": {
+   "name": "Unwieldy",
+   "text_sha1": "22046388e382492418439bfd2d06896029e569e2",
+   "impl": "native:unwieldy",
+   "note": "Its strikes after the strike back when charging."
+  },
+  "JKjtSSAto56J": {
+   "name": "Dash Aura",
+   "text_sha1": "85431ca773f6a1c4023a5bb60bdc9a540c1c477f",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "noS8F0WwHtHA"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "n8vjv0oBZDAL": {
+   "name": "Defensive Frenzy",
+   "text_sha1": "d8c12af3a7ce711d5e813796f2fcd942895036eb",
+   "impl": "native:versatile",
+   "effects": [
+    {
+     "primitive": "defense_mod",
+     "value": 1,
+     "side": "defender"
+    },
+    {
+     "primitive": "defense_mod",
+     "value": 2,
+     "side": "defender"
+    }
+   ],
+   "conditions": {
+    "most_models": true
+   },
+   "params": {
+    "choices": [
+     [
+      "1 token: +1 Defense",
+      [
+       0
+      ]
+     ],
+     [
+      "2 tokens: +2 Defense",
+      [
+       1
+      ]
+     ]
+    ],
+    "state": true
+   },
+   "note": "Tokens from units destroyed earlier: the target's state input, none = no token."
+  },
+  "hGd-1A2fPuyh": {
+   "name": "Fortified Growth",
+   "text_sha1": "e0695dacc8f2caaef6e2ba8b628630ee10a343a1",
+   "impl": "native:versatile",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": -1,
+     "side": "defender"
+    },
+    {
+     "primitive": "ap_mod",
+     "value": -2,
+     "side": "defender"
+    }
+   ],
+   "conditions": {
+    "most_models": true
+   },
+   "params": {
+    "choices": [
+     [
+      "2-3 tokens: AP(-1)",
+      [
+       0
+      ]
+     ],
+     [
+      "4 tokens: AP(-2)",
+      [
+       1
+      ]
+     ]
+    ],
+    "state": true
+   },
+   "note": "Tokens by round: the target's state input, none = 0-1 token; AP never below 0."
+  },
+  "uwrXuhqYepEd": {
+   "name": "Hit & Run Fighter Aura",
+   "text_sha1": "a9e045793cd0c4e242dafb50d6f69b4e8b848750",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "anyZ2FHtdAVO"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "5_4ZsH9_q-tE": {
+   "name": "Screened Aura",
+   "text_sha1": "4e865dfabc9798ec260100c88118ab345675d8f1",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "_tP0jExjizvc"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "qJulcrQGeaX6": {
+   "name": "Quick Shot Mark",
+   "text_sha1": "3372e371c7182a03ab2d439890de6a63413178ab",
+   "impl": "no_combat_effect",
+   "note": "Quick Shot against the target: shooting after Rush, the Analyzer's action input."
+  },
+  "sHIDSc5b37Jm": {
+   "name": "Spell Accumulator",
+   "text_sha1": "6e5e8b7f52d79d3e3657e121ef79deb45a31e57d",
+   "impl": "no_combat_effect",
+   "note": "Spell tokens for friendly casters: the Analyzer's token inputs."
+  },
+  "jaDijWTHmVNU": {
+   "name": "Split",
+   "text_sha1": "e8d7b98ddafe50d8d49b352c236e700a1601068e",
+   "impl": "no_combat_effect",
+   "note": "A new unit after this one is destroyed."
+  },
+  "kpuEyaul7J3Z": {
+   "name": "Ambush Re-Deployment",
+   "text_sha1": "91709fc41b9da2d5633ea49435fa1be17ccfe2cd",
+   "impl": "no_combat_effect",
+   "note": "Deployment."
+  },
+  "jdxaM66DHbMQ": {
+   "name": "Destructive",
+   "text_sha1": "85eaa338facb8e45a4773e10c7d6adc0fcc7f9b9",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 1
+    }
+   ],
+   "conditions": {
+    "target_over_half": true
+   },
+   "note": "At the start of the attack (the Analyzer's starting wounds)."
+  },
+  "ozCLWcof36wD": {
+   "name": "Hit & Run",
+   "text_sha1": "09f6a3973c23b0227eb633b313f7ab3c55b10b46",
+   "impl": "no_combat_effect",
+   "note": "Movement after shooting or melee (Harassing is an alias).",
+   "alias_sha1": {
+    "2xUH_d7T_Zfv": "09f6a3973c23b0227eb633b313f7ab3c55b10b46",
+    "SHjROxMxvQFd": "09f6a3973c23b0227eb633b313f7ab3c55b10b46"
+   }
+  },
+  "M8KFBuLeTrck": {
+   "name": "Enhanced Hit & Run",
+   "text_sha1": "b51483c0a389bb7ed3bda2a8e89f69319b17ea33",
+   "impl": "no_combat_effect",
+   "note": "Movement.",
+   "alias_sha1": {
+    "UrbEF2kpIjYH": "e58044155d3270e79fc358830eca2c0739679a62",
+    "g2ceRIgNr-GI": "a05646cfb726e7add1cd4d06da19e37b2cb03625"
+   }
+  },
+  "RUS7R0SwaBUj": {
+   "name": "Enhanced Harassing Aura",
+   "text_sha1": "ccb075c85e3d0966a2811a36a8d97c1034878043",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "M8KFBuLeTrck"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "zDNFCyPhKKOf": {
+   "name": "Enhanced Rapid Blink Aura",
+   "text_sha1": "5bb45c689bcc1c5111ccaba6cf5fdd3ce0c3bc68",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "X4RKFj6JEjzm"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "BOSZqK98Ncka": {
+   "name": "Enhanced Sturdy Aura",
+   "text_sha1": "f2c7695fba11d4bc8c321eda87137b687705b7ae",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "UBOoMTJY8qfD"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "UBOoMTJY8qfD": {
+   "name": "Enhanced Guarded",
+   "text_sha1": "33b37643f0ccb63c8aec33d6c164609025ac06c5",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "lift_distance",
+     "value": {
+      "rule": "zTfg9msVpfJ0"
+     }
+    }
+   ],
+   "conditions": {
+    "most_have_rule": "zTfg9msVpfJ0",
+    "most_models": true
+   },
+   "note": "Enhanced Sturdy is an alias; lifts Guarded's over 9\"/6\".",
+   "alias_sha1": {
+    "rMKm6JKLIxgn": "cc8aede5213ad3465e4b71415ff3d2d71c30d48a"
+   }
+  },
+  "LGezlmOLMTfl": {
+   "name": "Infiltrating Precision Strike",
+   "text_sha1": "2429a0a6c9dc61079a6b37c52fdb311a499a867f",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": 1,
+     "scope": "model"
+    }
+   ],
+   "conditions": {
+    "attack": "melee",
+    "ambushed_this_round": true
+   },
+   "note": "Counts as Infiltrate (Ambush): the Analyzer's 'deployed via Ambush this round'."
+  },
+  "FZLk0-3ci6jI": {
+   "name": "Martial Prowess",
+   "text_sha1": "6935f6f586a4cf6518c02e5ae40792f7f3af0a0e",
+   "impl": "no_combat_effect",
+   "note": "A second activation: the Analyzer's one exchange.",
+   "alias_sha1": {
+    "sGmLaPbLpSvT": "6935f6f586a4cf6518c02e5ae40792f7f3af0a0e"
+   }
+  },
+  "R6Y4QHBq6wxZ": {
+   "name": "Piercing Frenzy",
+   "text_sha1": "d7124126ecc08b12c207a4c25e0f1dc0b9bdcc2e",
+   "impl": "native:versatile",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 1,
+     "scope": "model"
+    },
+    {
+     "primitive": "ap_mod",
+     "value": 2,
+     "scope": "model"
+    }
+   ],
+   "params": {
+    "choices": [
+     [
+      "1 token: AP(+1)",
+      [
+       0
+      ]
+     ],
+     [
+      "2 tokens: AP(+2)",
+      [
+       1
+      ]
+     ]
+    ],
+    "state": true
+   },
+   "note": "Tokens from units destroyed earlier: the Analyzer's menu, none = no token."
+  },
+  "p3ql9lJcL-vw": {
+   "name": "Precision Frenzy",
+   "text_sha1": "ecf033b0d9aa785880f24c5442a70b8ef5ed69e3",
+   "impl": "native:versatile",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": 1,
+     "scope": "model"
+    },
+    {
+     "primitive": "hit_mod",
+     "value": 2,
+     "scope": "model"
+    }
+   ],
+   "params": {
+    "choices": [
+     [
+      "1 token: +1 to hit",
+      [
+       0
+      ]
+     ],
+     [
+      "2 tokens: +2 to hit",
+      [
+       1
+      ]
+     ]
+    ],
+    "state": true
+   },
+   "note": "Tokens from units destroyed earlier: the Analyzer's menu, none = no token."
+  },
+  "N0JRcI01vSBT": {
+   "name": "Deathstrike",
+   "text_sha1": "785b6037a6e7f26578e389d9e97df12f5fd6c14e",
+   "impl": "native:deathstrike",
+   "note": "X hits to the enemy when killed in melee (as Self-Destruct, no removal)."
+  },
+  "WdkGC1Q6_nHY": {
+   "name": "Enhanced Clan Warrior Aura",
+   "text_sha1": "f46529188b8a9d59f25f799539ae123381c724a4",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "ql-dzbuQgTT4"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "UVyi54SgbOoz": {
+   "name": "Enhanced Highborn Aura",
+   "text_sha1": "fc5db122cf9da755edb3cd0c26a8a8c055787be7",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "NX1-Y1zS-oUD"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "sQQhss7F6nCs": {
+   "name": "Enhanced Mischievous Aura",
+   "text_sha1": "80ac705a724909cda46cec3b9effc0167d5c2b7d",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "kFdn5NTc4iCO"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "fOIa9S1t0q7S": {
+   "name": "Melee Evasion Aura",
+   "text_sha1": "a48af374cdf8ed89ce4b9d86b2656f80112c33fe",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "EgdF_3MSddXR"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "JSnFcm3SCiMD": {
+   "name": "Fracture",
+   "text_sha1": "68406e8a5a3dd338d624807c6d1bdea18f1f88c9",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ap_on_6",
+     "value": 2
+    }
+   ]
+  },
+  "CJ2mI46Tp-al": {
+   "name": "Extra Reach",
+   "text_sha1": "e7b11bd6975d5d3c3e5dde4498c8695035cb1f0e",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "range_mod",
+     "value": 4
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   },
+   "note": "Highborn is an alias; the +2\" charge is positional.",
+   "alias_sha1": {
+    "5bc5xNmd5M14": "e7b11bd6975d5d3c3e5dde4498c8695035cb1f0e"
+   }
+  },
+  "NX1-Y1zS-oUD": {
+   "name": "Enhanced Extra Reach",
+   "text_sha1": "07dd5dc599d91c7395a419c1ea64594c380ffd99",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "range_mod",
+     "value": 4
+    }
+   ],
+   "conditions": {
+    "attack": "shooting",
+    "has_rule": "CJ2mI46Tp-al"
+   },
+   "note": "The other +4\" of +8\" (Enhanced Highborn is an alias).",
+   "alias_sha1": {
+    "6Nn0oPQN3TZc": "6b027fafe94d4b968912c23a1ec82a7c7946c8c5"
+   }
+  },
+  "r0MEI7V18zNs": {
+   "name": "Instinctive",
+   "text_sha1": "3ab82c7ef2dea387a0fb2f895a6dee51f13c28b9",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": 1,
+     "conditions": {
+      "attack": "shooting"
+     }
+    },
+    {
+     "primitive": "hit_mod",
+     "value": 1,
+     "conditions": {
+      "attack": "melee",
+      "action": "charge"
+     }
+    }
+   ],
+   "note": "The analysed target is read as the closest valid one."
+  },
+  "Lqk7bzR6k3xe": {
+   "name": "Vicious",
+   "text_sha1": "fcf621067675b31e15c83dab7eee69859238dea2",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "reroll_defense_6",
+     "value": true
+    }
+   ],
+   "note": "Mischievous is an alias.",
+   "alias_sha1": {
+    "rblJ2IkYaFon": "fcf621067675b31e15c83dab7eee69859238dea2",
+    "tidpe1mTXb9W": "fcf621067675b31e15c83dab7eee69859238dea2"
+   }
+  },
+  "kFdn5NTc4iCO": {
+   "name": "Enhanced Vicious",
+   "text_sha1": "3d900ce3d818720be93e5fd37488cc71aca6ad8a",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "reroll_defense_on",
+     "value": 5
+    }
+   ],
+   "conditions": {
+    "has_rule": "Lqk7bzR6k3xe"
+   },
+   "note": "Successful 5-6 instead of 6 (Enhanced Mischievous is an alias).",
+   "alias_sha1": {
+    "1BZ5wsWUjYCd": "4fb83c774cdfa44c12c508414ffa738051c45937",
+    "pUt7fqbSTNWP": "a1c2e9e8da7a4bb9e95b4c7b8d5ac2cd2d5052ee"
+   }
+  },
+  "a9j1Pje6TLBi": {
+   "name": "Quick Shot Aura",
+   "text_sha1": "92c7ac55e20f7451013de79aebd8e9c441310cf3",
+   "impl": "no_combat_effect",
+   "note": "Quick Shot: the Analyzer's action input."
+  },
+  "arJNSXC8F_Oa": {
+   "name": "Unwieldy Debuff",
+   "text_sha1": "4291e281c96ac661bbf583a3046abeb1ba34f09c",
+   "impl": "native:debuff",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "GgPKQ4tKFRIC"
+     }
+    }
+   ],
+   "params": {
+    "attack": "melee"
+   },
+   "note": "The enemy's melee weapons strike last when it charges."
+  },
+  "s6MgSfmgylXU": {
+   "name": "Defense",
+   "text_sha1": "303dec85cd659ffeb177fe1efaef8ccd3357f2a9",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "defense_mod",
+     "value": "X",
+     "side": "defender"
+    }
+   ],
+   "note": "+X to Defense rolls."
+  },
+  "gVRt_wk8DktW": {
+   "name": "Hazardous",
+   "text_sha1": "60ca9430d163ec101037c46732b999892036d1b4",
+   "impl": "native:hazardous",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 4
+    }
+   ],
+   "note": "AP(4); its unmodified 1s to hit wound its model (an Analyzer line)."
+  },
+  "vbYCQfF82BLa": {
+   "name": "Piercing Spotter",
+   "text_sha1": "8d4977a3cb84cf280553d7a722e423fcfe886633",
+   "impl": "native:spotter",
+   "note": "Tokens on the target: the Analyzer's 'AP spotter tokens', +AP(1) each."
+  },
+  "C5t3oLnEpNtX": {
+   "name": "Vengeance",
+   "text_sha1": "69477d7e34379c9b76dcc41189c66c46244032a8",
+   "impl": "native:mark",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": "X"
+    }
+   ],
+   "params": {
+    "tokens": 2
+   },
+   "note": "+X to hit against the unit that destroyed it: a Mark of 1-2 tokens (one model per unit takes it; 2 in a Combined Unit)."
+  },
+  "FPlO2MymiMc0": {
+   "name": "Coordinate",
+   "text_sha1": "5fc7feea364cfc18f5e5ecd28523afd7dd33fda2",
+   "impl": "no_combat_effect",
+   "note": "Activation order: one exchange in the Analyzer."
+  },
+  "ozw_t3SA8IDu": {
+   "name": "Enhanced Hold the Line Aura",
+   "text_sha1": "e7af87e017e5ceeff85dfb6144ca8291dc58b08b",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "TbjUdR-OJZPw"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit get Enhanced Hold the Line (= Enhanced Valiant)."
+  },
+  "MfDT3coYRS45": {
+   "name": "No Retreat Buff",
+   "text_sha1": "ad470569486030cf63206655ecb268508d40257f",
+   "impl": "native:buff",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "O2Cd7OibBBA5"
+     }
+    }
+   ],
+   "note": "A friendly unit gets No Retreat once."
+  },
+  "i8mWlZpqtiNO": {
+   "name": "Defensive Growth",
+   "text_sha1": "962b0bbebb47805ae68f941523114b375693afbb",
+   "impl": "native:versatile",
+   "effects": [
+    {
+     "primitive": "defense_mod",
+     "value": 1,
+     "side": "defender"
+    },
+    {
+     "primitive": "defense_mod",
+     "value": 2,
+     "side": "defender"
+    }
+   ],
+   "conditions": {
+    "most_models": true
+   },
+   "params": {
+    "choices": [
+     [
+      "2-3 tokens: +1 Defense",
+      [
+       0
+      ]
+     ],
+     [
+      "4 tokens: +2 Defense",
+      [
+       1
+      ]
+     ]
+    ],
+    "state": true
+   },
+   "note": "Tokens by round: the target's state input, none = 0-1 token."
+  },
+  "IJvzf5jxvuP8": {
+   "name": "Defensive Growth Aura",
+   "text_sha1": "aabf157a96d78c37c05e0add8822738c26bdfcba",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "i8mWlZpqtiNO"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "x7chGZmjk8Os": {
+   "name": "Quick Throw",
+   "text_sha1": "856bd81502f6f2368f388de6e8738bbd23954938",
+   "impl": "native:indirect_any_action",
+   "note": "Indirect weapons ignore line of sight after any shooting action; cover from Sight Blockers still only with Hold."
+  },
+  "B9OEkYUQsxvt": {
+   "name": "Piercing Tag",
+   "text_sha1": "f347d81c7b05c4771cb0d27d95a034119062ed88",
+   "impl": "native:spotter",
+   "note": "Tokens on the target: the Analyzer's 'AP spotter tokens', one per attack (+AP(1))."
+  },
+  "FPA1mew5j78v": {
+   "name": "Enhanced Infected Aura",
+   "text_sha1": "57229df697417aaa6a148e2c389105b9b093c122",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "5NeMSSj7-Pp5"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit get Enhanced Infected (= Enhanced Violent)."
+  },
+  "QMU04E_1bAVC": {
+   "name": "No Retreat Aura",
+   "text_sha1": "db272514988ed99e22a37f859bc31c28f63b8511",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "O2Cd7OibBBA5"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "W3hSISDGStUH": {
+   "name": "Precision Growth",
+   "text_sha1": "a858aa6d75903a804c98f465dfcdb28297b32c77",
+   "impl": "native:versatile",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": 1,
+     "scope": "model"
+    },
+    {
+     "primitive": "hit_mod",
+     "value": 2,
+     "scope": "model"
+    }
+   ],
+   "params": {
+    "choices": [
+     [
+      "2-3 tokens: +1 to hit",
+      [
+       0
+      ]
+     ],
+     [
+      "4 tokens: +2 to hit",
+      [
+       1
+      ]
+     ]
+    ],
+    "state": true
+   },
+   "note": "Tokens by round: the Analyzer's menu, none = 0-1 token."
+  },
+  "qNNjE6aa9YQ2": {
+   "name": "Bad Shot",
+   "text_sha1": "cf4e9a7b7a57270e2bb808213623f7a072b6ce5c",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": -1
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   },
+   "note": "-1 to hit when shooting."
+  },
+  "EYbEdB0ST9lf": {
+   "name": "Enhanced Ferocious Aura",
+   "text_sha1": "dd3fe040d7dab2947b379b3a6c05575cfa91fd73",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "Nbo5DTQufMoB"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit get Enhanced Ferocious (= Enhanced Brutal)."
+  },
+  "u2KyOrsBaOdU": {
+   "name": "Speed Feat",
+   "text_sha1": "bdbccbf35bf4a138cb1f429b7f315536a0ca82e6",
+   "impl": "no_combat_effect",
+   "note": "Movement, once per game."
+  },
+  "UEYz0htkjsxv": {
+   "name": "Speed Feat Aura",
+   "text_sha1": "397db646c0f0ab7da2e230a80c099e2c0c30777a",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "u2KyOrsBaOdU"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "engi9zFdRht9": {
+   "name": "Enhanced Machine-Fog Aura",
+   "text_sha1": "4c5c192a7ae31b4213e01832cdee5094341d5acf",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "95k3zdp_EzoN"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit get Enhanced Machine-Fog (= Enhanced Screened)."
+  },
+  "VI54cszY2BuG": {
+   "name": "Shatter",
+   "text_sha1": "def15aaba542401cc8df216dd0290963b2c0c003",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ap_on_6",
+     "value": 3
+    }
+   ],
+   "note": "As Fracture with AP(+3)."
+  },
+  "7sq95Nqfi4lG": {
+   "name": "Enhanced Self-Repair Buff",
+   "text_sha1": "380cf2860e77a10c557c461b05f8933ce098f13d",
+   "impl": "native:buff",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "2Cxml82Ma_3Y"
+     }
+    }
+   ],
+   "note": "A friendly unit gets Enhanced Self-Repair (= Enhanced Protected) once."
+  },
+  "xfXomZDK5SVX": {
+   "name": "Reanimation",
+   "text_sha1": "3bdbf6fbb045029768b89ecf62d97fbc27c8ecc0",
+   "impl": "no_combat_effect",
+   "note": "Restores models / wounds when the unit activates: the Analyzer's starting wounds."
+  },
+  "l_KzjNPv-_5H": {
+   "name": "Reanimation Aura",
+   "text_sha1": "5eae0c2af932a0fef6c82da51a89ce7ecc3c307f",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "xfXomZDK5SVX"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "CdIKErxgOpl3": {
+   "name": "Protection Feat Aura",
+   "text_sha1": "9c1240c7f25f89693703e8b7be29a6f97ca35d96",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "TU7fkKrcAvop"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "TU7fkKrcAvop": {
+   "name": "Protection Feat",
+   "text_sha1": "bf6020e329ecdd633c02e1b9b5227a8ac2a5cb66",
+   "impl": "native:ward",
+   "params": {
+    "ignore_on": 5,
+    "state": true
+   },
+   "note": "Once per game: wounds ignored on 5+ when the unit's 'Feat used' input is on, every wound of the activation."
+  },
+  "8cqDBbHGSA4m": {
+   "name": "Demolish",
+   "text_sha1": "6d5a990b0a9d409112b990c42d1ff50eb174364c",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "ignore_cover",
+     "value": true
+    },
+    {
+     "primitive": "ap_mod",
+     "value": 1,
+     "conditions": {
+      "target_near_terrain": true
+     }
+    }
+   ],
+   "note": "Ignores Cover; AP(+1) when the target is within 1\" of terrain (its input)."
+  },
+  "0Z-OGtDpajc3": {
+   "name": "Grounded Evasion",
+   "text_sha1": "c1d50fc1ef86a82b4a094ec318ca378b37fb7ea2",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": -1,
+     "side": "defender"
+    }
+   ],
+   "conditions": {
+    "most_models": true,
+    "near_terrain": true
+   },
+   "note": "Enemies get -1 to hit when the unit is within 1\" of terrain (its input)."
+  },
+  "5L4WYDhAN6bU": {
+   "name": "Grounded Defense",
+   "text_sha1": "f39097e65455516e6ac86a72093690f6753391a0",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "defense_mod",
+     "value": 1,
+     "side": "defender"
+    }
+   ],
+   "conditions": {
+    "most_models": true,
+    "near_terrain": true
+   },
+   "note": "+1 Defense when the unit is within 1\" of terrain (its input)."
+  },
+  "ZjmJUR3enJGu": {
+   "name": "Grounded Precision",
+   "text_sha1": "8f8e0dc21f4eb428564aaffb5bf2889a7ed77efb",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": 1
+    }
+   ],
+   "conditions": {
+    "near_terrain": true
+   },
+   "note": "+1 to hit for its holder when its unit is within 1\" of terrain."
+  },
+  "KT62C0Y4SbKS": {
+   "name": "Grounded Defense Aura",
+   "text_sha1": "5b650e262bcf9f6fdb43cf94601a86783a415770",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "5L4WYDhAN6bU"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "E-2e-rVm1WAz": {
+   "name": "Grounded Precision Aura",
+   "text_sha1": "c800d0245fa3baa055d480eb00693141d4987457",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "ZjmJUR3enJGu"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit."
+  },
+  "rtRapnaM86LH": {
+   "name": "Reap",
+   "text_sha1": "bb874a7091abb730589b5eac7bcc9b6e1ce8bf57",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "reroll_defense_on",
+     "value": 5
+    }
+   ],
+   "conditions": {
+    "target_shaken_or_fatigued": true
+   },
+   "note": "Target Shaken or Fatigued (its inputs): re-roll successful unmodified Defense 5-6."
+  },
+  "m4BLeFXB-kOb": {
+   "name": "Enhanced Guerrilla Aura",
+   "text_sha1": "f0f28426f7759d81e3aa014e20f0e067a6ff062e",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "M8KFBuLeTrck"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit get Enhanced Guerrilla (= Enhanced Hit & Run)."
+  },
+  "sJXpQUJFLbVh": {
+   "name": "Enhanced Scrapper Aura",
+   "text_sha1": "c0b8eb10c532a1f697bada2e80fbaa5277a34ce9",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "kFdn5NTc4iCO"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit get Enhanced Scrapper (= Enhanced Vicious)."
+  },
+  "QhQL5YYoO3jJ": {
+   "name": "Enhanced Scurry Aura",
+   "text_sha1": "964a291a3b6965689bbb99c0d8564b3bd803e42d",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "8Ai6vFN7Ut6E"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit get Enhanced Scurry (= Enhanced Agile)."
+  },
+  "3oGVnDhS1udb": {
+   "name": "Enhanced Shadowborn Aura",
+   "text_sha1": "03c59e54e53f2a677aa6cda6d52e42ce8e65719e",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "2hXA8X1Xlrmc"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit get Enhanced Shadowborn (= Enhanced Shrouded)."
+  },
+  "zlKV_VK3wONR": {
+   "name": "Predator Shooter Aura",
+   "text_sha1": "eec0616944a31bda263e1df3c9808cf144f434ca",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "UlH7N0knz4eN"
+     },
+     "scope": "unit"
+    }
+   ],
+   "note": "This model and its unit get Predator Shooter."
+  },
+  "s97hkNZ91jnd": {
+   "name": "Enhanced Shadowborn Buff",
+   "text_sha1": "50d325cfe743dc60237b05c6ad285a839e0467fd",
+   "impl": "native:buff",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "2hXA8X1Xlrmc"
+     }
+    }
+   ],
+   "note": "A friendly unit gets Enhanced Shadowborn (= Enhanced Shrouded) once."
+  },
+  "0B7GlGWBl7FF": {
+   "name": "Enhanced Primal Buff",
+   "text_sha1": "4570391e6b88fd7cb62077a3baefb53cc975f6d2",
+   "impl": "native:buff",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "ql-dzbuQgTT4"
+     }
+    }
+   ],
+   "note": "A friendly unit gets Enhanced Primal (= Enhanced Predator) once."
+  },
+  "UlH7N0knz4eN": {
+   "name": "Predator Shooter",
+   "text_sha1": "4ef58c9b7f30b72dbed79ae63feb7ba15209e09f",
+   "impl": "composed",
+   "effects": [
+    {
+     "primitive": "extra_attack_on",
+     "value": 6
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   },
+   "note": "Predator when shooting only."
+  },
+  "L_61KYvup31T": {
+   "name": "Precision Tag",
+   "text_sha1": "894cf1e9ff7f63c40c22e521807560ffcd7d77ac",
+   "impl": "native:spotter",
+   "note": "Tokens on the target: the Analyzer's 'Spotter tokens', one per attack (+1 to hit)."
+  },
+  "e0u4Znq4Z82Q": {
+   "name": "Reinforcement",
+   "text_sha1": "a908747461a9939acbb47b48557863a7b43613b2",
+   "impl": "no_combat_effect",
+   "note": "Removal when Shaken and a new copy next round: after the attack (P(Shaken) unchanged)."
+  }
+ }
+}

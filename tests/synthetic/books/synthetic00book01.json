@@ -1,0 +1,2349 @@
+{
+ "uid": "synthetic00book01",
+ "name": "Synthetic Legion",
+ "versionString": "3.6.0",
+ "gameSystemId": 2,
+ "gameSystemSlug": "grimdark-future",
+ "factionName": null,
+ "factionRelation": null,
+ "units": [
+  {
+   "id": "uTroop1",
+   "name": "Line Troopers",
+   "size": 10,
+   "quality": 4,
+   "defense": 4,
+   "cost": 100,
+   "rules": [],
+   "weapons": [
+    {
+     "id": "w-Rifle",
+     "name": "Rifle",
+     "type": "ArmyBookWeapon",
+     "count": 10,
+     "range": 24,
+     "attacks": 1,
+     "weaponId": "wid-Rifle",
+     "specialRules": [],
+     "attacksMultiplier": 1,
+     "label": "10x Rifle (24\", A1)",
+     "originalCount": 10
+    },
+    {
+     "id": "w-Hand_Weapon",
+     "name": "Hand Weapon",
+     "type": "ArmyBookWeapon",
+     "count": 10,
+     "range": 0,
+     "attacks": 1,
+     "weaponId": "wid-Hand Weapon",
+     "specialRules": [],
+     "attacksMultiplier": 1,
+     "label": "10x Hand Weapon (A1)",
+     "originalCount": 10
+    }
+   ],
+   "items": [],
+   "upgrades": [
+    "PA",
+    "PB"
+   ],
+   "bases": null,
+   "valid": true,
+   "hasCustomRule": false,
+   "hasBalanceInvalid": false,
+   "disabledSections": null
+  },
+  {
+   "id": "uCapt01",
+   "name": "Field Captain",
+   "size": 1,
+   "quality": 3,
+   "defense": 4,
+   "cost": 60,
+   "rules": [
+    {
+     "type": "ArmyBookRule",
+     "id": "T08VkBuVmNZ_",
+     "name": "Hero",
+     "label": "Hero"
+    },
+    {
+     "type": "ArmyBookRule",
+     "id": "a0YtInGiUDd6",
+     "name": "Tough",
+     "label": "Tough(3)",
+     "rating": 3
+    }
+   ],
+   "weapons": [
+    {
+     "id": "w-Pistol",
+     "name": "Pistol",
+     "type": "ArmyBookWeapon",
+     "count": 1,
+     "range": 12,
+     "attacks": 1,
+     "weaponId": "wid-Pistol",
+     "specialRules": [],
+     "attacksMultiplier": 1,
+     "label": "Pistol (12\", A1)",
+     "originalCount": 1
+    },
+    {
+     "id": "w-Blade",
+     "name": "Blade",
+     "type": "ArmyBookWeapon",
+     "count": 1,
+     "range": 0,
+     "attacks": 3,
+     "weaponId": "wid-Blade",
+     "specialRules": [
+      {
+       "type": "ArmyBookRule",
+       "id": "17crjK7P6_w6",
+       "name": "AP",
+       "label": "AP(1)",
+       "rating": 1
+      }
+     ],
+     "attacksMultiplier": 1,
+     "label": "Blade (A3, AP(1))",
+     "originalCount": 1
+    }
+   ],
+   "items": [
+    {
+     "id": "i-Command Kit",
+     "name": "Command Kit",
+     "type": "ArmyBookItem",
+     "bases": null,
+     "content": [
+      {
+       "type": "ArmyBookRule",
+       "id": "synSplit00001",
+       "name": "Split",
+       "label": "Split(Drones [2])",
+       "rating": "Drones [2]"
+      }
+     ],
+     "count": 1,
+     "label": "Command Kit"
+    }
+   ],
+   "upgrades": [
+    "PC"
+   ],
+   "bases": null,
+   "valid": true,
+   "hasCustomRule": false,
+   "hasBalanceInvalid": false,
+   "disabledSections": null
+  },
+  {
+   "id": "uWalk01",
+   "name": "Siege Walker",
+   "size": 1,
+   "quality": 4,
+   "defense": 2,
+   "cost": 200,
+   "rules": [
+    {
+     "type": "ArmyBookRule",
+     "id": "a0YtInGiUDd6",
+     "name": "Tough",
+     "label": "Tough(9)",
+     "rating": 9
+    },
+    {
+     "type": "ArmyBookRule",
+     "id": "dIQ3SGl2J2Ew",
+     "name": "Fear",
+     "label": "Fear(2)",
+     "rating": 2
+    }
+   ],
+   "weapons": [
+    {
+     "id": "w-Rotary_Gun",
+     "name": "Rotary Gun",
+     "type": "ArmyBookWeapon",
+     "count": 1,
+     "range": 24,
+     "attacks": 6,
+     "weaponId": "wid-Rotary Gun",
+     "specialRules": [
+      {
+       "type": "ArmyBookRule",
+       "id": "5v6oaGfrdf29",
+       "name": "Surge",
+       "label": "Surge"
+      }
+     ],
+     "attacksMultiplier": 2,
+     "label": "Rotary Gun (24\", A6, Surge)",
+     "originalCount": 1
+    },
+    {
+     "id": "w-Claw",
+     "name": "Claw",
+     "type": "ArmyBookWeapon",
+     "count": 2,
+     "range": 0,
+     "attacks": 2,
+     "weaponId": "wid-Claw",
+     "specialRules": [
+      {
+       "type": "ArmyBookRule",
+       "id": "17crjK7P6_w6",
+       "name": "AP",
+       "label": "AP(1)",
+       "rating": 1
+      }
+     ],
+     "attacksMultiplier": 1,
+     "label": "2x Claw (A2, AP(1))",
+     "originalCount": 2
+    },
+    {
+     "id": "w-Stomp",
+     "name": "Stomp",
+     "type": "ArmyBookWeapon",
+     "count": 1,
+     "range": null,
+     "attacks": 3,
+     "weaponId": "wid-Stomp",
+     "specialRules": [],
+     "attacksMultiplier": 1,
+     "label": "Stomp (A3)",
+     "originalCount": 1
+    }
+   ],
+   "items": [],
+   "upgrades": [
+    "PD"
+   ],
+   "bases": null,
+   "valid": true,
+   "hasCustomRule": false,
+   "hasBalanceInvalid": false,
+   "disabledSections": null
+  },
+  {
+   "id": "uJets01",
+   "name": "Jet Riders",
+   "size": 3,
+   "quality": 4,
+   "defense": 3,
+   "cost": 120,
+   "rules": [
+    {
+     "type": "ArmyBookRule",
+     "id": "a0YtInGiUDd6",
+     "name": "Tough",
+     "label": "Tough(3)",
+     "rating": 3
+    },
+    {
+     "type": "ArmyBookRule",
+     "id": "KdgwlPb8LuD2",
+     "name": "Fast",
+     "label": "Fast"
+    }
+   ],
+   "weapons": [
+    {
+     "id": "w-Jet_Carbine",
+     "name": "Jet Carbine",
+     "type": "ArmyBookWeapon",
+     "count": 3,
+     "range": 18,
+     "attacks": 2,
+     "weaponId": "wid-Jet Carbine",
+     "specialRules": [],
+     "attacksMultiplier": 1,
+     "label": "3x Jet Carbine (18\", A2)",
+     "originalCount": 3
+    },
+    {
+     "id": "w-Spike",
+     "name": "Spike",
+     "type": "ArmyBookWeapon",
+     "count": 3,
+     "range": 0,
+     "attacks": 1,
+     "weaponId": "wid-Spike",
+     "specialRules": [],
+     "attacksMultiplier": 1,
+     "label": "3x Spike (A1)",
+     "originalCount": 3
+    }
+   ],
+   "items": [],
+   "upgrades": [
+    "PB",
+    "PMISSING"
+   ],
+   "bases": null,
+   "valid": true,
+   "hasCustomRule": false,
+   "hasBalanceInvalid": false,
+   "disabledSections": [
+    "sMUpTo3",
+    "staleUid"
+   ]
+  }
+ ],
+ "upgradePackages": [
+  {
+   "uid": "PA",
+   "hint": "Line Troopers",
+   "sections": [
+    {
+     "id": "regen-sRep1",
+     "uid": "sRep1",
+     "label": "Replace Hand Weapon",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "replace",
+     "options": [
+      {
+       "uid": "oRep1a",
+       "id": "regen-oRep1a",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Chain Blade (A2)",
+       "gains": [
+        {
+         "id": "w-Chain_Blade",
+         "name": "Chain Blade",
+         "type": "ArmyBookWeapon",
+         "count": 1,
+         "range": 0,
+         "attacks": 2,
+         "weaponId": "wid-Chain Blade",
+         "specialRules": [],
+         "attacksMultiplier": 1,
+         "label": "Chain Blade (A2)",
+         "originalCount": 1
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 5,
+         "exactCost": 4.6,
+         "questCost": 10
+        }
+       ],
+       "parentSectionId": "sRep1",
+       "parentSectionUid": "staleSection",
+       "cost": 5
+      }
+     ],
+     "targets": [
+      "Hand Weapon"
+     ]
+    },
+    {
+     "id": "regen-sRepAll",
+     "uid": "sRepAll",
+     "label": "Replace all Rifles",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "replace",
+     "options": [
+      {
+       "uid": "oRepAll",
+       "id": "regen-oRepAll",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Carbine (18\", A2)",
+       "gains": [
+        {
+         "id": "w-Carbine",
+         "name": "Carbine",
+         "type": "ArmyBookWeapon",
+         "count": 1,
+         "range": 18,
+         "attacks": 2,
+         "weaponId": "wid-Carbine",
+         "specialRules": [],
+         "attacksMultiplier": 1,
+         "label": "Carbine (18\", A2)",
+         "originalCount": 1
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 10,
+         "exactCost": 9.6,
+         "questCost": 20
+        }
+       ],
+       "parentSectionId": "sRepAll",
+       "parentSectionUid": "staleSection"
+      }
+     ],
+     "affects": {
+      "type": "all"
+     },
+     "targets": [
+      "Rifles"
+     ]
+    },
+    {
+     "id": "regen-sRepAny",
+     "uid": "sRepAny",
+     "label": "Replace any Rifle",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "replace",
+     "options": [
+      {
+       "uid": "oRepAny",
+       "id": "regen-oRepAny",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Flamer (12\", A1, Blast(3))",
+       "gains": [
+        {
+         "id": "w-Flamer",
+         "name": "Flamer",
+         "type": "ArmyBookWeapon",
+         "count": 1,
+         "range": 12,
+         "attacks": 1,
+         "weaponId": "wid-Flamer",
+         "specialRules": [
+          {
+           "type": "ArmyBookRule",
+           "id": "w_vX0mi58KKt",
+           "name": "Blast",
+           "label": "Blast(3)",
+           "rating": 3
+          }
+         ],
+         "attacksMultiplier": 1,
+         "label": "Flamer (12\", A1, Blast(3))",
+         "originalCount": 1
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 5,
+         "exactCost": 4.6,
+         "questCost": 10
+        }
+       ],
+       "parentSectionId": "sRepAny",
+       "parentSectionUid": "staleSection",
+       "cost": 99
+      }
+     ],
+     "affects": {
+      "type": "any"
+     },
+     "targets": [
+      "Rifle"
+     ]
+    },
+    {
+     "id": "regen-sRepOne",
+     "uid": "sRepOne",
+     "label": "Replace one Rifle",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "replace",
+     "options": [
+      {
+       "uid": "oRepOneA",
+       "id": "regen-oRepOneA",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Sgt. Pistol (12\", A1)",
+       "gains": [
+        {
+         "id": "w-Sgt._Pistol",
+         "name": "Sgt. Pistol",
+         "type": "ArmyBookWeapon",
+         "count": 1,
+         "range": 12,
+         "attacks": 1,
+         "weaponId": "wid-Sgt. Pistol",
+         "specialRules": [],
+         "attacksMultiplier": 1,
+         "label": "Sgt. Pistol (12\", A1)",
+         "originalCount": 1
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 0,
+         "exactCost": -0.4,
+         "questCost": 0
+        }
+       ],
+       "parentSectionId": "sRepOne",
+       "parentSectionUid": "staleSection",
+       "cost": 0
+      },
+      {
+       "uid": "oRepOneB",
+       "id": "regen-oRepOneB",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Plasma Gun (24\", A1, AP(4))",
+       "gains": [
+        {
+         "id": "w-Plasma_Gun",
+         "name": "Plasma Gun",
+         "type": "ArmyBookWeapon",
+         "count": 1,
+         "range": 24,
+         "attacks": 1,
+         "weaponId": "wid-Plasma Gun",
+         "specialRules": [
+          {
+           "type": "ArmyBookRule",
+           "id": "17crjK7P6_w6",
+           "name": "AP",
+           "label": "AP(4)",
+           "rating": 4
+          }
+         ],
+         "attacksMultiplier": 1,
+         "label": "Plasma Gun (24\", A1, AP(4))",
+         "originalCount": 1
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 15,
+         "exactCost": 14.6,
+         "questCost": 30
+        }
+       ],
+       "parentSectionId": "sRepOne",
+       "parentSectionUid": "staleSection",
+       "cost": 15
+      },
+      {
+       "uid": "oRepOneC",
+       "id": "regen-oRepOneC",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Weapon Team",
+       "gains": [
+        {
+         "id": "i-Weapon Team",
+         "name": "Weapon Team",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "id": "w-Heavy_Gun",
+           "name": "Heavy Gun",
+           "type": "ArmyBookWeapon",
+           "count": 1,
+           "range": 30,
+           "attacks": 3,
+           "weaponId": "wid-Heavy Gun",
+           "specialRules": [
+            {
+             "type": "ArmyBookRule",
+             "id": "17crjK7P6_w6",
+             "name": "AP",
+             "label": "AP(1)",
+             "rating": 1
+            }
+           ],
+           "attacksMultiplier": 1,
+           "label": "Heavy Gun (30\", A3, AP(1))",
+           "originalCount": 1
+          },
+          {
+           "type": "ArmyBookRule",
+           "id": "a0YtInGiUDd6",
+           "name": "Tough",
+           "label": "Tough(3)",
+           "rating": "3"
+          }
+         ],
+         "count": 1,
+         "label": "Weapon Team"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 20,
+         "exactCost": 19.6,
+         "questCost": 40
+        }
+       ],
+       "parentSectionId": "sRepOne",
+       "parentSectionUid": "staleSection",
+       "cost": 20
+      }
+     ],
+     "affects": {
+      "type": "exactly",
+      "value": 1
+     },
+     "targets": [
+      "Rifle"
+     ]
+    },
+    {
+     "id": "regen-sChain",
+     "uid": "sChain",
+     "label": "Replace Sgt. Pistol",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "replace",
+     "options": [
+      {
+       "uid": "oChain",
+       "id": "regen-oChain",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Sgt. Plasma Pistol (12\", A1, AP(4))",
+       "gains": [
+        {
+         "id": "w-Sgt._Plasma_Pistol",
+         "name": "Sgt. Plasma Pistol",
+         "type": "ArmyBookWeapon",
+         "count": 1,
+         "range": 12,
+         "attacks": 1,
+         "weaponId": "wid-Sgt. Plasma Pistol",
+         "specialRules": [
+          {
+           "type": "ArmyBookRule",
+           "id": "17crjK7P6_w6",
+           "name": "AP",
+           "label": "AP(4)",
+           "rating": 4
+          }
+         ],
+         "attacksMultiplier": 1,
+         "label": "Sgt. Plasma Pistol (12\", A1, AP(4))",
+         "originalCount": 1
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 5,
+         "exactCost": 4.6,
+         "questCost": 10
+        }
+       ],
+       "parentSectionId": "sChain",
+       "parentSectionUid": "staleSection",
+       "cost": 5
+      }
+     ],
+     "targets": [
+      "Sgt. Pistol"
+     ]
+    },
+    {
+     "id": "regen-sUpTo2",
+     "uid": "sUpTo2",
+     "label": "Replace up to two Rifles and Hand Weapons",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "replace",
+     "options": [
+      {
+       "uid": "oUpTo2",
+       "id": "regen-oUpTo2",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Heavy Rifle (30\", A1, AP(1))",
+       "gains": [
+        {
+         "id": "w-Heavy_Rifle",
+         "name": "Heavy Rifle",
+         "type": "ArmyBookWeapon",
+         "count": 1,
+         "range": 30,
+         "attacks": 1,
+         "weaponId": "wid-Heavy Rifle",
+         "specialRules": [
+          {
+           "type": "ArmyBookRule",
+           "id": "17crjK7P6_w6",
+           "name": "AP",
+           "label": "AP(1)",
+           "rating": 1
+          }
+         ],
+         "attacksMultiplier": 1,
+         "label": "Heavy Rifle (30\", A1, AP(1))",
+         "originalCount": 1
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 10,
+         "exactCost": 9.6,
+         "questCost": 20
+        }
+       ],
+       "parentSectionId": "sUpTo2",
+       "parentSectionUid": "staleSection",
+       "cost": 10
+      }
+     ],
+     "affects": {
+      "type": "up to",
+      "value": 2
+     },
+     "targets": [
+      "Rifles",
+      "Hand Weapons"
+     ]
+    },
+    {
+     "id": "regen-sAtt1",
+     "uid": "sAtt1",
+     "label": "Take one Rifle attachment",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "attachment",
+     "options": [
+      {
+       "uid": "oAtt1",
+       "id": "regen-oAtt1",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Grenade Launcher (24\", A1, Blast(3))",
+       "gains": [
+        {
+         "id": "w-Grenade_Launcher",
+         "name": "Grenade Launcher",
+         "type": "ArmyBookWeapon",
+         "count": 1,
+         "range": 24,
+         "attacks": 1,
+         "weaponId": "wid-Grenade Launcher",
+         "specialRules": [
+          {
+           "type": "ArmyBookRule",
+           "id": "w_vX0mi58KKt",
+           "name": "Blast",
+           "label": "Blast(3)",
+           "rating": 3
+          }
+         ],
+         "attacksMultiplier": 1,
+         "label": "Grenade Launcher (24\", A1, Blast(3))",
+         "originalCount": 1
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 10,
+         "exactCost": 9.6,
+         "questCost": 20
+        }
+       ],
+       "parentSectionId": "sAtt1",
+       "parentSectionUid": "staleSection",
+       "cost": 10
+      }
+     ],
+     "select": {
+      "type": "exactly",
+      "value": 1
+     },
+     "targets": [
+      "Rifle"
+     ]
+    },
+    {
+     "id": "regen-sAttM1",
+     "uid": "sAttM1",
+     "label": "Any model may take one Rifle attachment",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "attachment",
+     "options": [
+      {
+       "uid": "oAttM1",
+       "id": "regen-oAttM1",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Bayonet (A1)",
+       "gains": [
+        {
+         "id": "w-Bayonet",
+         "name": "Bayonet",
+         "type": "ArmyBookWeapon",
+         "count": 1,
+         "range": 0,
+         "attacks": 1,
+         "weaponId": "wid-Bayonet",
+         "specialRules": [],
+         "attacksMultiplier": 1,
+         "label": "Bayonet (A1)",
+         "originalCount": 1
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 1,
+         "exactCost": 0.6,
+         "questCost": 2
+        }
+       ],
+       "parentSectionId": "sAttM1",
+       "parentSectionUid": "staleSection",
+       "cost": 1
+      }
+     ],
+     "affects": {
+      "type": "exactly",
+      "value": 1
+     },
+     "select": {
+      "type": "any"
+     },
+     "targets": [
+      "Rifle"
+     ],
+     "model": true
+    },
+    {
+     "id": "regen-sAttMAny",
+     "uid": "sAttMAny",
+     "label": "Any model may take any Rifle attachment",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "attachment",
+     "options": [
+      {
+       "uid": "oAttMAny",
+       "id": "regen-oAttMAny",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Underslung Flamer (6\", A1)",
+       "gains": [
+        {
+         "id": "w-Underslung_Flamer",
+         "name": "Underslung Flamer",
+         "type": "ArmyBookWeapon",
+         "count": 1,
+         "range": 6,
+         "attacks": 1,
+         "weaponId": "wid-Underslung Flamer",
+         "specialRules": [],
+         "attacksMultiplier": 1,
+         "label": "Underslung Flamer (6\", A1)",
+         "originalCount": 1
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 2,
+         "exactCost": 1.6,
+         "questCost": 4
+        }
+       ],
+       "parentSectionId": "sAttMAny",
+       "parentSectionUid": "staleSection",
+       "cost": 2
+      }
+     ],
+     "affects": {
+      "type": "any"
+     },
+     "select": {
+      "type": "any"
+     },
+     "targets": [
+      "Rifle"
+     ],
+     "model": true,
+     "isLowPrio": true
+    }
+   ]
+  },
+  {
+   "uid": "PB",
+   "hint": "Line Troopers, Jet Riders",
+   "sections": [
+    {
+     "id": "regen-sMAll",
+     "uid": "sMAll",
+     "label": "Upgrade all models with",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "upgrade",
+     "options": [
+      {
+       "uid": "oMAll",
+       "id": "regen-oMAll",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Shields",
+       "gains": [
+        {
+         "id": "i-Shields",
+         "name": "Shields",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "type": "ArmyBookRule",
+           "id": "_T07iXWo4VwJ",
+           "name": "Parry",
+           "label": "Parry(1)",
+           "rating": 1
+          }
+         ],
+         "count": 1,
+         "label": "Shields"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 20,
+         "exactCost": 19.6,
+         "questCost": 40
+        },
+        {
+         "unitId": "uJets01",
+         "cost": 9,
+         "exactCost": 8.6,
+         "questCost": 18
+        }
+       ],
+       "parentSectionId": "sMAll",
+       "parentSectionUid": "staleSection",
+       "cost": 20
+      }
+     ],
+     "affects": {
+      "type": "all"
+     },
+     "model": true
+    },
+    {
+     "id": "regen-sMOne",
+     "uid": "sMOne",
+     "label": "Upgrade one model with",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "upgrade",
+     "options": [
+      {
+       "uid": "oMOne",
+       "id": "regen-oMOne",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Banner Kit",
+       "gains": [
+        {
+         "id": "i-Banner Kit",
+         "name": "Banner Kit",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "type": "ArmyBookRule",
+           "id": "ywXKQKPOLjTF",
+           "name": "Banner",
+           "label": "Banner"
+          }
+         ],
+         "count": 1,
+         "label": "Banner Kit"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 5,
+         "exactCost": 4.6,
+         "questCost": 10
+        },
+        {
+         "unitId": "uJets01",
+         "cost": 6,
+         "exactCost": 5.6,
+         "questCost": 12
+        }
+       ],
+       "parentSectionId": "sMOne",
+       "parentSectionUid": "staleSection",
+       "cost": 5
+      }
+     ],
+     "affects": {
+      "type": "exactly",
+      "value": 1
+     },
+     "model": true
+    },
+    {
+     "id": "regen-sMAllOne",
+     "uid": "sMAllOne",
+     "label": "Upgrade all models with one",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "upgrade",
+     "options": [
+      {
+       "uid": "oMAllOneA",
+       "id": "regen-oMAllOneA",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Jump Packs",
+       "gains": [
+        {
+         "id": "i-Jump Packs",
+         "name": "Jump Packs",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "type": "ArmyBookRule",
+           "id": "KdgwlPb8LuD2",
+           "name": "Fast",
+           "label": "Fast"
+          }
+         ],
+         "count": 1,
+         "label": "Jump Packs"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 20,
+         "exactCost": 19.6,
+         "questCost": 40
+        },
+        {
+         "unitId": "uJets01",
+         "cost": 10,
+         "exactCost": 9.6,
+         "questCost": 20
+        }
+       ],
+       "parentSectionId": "sMAllOne",
+       "parentSectionUid": "staleSection",
+       "cost": 20
+      },
+      {
+       "uid": "oMAllOneB",
+       "id": "regen-oMAllOneB",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Camo Cloaks",
+       "gains": [
+        {
+         "id": "i-Camo Cloaks",
+         "name": "Camo Cloaks",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "type": "ArmyBookRule",
+           "id": "9jyvRoBODD-O",
+           "name": "Stealth",
+           "label": "Stealth"
+          }
+         ],
+         "count": 1,
+         "label": "Camo Cloaks"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 15,
+         "exactCost": 14.6,
+         "questCost": 30
+        },
+        {
+         "unitId": "uJets01",
+         "cost": 8,
+         "exactCost": 7.6,
+         "questCost": 16
+        }
+       ],
+       "parentSectionId": "sMAllOne",
+       "parentSectionUid": "staleSection",
+       "cost": 15
+      }
+     ],
+     "affects": {
+      "type": "all"
+     },
+     "select": {
+      "type": "exactly",
+      "value": 1
+     },
+     "model": true
+    },
+    {
+     "id": "regen-sMOneOne",
+     "uid": "sMOneOne",
+     "label": "Upgrade one model with one",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "upgrade",
+     "options": [
+      {
+       "uid": "oMOneOneA",
+       "id": "regen-oMOneOneA",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Medic Kit",
+       "gains": [
+        {
+         "id": "i-Medic Kit",
+         "name": "Medic Kit",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "type": "ArmyBookRule",
+           "id": "8KujvrTG8k9p",
+           "name": "Regeneration",
+           "label": "Regeneration"
+          }
+         ],
+         "count": 1,
+         "label": "Medic Kit"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 10,
+         "exactCost": 9.6,
+         "questCost": 20
+        },
+        {
+         "unitId": "uJets01",
+         "cost": 10,
+         "exactCost": 9.6,
+         "questCost": 20
+        }
+       ],
+       "parentSectionId": "sMOneOne",
+       "parentSectionUid": "staleSection",
+       "cost": 10
+      },
+      {
+       "uid": "oMOneOneB",
+       "id": "regen-oMOneOneB",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Gun Drone",
+       "gains": [
+        {
+         "id": "i-Gun Drone",
+         "name": "Gun Drone",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "id": "w-Drone_Gun",
+           "name": "Drone Gun",
+           "type": "ArmyBookWeapon",
+           "count": 1,
+           "range": 18,
+           "attacks": 2,
+           "weaponId": "wid-Drone Gun",
+           "specialRules": [
+            {
+             "type": "ArmyBookRule",
+             "id": "9042COVrLCsI",
+             "name": "Limited",
+             "label": "Limited"
+            }
+           ],
+           "attacksMultiplier": 1,
+           "label": "Drone Gun (18\", A2, Limited)",
+           "originalCount": 1
+          }
+         ],
+         "count": 1,
+         "label": "Gun Drone"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 10,
+         "exactCost": 9.6,
+         "questCost": 20
+        },
+        {
+         "unitId": "uJets01",
+         "cost": 12,
+         "exactCost": 11.6,
+         "questCost": 24
+        }
+       ],
+       "parentSectionId": "sMOneOne",
+       "parentSectionUid": "staleSection",
+       "cost": 10
+      }
+     ],
+     "affects": {
+      "type": "exactly",
+      "value": 1
+     },
+     "select": {
+      "type": "exactly",
+      "value": 1
+     },
+     "model": true
+    },
+    {
+     "id": "regen-sMAllAny",
+     "uid": "sMAllAny",
+     "label": "Upgrade all models with any",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "upgrade",
+     "options": [
+      {
+       "uid": "oMAllAnyA",
+       "id": "regen-oMAllAnyA",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Frag Grenades",
+       "gains": [
+        {
+         "id": "i-Frag Grenades",
+         "name": "Frag Grenades",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "type": "ArmyBookRule",
+           "id": "62-mYKVM9MLd",
+           "name": "Impact",
+           "label": "Impact(1)",
+           "rating": 1
+          }
+         ],
+         "count": 1,
+         "label": "Frag Grenades"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 10,
+         "exactCost": 9.6,
+         "questCost": 20
+        },
+        {
+         "unitId": "uJets01",
+         "cost": 5,
+         "exactCost": 4.6,
+         "questCost": 10
+        }
+       ],
+       "parentSectionId": "sMAllAny",
+       "parentSectionUid": "staleSection",
+       "cost": 10
+      },
+      {
+       "uid": "oMAllAnyB",
+       "id": "regen-oMAllAnyB",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Krak Grenades",
+       "gains": [
+        {
+         "id": "i-Krak Grenades",
+         "name": "Krak Grenades",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "type": "ArmyBookRule",
+           "id": "Naqc5mga9Uha",
+           "name": "Bane",
+           "label": "Bane"
+          }
+         ],
+         "count": 1,
+         "label": "Krak Grenades"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 10,
+         "exactCost": 9.6,
+         "questCost": 20
+        },
+        {
+         "unitId": "uJets01",
+         "cost": 5,
+         "exactCost": 4.6,
+         "questCost": 10
+        }
+       ],
+       "parentSectionId": "sMAllAny",
+       "parentSectionUid": "staleSection",
+       "cost": 10
+      }
+     ],
+     "affects": {
+      "type": "all"
+     },
+     "select": {
+      "type": "any"
+     },
+     "model": true
+    },
+    {
+     "id": "regen-sMUpTo3",
+     "uid": "sMUpTo3",
+     "label": "Upgrade up to three models with one",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "upgrade",
+     "options": [
+      {
+       "uid": "oMUpTo3",
+       "id": "regen-oMUpTo3",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Musician",
+       "gains": [
+        {
+         "id": "gRule1",
+         "name": "Musician",
+         "type": "ArmyBookRule",
+         "label": "Musician",
+         "count": 1
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 5,
+         "exactCost": 4.6,
+         "questCost": 10
+        },
+        {
+         "unitId": "uJets01",
+         "cost": 5,
+         "exactCost": 4.6,
+         "questCost": 10
+        }
+       ],
+       "parentSectionId": "sMUpTo3",
+       "parentSectionUid": "staleSection",
+       "cost": 5
+      }
+     ],
+     "affects": {
+      "type": "up to",
+      "value": 3
+     },
+     "select": {
+      "type": "exactly",
+      "value": 1
+     },
+     "model": true
+    },
+    {
+     "id": "regen-sMUpTo2",
+     "uid": "sMUpTo2",
+     "label": "Upgrade up to two models with one",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "upgrade",
+     "options": [
+      {
+       "uid": "oMUpTo2",
+       "id": "regen-oMUpTo2",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Sniper Rifle (30\", A1, Sharpshot)",
+       "gains": [
+        {
+         "id": "w-Sniper_Rifle",
+         "name": "Sniper Rifle",
+         "type": "ArmyBookWeapon",
+         "count": 1,
+         "range": 30,
+         "attacks": 1,
+         "weaponId": "wid-Sniper Rifle",
+         "specialRules": [
+          {
+           "type": "ArmyBookRule",
+           "id": "synSharpshot1",
+           "name": "Sharpshot",
+           "label": "Sharpshot"
+          }
+         ],
+         "attacksMultiplier": 1,
+         "label": "Sniper Rifle (30\", A1, Sharpshot)",
+         "originalCount": 1
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 10,
+         "exactCost": 9.6,
+         "questCost": 20
+        },
+        {
+         "unitId": "uJets01",
+         "cost": 10,
+         "exactCost": 9.6,
+         "questCost": 20
+        }
+       ],
+       "parentSectionId": "sMUpTo2",
+       "parentSectionUid": "staleSection",
+       "cost": 10
+      }
+     ],
+     "affects": {
+      "type": "up to",
+      "value": 2
+     },
+     "select": {
+      "type": "exactly",
+      "value": 1
+     },
+     "model": true
+    },
+    {
+     "id": "regen-sMAny",
+     "uid": "sMAny",
+     "label": "Upgrade any model with",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "upgrade",
+     "options": [
+      {
+       "uid": "oMAny",
+       "id": "regen-oMAny",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Combat Stims",
+       "gains": [
+        {
+         "id": "i-Combat Stims",
+         "name": "Combat Stims",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "type": "ArmyBookRule",
+           "id": "JoOCVPx1xT1G",
+           "name": "Furious",
+           "label": "Furious"
+          }
+         ],
+         "count": 1,
+         "label": "Combat Stims"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 2,
+         "exactCost": 1.6,
+         "questCost": 4
+        },
+        {
+         "unitId": "uJets01",
+         "cost": 3,
+         "exactCost": 2.6,
+         "questCost": 6
+        }
+       ],
+       "parentSectionId": "sMAny",
+       "parentSectionUid": "staleSection",
+       "cost": 2
+      }
+     ],
+     "affects": {
+      "type": "any"
+     },
+     "model": true
+    },
+    {
+     "id": "regen-sMOneAny",
+     "uid": "sMOneAny",
+     "label": "Upgrade one model with any",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "upgrade",
+     "options": [
+      {
+       "uid": "oMOneAnyA",
+       "id": "regen-oMOneAnyA",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Auspex",
+       "gains": [
+        {
+         "id": "i-Auspex",
+         "name": "Auspex",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "type": "ArmyBookRule",
+           "id": "H9E9PIWpGRdw",
+           "name": "Relentless",
+           "label": "Relentless"
+          }
+         ],
+         "count": 1,
+         "label": "Auspex"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 5,
+         "exactCost": 4.6,
+         "questCost": 10
+        },
+        {
+         "unitId": "uJets01",
+         "cost": 5,
+         "exactCost": 4.6,
+         "questCost": 10
+        }
+       ],
+       "parentSectionId": "sMOneAny",
+       "parentSectionUid": "staleSection",
+       "cost": 5
+      },
+      {
+       "uid": "oMOneAnyB",
+       "id": "regen-oMOneAnyB",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Comms",
+       "gains": [
+        {
+         "id": "i-Comms",
+         "name": "Comms",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "type": "ArmyBookRule",
+           "id": "Zx4mWN0SbmK8",
+           "name": "Reliable",
+           "label": "Reliable"
+          }
+         ],
+         "count": 1,
+         "label": "Comms"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uTroop1",
+         "cost": 5,
+         "exactCost": 4.6,
+         "questCost": 10
+        },
+        {
+         "unitId": "uJets01",
+         "cost": 5,
+         "exactCost": 4.6,
+         "questCost": 10
+        }
+       ],
+       "parentSectionId": "sMOneAny",
+       "parentSectionUid": "staleSection",
+       "cost": 5
+      }
+     ],
+     "affects": {
+      "type": "exactly",
+      "value": 1
+     },
+     "select": {
+      "type": "any"
+     },
+     "model": true
+    }
+   ]
+  },
+  {
+   "uid": "PC",
+   "hint": "Field Captain",
+   "sections": [
+    {
+     "id": "regen-sOne",
+     "uid": "sOne",
+     "label": "Upgrade with one",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "upgrade",
+     "options": [
+      {
+       "uid": "oOneA",
+       "id": "regen-oOneA",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Psychic",
+       "gains": [
+        {
+         "id": "i-Psychic",
+         "name": "Psychic",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "type": "ArmyBookRule",
+           "id": "47CAqf7ySlfc",
+           "name": "Caster",
+           "label": "Caster(1)",
+           "rating": 1
+          }
+         ],
+         "count": 1,
+         "label": "Psychic"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uCapt01",
+         "cost": 15,
+         "exactCost": 14.6,
+         "questCost": 30
+        }
+       ],
+       "parentSectionId": "sOne",
+       "parentSectionUid": "staleSection",
+       "cost": 15
+      },
+      {
+       "uid": "oOneB",
+       "id": "regen-oOneB",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Veteran",
+       "gains": [
+        {
+         "id": "i-Veteran",
+         "name": "Veteran",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "type": "ArmyBookRule",
+           "id": "2atvlmICQSCV",
+           "name": "Fearless",
+           "label": "Fearless"
+          }
+         ],
+         "count": 1,
+         "label": "Veteran"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uCapt01",
+         "cost": 10,
+         "exactCost": 9.6,
+         "questCost": 20
+        }
+       ],
+       "parentSectionId": "sOne",
+       "parentSectionUid": "staleSection",
+       "cost": 10
+      }
+     ],
+     "select": {
+      "type": "exactly",
+      "value": 1
+     },
+     "isHeroUpgrade": true
+    },
+    {
+     "id": "regen-sOne2",
+     "uid": "sOne2",
+     "label": "Upgrade with one",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "upgrade",
+     "options": [
+      {
+       "uid": "oOne2A",
+       "id": "regen-oOne2A",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Psychic",
+       "gains": [
+        {
+         "id": "i-Psychic",
+         "name": "Psychic",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "type": "ArmyBookRule",
+           "id": "47CAqf7ySlfc",
+           "name": "Caster",
+           "label": "Caster(1)",
+           "rating": 1
+          }
+         ],
+         "count": 1,
+         "label": "Psychic"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uCapt01",
+         "cost": 20,
+         "exactCost": 19.6,
+         "questCost": 40
+        }
+       ],
+       "parentSectionId": "sOne2",
+       "parentSectionUid": "staleSection",
+       "cost": 20
+      },
+      {
+       "uid": "oOne2B",
+       "id": "regen-oOne2B",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Scanner",
+       "gains": [
+        {
+         "id": "i-Scanner",
+         "name": "Scanner",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "type": "ArmyBookRule",
+           "id": "H9E9PIWpGRdw",
+           "name": "Relentless",
+           "label": "Relentless"
+          }
+         ],
+         "count": 1,
+         "label": "Scanner"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uCapt01",
+         "cost": 5,
+         "exactCost": 4.6,
+         "questCost": 10
+        }
+       ],
+       "parentSectionId": "sOne2",
+       "parentSectionUid": "staleSection",
+       "cost": 5
+      }
+     ],
+     "select": {
+      "type": "exactly",
+      "value": 1
+     }
+    },
+    {
+     "id": "regen-sAny",
+     "uid": "sAny",
+     "label": "Upgrade with any",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "upgrade",
+     "options": [
+      {
+       "uid": "oAnyA",
+       "id": "regen-oAnyA",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Bodyguard",
+       "gains": [
+        {
+         "id": "i-Bodyguard",
+         "name": "Bodyguard",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "type": "ArmyBookRule",
+           "id": "a0YtInGiUDd6",
+           "name": "Tough",
+           "label": "Tough(1)",
+           "rating": 1
+          }
+         ],
+         "count": 1,
+         "label": "Bodyguard"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uCapt01",
+         "cost": 10,
+         "exactCost": 9.6,
+         "questCost": 20
+        }
+       ],
+       "parentSectionId": "sAny",
+       "parentSectionUid": "staleSection",
+       "cost": 10
+      },
+      {
+       "uid": "oAnyB",
+       "id": "regen-oAnyB",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Grav Pistol (12\", A1, Rending)",
+       "gains": [
+        {
+         "id": "w-Grav_Pistol",
+         "name": "Grav Pistol",
+         "type": "ArmyBookWeapon",
+         "count": 1,
+         "range": 12,
+         "attacks": 1,
+         "weaponId": "wid-Grav Pistol",
+         "specialRules": [
+          {
+           "type": "ArmyBookRule",
+           "id": "cavWDboL4ubs",
+           "name": "Rending",
+           "label": "Rending"
+          }
+         ],
+         "attacksMultiplier": 1,
+         "label": "Grav Pistol (12\", A1, Rending)",
+         "originalCount": 1
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uCapt01",
+         "cost": 5,
+         "exactCost": 4.6,
+         "questCost": 10
+        }
+       ],
+       "parentSectionId": "sAny",
+       "parentSectionUid": "staleSection",
+       "cost": 5
+      }
+     ],
+     "select": {
+      "type": "any"
+     }
+    },
+    {
+     "id": "regen-sWith",
+     "uid": "sWith",
+     "label": "Upgrade with",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "upgrade",
+     "options": [
+      {
+       "uid": "oWith",
+       "id": "regen-oWith",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Command Banner",
+       "gains": [
+        {
+         "id": "i-Command Banner",
+         "name": "Command Banner",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "type": "ArmyBookRule",
+           "id": "ywXKQKPOLjTF",
+           "name": "Banner",
+           "label": "Banner"
+          }
+         ],
+         "count": 1,
+         "label": "Command Banner"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uCapt01",
+         "cost": 10,
+         "exactCost": 9.6,
+         "questCost": 20
+        }
+       ],
+       "parentSectionId": "sWith",
+       "parentSectionUid": "staleSection",
+       "cost": 10
+      }
+     ]
+    },
+    {
+     "id": "regen-sUpTo2",
+     "uid": "sUpTo2",
+     "label": "Upgrade with up to two",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "upgrade",
+     "options": [
+      {
+       "uid": "oUT2A",
+       "id": "regen-oUT2A",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Iron Halo",
+       "gains": [
+        {
+         "id": "i-Iron Halo",
+         "name": "Iron Halo",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "type": "ArmyBookRule",
+           "id": "dIQ3SGl2J2Ew",
+           "name": "Fear",
+           "label": "Fear(1)",
+           "rating": 1
+          }
+         ],
+         "count": 1,
+         "label": "Iron Halo"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uCapt01",
+         "cost": 5,
+         "exactCost": 4.6,
+         "questCost": 10
+        }
+       ],
+       "parentSectionId": "sUpTo2",
+       "parentSectionUid": "staleSection",
+       "cost": 5
+      },
+      {
+       "uid": "oUT2B",
+       "id": "regen-oUT2B",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Jet Pack",
+       "gains": [
+        {
+         "id": "i-Jet Pack",
+         "name": "Jet Pack",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "type": "ArmyBookRule",
+           "id": "-QJdqJEKjIpE",
+           "name": "Flying",
+           "label": "Flying"
+          }
+         ],
+         "count": 1,
+         "label": "Jet Pack"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uCapt01",
+         "cost": 10,
+         "exactCost": 9.6,
+         "questCost": 20
+        }
+       ],
+       "parentSectionId": "sUpTo2",
+       "parentSectionUid": "staleSection",
+       "cost": 10
+      },
+      {
+       "uid": "oUT2C",
+       "id": "regen-oUT2C",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Auspex",
+       "gains": [
+        {
+         "id": "i-Auspex",
+         "name": "Auspex",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "type": "ArmyBookRule",
+           "id": "H9E9PIWpGRdw",
+           "name": "Relentless",
+           "label": "Relentless"
+          }
+         ],
+         "count": 1,
+         "label": "Auspex"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uCapt01",
+         "cost": 5,
+         "exactCost": 4.6,
+         "questCost": 10
+        }
+       ],
+       "parentSectionId": "sUpTo2",
+       "parentSectionUid": "staleSection",
+       "cost": 5
+      }
+     ],
+     "select": {
+      "type": "up to",
+      "value": 2
+     }
+    },
+    {
+     "id": "regen-sAnyUpTo2",
+     "uid": "sAnyUpTo2",
+     "label": "Upgrade with up to two of any",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "upgrade",
+     "options": [
+      {
+       "uid": "oAUT2",
+       "id": "regen-oAUT2",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Frag Charges",
+       "gains": [
+        {
+         "id": "i-Frag Charges",
+         "name": "Frag Charges",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "type": "ArmyBookRule",
+           "id": "62-mYKVM9MLd",
+           "name": "Impact",
+           "label": "Impact(2)",
+           "rating": 2
+          }
+         ],
+         "count": 1,
+         "label": "Frag Charges"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uCapt01",
+         "cost": 5,
+         "exactCost": 4.6,
+         "questCost": 10
+        }
+       ],
+       "parentSectionId": "sAnyUpTo2",
+       "parentSectionUid": "staleSection",
+       "cost": 5
+      }
+     ],
+     "affects": {
+      "type": "any"
+     },
+     "select": {
+      "type": "up to",
+      "value": 2
+     }
+    },
+    {
+     "id": "regen-sRepPistol",
+     "uid": "sRepPistol",
+     "label": "Replace Pistol",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "replace",
+     "options": [
+      {
+       "uid": "oRepPistol",
+       "id": "regen-oRepPistol",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Plasma Pistol (12\", A1, AP(4))",
+       "gains": [
+        {
+         "id": "w-Plasma_Pistol",
+         "name": "Plasma Pistol",
+         "type": "ArmyBookWeapon",
+         "count": 1,
+         "range": 12,
+         "attacks": 1,
+         "weaponId": "wid-Plasma Pistol",
+         "specialRules": [
+          {
+           "type": "ArmyBookRule",
+           "id": "17crjK7P6_w6",
+           "name": "AP",
+           "label": "AP(4)",
+           "rating": 4
+          }
+         ],
+         "attacksMultiplier": 1,
+         "label": "Plasma Pistol (12\", A1, AP(4))",
+         "originalCount": 1
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uCapt01",
+         "cost": 5,
+         "exactCost": 4.6,
+         "questCost": 10
+        }
+       ],
+       "parentSectionId": "sRepPistol",
+       "parentSectionUid": "staleSection",
+       "cost": 5
+      }
+     ],
+     "targets": [
+      "Pistol"
+     ]
+    }
+   ]
+  },
+  {
+   "uid": "PD",
+   "hint": "Siege Walker",
+   "sections": [
+    {
+     "id": "regen-sHammer",
+     "uid": "sHammer",
+     "label": "Replace Siege Hammer",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "replace",
+     "options": [
+      {
+       "uid": "oHammer",
+       "id": "regen-oHammer",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Thunder Hammer (A4, AP(4))",
+       "gains": [
+        {
+         "id": "w-Thunder_Hammer",
+         "name": "Thunder Hammer",
+         "type": "ArmyBookWeapon",
+         "count": 1,
+         "range": 0,
+         "attacks": 4,
+         "weaponId": "wid-Thunder Hammer",
+         "specialRules": [
+          {
+           "type": "ArmyBookRule",
+           "id": "17crjK7P6_w6",
+           "name": "AP",
+           "label": "AP(4)",
+           "rating": 4
+          }
+         ],
+         "attacksMultiplier": 1,
+         "label": "Thunder Hammer (A4, AP(4))",
+         "originalCount": 1
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uWalk01",
+         "cost": 10,
+         "exactCost": 9.6,
+         "questCost": 20
+        }
+       ],
+       "parentSectionId": "sHammer",
+       "parentSectionUid": "staleSection",
+       "cost": 10
+      }
+     ],
+     "targets": [
+      "Siege Hammer"
+     ]
+    },
+    {
+     "id": "regen-s2x",
+     "uid": "s2x",
+     "label": "Replace 2x Claw",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "replace",
+     "options": [
+      {
+       "uid": "o2x",
+       "id": "regen-o2x",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Siege Hammer (A3, AP(3), Deadly(3))",
+       "gains": [
+        {
+         "id": "w-Siege_Hammer",
+         "name": "Siege Hammer",
+         "type": "ArmyBookWeapon",
+         "count": 1,
+         "range": 0,
+         "attacks": 3,
+         "weaponId": "wid-Siege Hammer",
+         "specialRules": [
+          {
+           "type": "ArmyBookRule",
+           "id": "17crjK7P6_w6",
+           "name": "AP",
+           "label": "AP(3)",
+           "rating": 3
+          },
+          {
+           "type": "ArmyBookRule",
+           "id": "_mrPya5SXSqW",
+           "name": "Deadly",
+           "label": "Deadly(3)",
+           "rating": 3
+          }
+         ],
+         "attacksMultiplier": 1,
+         "label": "Siege Hammer (A3, AP(3), Deadly(3))",
+         "originalCount": 1
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uWalk01",
+         "cost": 20,
+         "exactCost": 19.6,
+         "questCost": 40
+        }
+       ],
+       "parentSectionId": "s2x",
+       "parentSectionUid": "staleSection",
+       "cost": 20
+      }
+     ],
+     "targets": [
+      "2x Claw"
+     ]
+    },
+    {
+     "id": "regen-sWOne",
+     "uid": "sWOne",
+     "label": "Upgrade with one",
+     "parentPackageUid": null,
+     "type": "ArmyBookUpgradeSection",
+     "variant": "upgrade",
+     "options": [
+      {
+       "uid": "oWOne",
+       "id": "regen-oWOne",
+       "type": "ArmyBookUpgradeOption",
+       "label": "Sponson",
+       "gains": [
+        {
+         "id": "i-Sponson",
+         "name": "Sponson",
+         "type": "ArmyBookItem",
+         "bases": null,
+         "content": [
+          {
+           "id": "w-Sponson_Flamer",
+           "name": "Sponson Flamer",
+           "type": "ArmyBookWeapon",
+           "count": 1,
+           "range": 12,
+           "attacks": 1,
+           "weaponId": "wid-Sponson Flamer",
+           "specialRules": [
+            {
+             "type": "ArmyBookRule",
+             "id": "w_vX0mi58KKt",
+             "name": "Blast",
+             "label": "Blast(3)",
+             "rating": 3
+            }
+           ],
+           "attacksMultiplier": 1,
+           "label": "Sponson Flamer (12\", A1, Blast(3))",
+           "originalCount": 1
+          }
+         ],
+         "count": 1,
+         "label": "Sponson"
+        }
+       ],
+       "costs": [
+        {
+         "unitId": "uWalk01",
+         "cost": 15,
+         "exactCost": 14.6,
+         "questCost": 30
+        }
+       ],
+       "parentSectionId": "sWOne",
+       "parentSectionUid": "staleSection",
+       "cost": 15
+      }
+     ],
+     "select": {
+      "type": "exactly",
+      "value": 1
+     }
+    }
+   ]
+  }
+ ],
+ "specialRules": [
+  {
+   "id": "synMarksman01",
+   "name": "Marksman",
+   "aliasedRuleId": null,
+   "description": "Synthetic: +1 to hit when shooting over 9\".",
+   "hasRating": false,
+   "coreType": null,
+   "targetType": 1
+  },
+  {
+   "id": "synSharpshot1",
+   "name": "Sharpshot",
+   "aliasedRuleId": "synMarksman01",
+   "originalName": "Marksman",
+   "description": "Synthetic: +1 to hit when shooting over 9\".",
+   "hasRating": false,
+   "coreType": null,
+   "targetType": 1
+  },
+  {
+   "id": "synSplit00001",
+   "name": "Split",
+   "aliasedRuleId": null,
+   "description": "Synthetic: splits into another unit.",
+   "hasRating": true,
+   "coreType": null,
+   "targetType": 1
+  }
+ ],
+ "spells": [
+  {
+   "id": "sp1",
+   "name": "Bolt",
+   "threshold": 1,
+   "effect": "Synthetic: target takes 2 hits with AP(1).",
+   "generation": {}
+  },
+  {
+   "id": "sp2",
+   "name": "Ward",
+   "threshold": 2,
+   "effect": "Synthetic: friendly unit gets +1 to defense rolls once.",
+   "generation": {}
+  }
+ ],
+ "transforms": [
+  {
+   "id": "t1",
+   "type": "unit/namePrefix",
+   "filter": [],
+   "target": "Ignored"
+  }
+ ]
+}

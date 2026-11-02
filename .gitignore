@@ -1,0 +1,16 @@
+# Army Forge downloads: OPR data is for personal use, never commit it.
+/data/
+# Analyzer sessions embed copies of the Army Forge books: never commit them.
+/sessions/
+# Game Assistant games embed copies of the books too.
+/games/
+# Development notes and checks: kept by the author, not published.
+/devel/
+# Optional local test configuration (real-data path).
+/tests/test_config.ini
+# Python / build artefacts
+__pycache__/
+*.py[cod]
+/build/
+/dist/
+*.tmp

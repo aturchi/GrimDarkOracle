@@ -1,0 +1,3004 @@
+{
+ "format": "grimdarkoracle-spells/1",
+ "note": "Spell semantics keyed by '<spell id>:<first 10 hex of the SHA-1 of the effect text>'. Kinds: damage (fixed hits), mark (effects on friendly attacks against the target, rules schema), grant (rules given to the friendly unit), no_combat_effect. Rule names resolve against the spell's book, then core.",
+ "spells": {
+  "f3hnO:26657f7b25": {
+   "name": "Aura of Peace",
+   "text_sha1": "26657f7b25d40d06f0bb22f8c1588f30867eb7aa",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Fearless"
+    }
+   ]
+  },
+  "ERNBr:1ba867bb20": {
+   "name": "Killing Blow",
+   "text_sha1": "1ba867bb20bb939b748fa6b71d6a4041120cacba",
+   "kind": "damage",
+   "hits": 2,
+   "range": 18,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "note": "Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "AJix2:fb696a8554": {
+   "name": "Coordinated Aggression",
+   "text_sha1": "fb696a8554619e5e6b4aaff16a6410e583fbcc9d",
+   "kind": "mark",
+   "effects": [
+    {
+     "primitive": "ap_mod",
+     "value": 1
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   }
+  },
+  "CNGAN:3abfe1661b": {
+   "name": "Devastating Strike",
+   "text_sha1": "3abfe1661b74724e2e97950ba0407216e76e8817",
+   "kind": "damage",
+   "hits": 4,
+   "range": 12,
+   "rules": [
+    [
+     "Puncture",
+     null
+    ]
+   ]
+  },
+  "NHo8y:67c17ad108": {
+   "name": "Psychic Stabilization",
+   "text_sha1": "67c17ad108710387a73b07a029b6f2c6614ba454",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Targeting Visor"
+    }
+   ]
+  },
+  "b8tp5:8639eb9526": {
+   "name": "Deadly Surge",
+   "text_sha1": "8639eb95260dd15c6ca41652cbbc9a956f720de0",
+   "kind": "damage",
+   "hits": 9,
+   "range": 12,
+   "rules": [
+    [
+     "Bane",
+     null
+    ]
+   ]
+  },
+  "L_-cl:9459983183": {
+   "name": "Protective Dome",
+   "text_sha1": "945998318329c506dc89f3dc5dde445868c08f79",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Evasive"
+    }
+   ]
+  },
+  "0IRkW:906e8599de": {
+   "name": "Psychic Terror",
+   "text_sha1": "906e8599ded9a842b4d8271c9dfba62574424b30",
+   "kind": "damage",
+   "hits": 3,
+   "range": 6,
+   "rules": [
+    [
+     "Bane",
+     null
+    ]
+   ]
+  },
+  "c19YO:6fd87b71ed": {
+   "name": "Advanced Sight",
+   "text_sha1": "6fd87b71ed33439067c28b6dc5ece8cdd5592a79",
+   "kind": "mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "QXyt-zV_bjpg"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   },
+   "note": "Unstoppable on friendly weapons when shooting against the target."
+  },
+  "98xBf:aea9c2c038": {
+   "name": "Lightning Fog",
+   "text_sha1": "aea9c2c0381a4420e36f9d7452145b1c7a54281e",
+   "kind": "damage",
+   "hits": 4,
+   "range": 9,
+   "rules": [],
+   "note": "Up to two units take 4 hits each: the Analyzer resolves the hits on its target."
+  },
+  "iBpcF:03f8af03ef": {
+   "name": "Blessed Ammo",
+   "text_sha1": "03f8af03ef82d62faab9ff00be2ba96565f606f6",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Shred",
+     "to": "weapons",
+     "attack": "shooting"
+    }
+   ]
+  },
+  "IiOah:4f9f5b1a4d": {
+   "name": "Cerebral Trauma",
+   "text_sha1": "4f9f5b1a4d8c5a59819257b5eaa2250bfbcdd99f",
+   "kind": "damage",
+   "hits": 6,
+   "range": 24,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Smash",
+     null
+    ]
+   ],
+   "note": "Smash: over half of the spell's range (12\")."
+  },
+  "0IRkW:1ba867bb20": {
+   "name": "Heavenly Lance",
+   "text_sha1": "1ba867bb20bb939b748fa6b71d6a4041120cacba",
+   "kind": "damage",
+   "hits": 2,
+   "range": 18,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "note": "Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "98xBf:8c9d33024b": {
+   "name": "Shield Breaker",
+   "text_sha1": "8c9d33024bce06cb74a97359e99f606c5717ec4a",
+   "kind": "damage",
+   "hits": 4,
+   "range": 12,
+   "rules": [
+    [
+     "Shred",
+     null
+    ]
+   ]
+  },
+  "iBpcF:8d7d6ecf55": {
+   "name": "Burst of Rage",
+   "text_sha1": "8d7d6ecf553d53c1aae676056b234f931427fbf4",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Bloodborn"
+    }
+   ]
+  },
+  "spwoE:9459983183": {
+   "name": "Blood Dome",
+   "text_sha1": "945998318329c506dc89f3dc5dde445868c08f79",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Evasive"
+    }
+   ]
+  },
+  "q7FYs:1ba867bb20": {
+   "name": "Heavenly Lance",
+   "text_sha1": "1ba867bb20bb939b748fa6b71d6a4041120cacba",
+   "kind": "damage",
+   "hits": 2,
+   "range": 18,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "note": "Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "At3dW:6fd87b71ed": {
+   "name": "Blood Sight",
+   "text_sha1": "6fd87b71ed33439067c28b6dc5ece8cdd5592a79",
+   "kind": "mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "QXyt-zV_bjpg"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   },
+   "note": "Unstoppable on friendly weapons when shooting against the target."
+  },
+  "lpVma:8c9d33024b": {
+   "name": "Shield Breaker",
+   "text_sha1": "8c9d33024bce06cb74a97359e99f606c5717ec4a",
+   "kind": "damage",
+   "hits": 4,
+   "range": 12,
+   "rules": [
+    [
+     "Shred",
+     null
+    ]
+   ]
+  },
+  "E2Hc6:8d7d6ecf55": {
+   "name": "Burst of Rage",
+   "text_sha1": "8d7d6ecf553d53c1aae676056b234f931427fbf4",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Bloodborn"
+    }
+   ]
+  },
+  "_TqtK:44494e8576": {
+   "name": "Blood Wound",
+   "text_sha1": "44494e8576320734348a5fcc6af83bf4da2b18b8",
+   "kind": "damage",
+   "hits": 6,
+   "range": 18,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Pierce",
+     null
+    ]
+   ]
+  },
+  "iBpcF:38d006a5a3": {
+   "name": "Blessed Shroud",
+   "text_sha1": "38d006a5a3909a55ec84fbff3321fca06c8c3180",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Darkborn"
+    }
+   ]
+  },
+  "q7FYs:906e8599de": {
+   "name": "Psychic Terror",
+   "text_sha1": "906e8599ded9a842b4d8271c9dfba62574424b30",
+   "kind": "damage",
+   "hits": 3,
+   "range": 6,
+   "rules": [
+    [
+     "Bane",
+     null
+    ]
+   ]
+  },
+  "lpVma:aea9c2c038": {
+   "name": "Lightning Fog",
+   "text_sha1": "aea9c2c0381a4420e36f9d7452145b1c7a54281e",
+   "kind": "damage",
+   "hits": 4,
+   "range": 9,
+   "rules": [],
+   "note": "Up to two units take 4 hits each: the Analyzer resolves the hits on its target."
+  },
+  "E2Hc6:38d006a5a3": {
+   "name": "Blessed Shroud",
+   "text_sha1": "38d006a5a3909a55ec84fbff3321fca06c8c3180",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Darkborn"
+    }
+   ]
+  },
+  "98xBf:2686757152": {
+   "name": "Doom Strike",
+   "text_sha1": "26867571529395fe598cc37c88da5934718c99a2",
+   "kind": "damage",
+   "hits": 1,
+   "range": 6,
+   "rules": [
+    [
+     "AP",
+     2
+    ],
+    [
+     "Deadly",
+     3
+    ]
+   ]
+  },
+  "0IRkW:a3cb9c86bc": {
+   "name": "Purge the Impure",
+   "text_sha1": "a3cb9c86bc2e450cb9aaacb784f7a03472fdb4b4",
+   "kind": "damage",
+   "hits": 4,
+   "range": 6,
+   "rules": [
+    [
+     "AP",
+     2
+    ]
+   ],
+   "note": "Up to two units take 4 hits each: the Analyzer resolves the hits on its target."
+  },
+  "iBpcF:c3bfeea183": {
+   "name": "Banishing Sigil",
+   "text_sha1": "c3bfeea1830da621a10bbb04807c46f7c69d3e6c",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Knightborn"
+    }
+   ]
+  },
+  "lpVma:2686757152": {
+   "name": "Doom Strike",
+   "text_sha1": "26867571529395fe598cc37c88da5934718c99a2",
+   "kind": "damage",
+   "hits": 1,
+   "range": 6,
+   "rules": [
+    [
+     "AP",
+     2
+    ],
+    [
+     "Deadly",
+     3
+    ]
+   ]
+  },
+  "q7FYs:a3cb9c86bc": {
+   "name": "Purge the Impure",
+   "text_sha1": "a3cb9c86bc2e450cb9aaacb784f7a03472fdb4b4",
+   "kind": "damage",
+   "hits": 4,
+   "range": 6,
+   "rules": [
+    [
+     "AP",
+     2
+    ]
+   ],
+   "note": "Up to two units take 4 hits each: the Analyzer resolves the hits on its target."
+  },
+  "E2Hc6:c3bfeea183": {
+   "name": "Banishing Sigil",
+   "text_sha1": "c3bfeea1830da621a10bbb04807c46f7c69d3e6c",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Knightborn"
+    }
+   ]
+  },
+  "iBpcF:2a8d28907c": {
+   "name": "Blessed Ammo",
+   "text_sha1": "2a8d28907c4f6500c3370be380ab3d99c1748807",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Watchborn"
+    }
+   ]
+  },
+  "E2Hc6:2a8d28907c": {
+   "name": "Blessed Ammo",
+   "text_sha1": "2a8d28907c4f6500c3370be380ab3d99c1748807",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Watchborn"
+    }
+   ]
+  },
+  "0IRkW:259f5b9436": {
+   "name": "Godly Thunder",
+   "text_sha1": "259f5b94369dfcd0d276aae1210f8754608a864b",
+   "kind": "damage",
+   "hits": 1,
+   "range": 18,
+   "rules": [
+    [
+     "AP",
+     4
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "note": "Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "iBpcF:c5679fed4a": {
+   "name": "Righteous Fury",
+   "text_sha1": "c5679fed4aaaaba74cf466e31c56b404e3ad233d",
+   "kind": "no_combat_effect",
+   "note": "Enhanced Wolfborn: movement."
+  },
+  "q7FYs:259f5b9436": {
+   "name": "Godly Thunder",
+   "text_sha1": "259f5b94369dfcd0d276aae1210f8754608a864b",
+   "kind": "damage",
+   "hits": 1,
+   "range": 18,
+   "rules": [
+    [
+     "AP",
+     4
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "note": "Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "E2Hc6:c5679fed4a": {
+   "name": "Righteous Fury",
+   "text_sha1": "c5679fed4aaaaba74cf466e31c56b404e3ad233d",
+   "kind": "no_combat_effect",
+   "note": "Enhanced Wolfborn: movement."
+  },
+  "WqVYV:108a652988": {
+   "name": "Shifting Form",
+   "text_sha1": "108a65298863d45dd4418534f6102a6553428c08",
+   "kind": "no_combat_effect",
+   "note": "Spell tokens lost: the Analyzer's token inputs."
+  },
+  "ETqFz:ef0789ae38": {
+   "name": "Sky Blaze",
+   "text_sha1": "ef0789ae38f9192f036f1eafce7703f92a456e70",
+   "kind": "damage",
+   "hits": 3,
+   "range": 12,
+   "rules": [
+    [
+     "Lacerate",
+     null
+    ]
+   ]
+  },
+  "koM0N:cf5a049ae0": {
+   "name": "Breath of Change",
+   "text_sha1": "cf5a049ae07e21feca8c5b86f317bdeaf054af6a",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Bane when Shooting"
+    }
+   ]
+  },
+  "2cJLM:e52e1d0a00": {
+   "name": "Power Bolt",
+   "text_sha1": "e52e1d0a00843a8a1c90a6a826117f6faac13a41",
+   "kind": "damage",
+   "hits": 4,
+   "range": 12,
+   "rules": [
+    [
+     "AP",
+     2
+    ]
+   ]
+  },
+  "UD96W:25ad877d15": {
+   "name": "Change Boon",
+   "text_sha1": "25ad877d15fc9d637a1b303f72d2e97e14dae8ea",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Changebound"
+    }
+   ]
+  },
+  "EMMnm:cadee86e98": {
+   "name": "Mutating Inferno",
+   "text_sha1": "cadee86e98c06bdd06490fea932d2046a62f005f",
+   "kind": "damage",
+   "hits": 3,
+   "range": 24,
+   "rules": [],
+   "note": "Up to two units take 3 hits each: the Analyzer resolves the hits on its target."
+  },
+  "koM0N:8718ec62e8": {
+   "name": "Combat Ecstasy",
+   "text_sha1": "8718ec62e8b445fef433d1ab81905228ce148830",
+   "kind": "no_combat_effect",
+   "note": "Quick Shot against the target: shooting after Rush, the Analyzer's action input."
+  },
+  "2cJLM:1ba867bb20": {
+   "name": "Total Seizure",
+   "text_sha1": "1ba867bb20bb939b748fa6b71d6a4041120cacba",
+   "kind": "damage",
+   "hits": 2,
+   "range": 18,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "note": "Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "UD96W:bdce84f6f6": {
+   "name": "Lust Boon",
+   "text_sha1": "bdce84f6f651a3e806903070292e00f913595691",
+   "kind": "no_combat_effect",
+   "note": "Enhanced Lustbound: movement."
+  },
+  "WqVYV:a209c835c8": {
+   "name": "Blissful Dance",
+   "text_sha1": "a209c835c871be7ef8ba42498b8ae01687085a49",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Melee Evasion"
+    }
+   ]
+  },
+  "ETqFz:56a6acd7ac": {
+   "name": "Overpowering Lash",
+   "text_sha1": "56a6acd7ac37b89ea3acc44f269996774914d056",
+   "kind": "damage",
+   "hits": 6,
+   "range": 18,
+   "rules": [
+    [
+     "Shred",
+     null
+    ]
+   ]
+  },
+  "koM0N:edfde1855f": {
+   "name": "Aura of Pestilence",
+   "text_sha1": "edfde1855fe62f8aa9f89143d0934bf7409a436b",
+   "kind": "no_combat_effect",
+   "note": "Difficult Terrain: movement."
+  },
+  "WqVYV:627f29c7aa": {
+   "name": "Blessed Virus",
+   "text_sha1": "627f29c7aae23ca6d7de4ab11360c3dc6a9d5a18",
+   "kind": "no_combat_effect",
+   "note": "Rapid Rush: movement."
+  },
+  "ETqFz:efbb6e7ed3": {
+   "name": "Rot Wave",
+   "text_sha1": "efbb6e7ed33c1f4e46848cdad1ab7180b3475776",
+   "kind": "damage",
+   "hits": 4,
+   "range": 18,
+   "rules": []
+  },
+  "UD96W:6215dc9e80": {
+   "name": "Plague Boon",
+   "text_sha1": "6215dc9e80ddfa469043a9adbea7cd5cab62ac36",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Plaguebound"
+    }
+   ]
+  },
+  "EMMnm:661d798daa": {
+   "name": "Plague Malediction",
+   "text_sha1": "661d798daaf85e41080d45179a3e0f23796523cc",
+   "kind": "damage",
+   "hits": 3,
+   "range": 24,
+   "rules": [
+    [
+     "AP",
+     4
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "note": "Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "koM0N:91457ad5ad": {
+   "name": "Terrifying Fury",
+   "text_sha1": "91457ad5adf6cb7da29e2c9f193ec4d08bf6e59f",
+   "kind": "no_combat_effect",
+   "note": "A Morale Test outside an attack; Fatigued is the Analyzer's input."
+  },
+  "WqVYV:d9571d8265": {
+   "name": "Fiery Protection",
+   "text_sha1": "d9571d8265aa7802dc28f1cb9074792b13a02d06",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Melee Evasion"
+    }
+   ]
+  },
+  "2cJLM:a3cb9c86bc": {
+   "name": "Headtaker Strike",
+   "text_sha1": "a3cb9c86bc2e450cb9aaacb784f7a03472fdb4b4",
+   "kind": "damage",
+   "hits": 4,
+   "range": 6,
+   "rules": [
+    [
+     "AP",
+     2
+    ]
+   ],
+   "note": "Up to two units take 4 hits each: the Analyzer resolves the hits on its target."
+  },
+  "UD96W:ef1294be4a": {
+   "name": "War Boon",
+   "text_sha1": "ef1294be4a7009cee28413decee458406dbcc2a7",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Warbound"
+    }
+   ]
+  },
+  "ETqFz:0495ceaa90": {
+   "name": "Flame of Destruction",
+   "text_sha1": "0495ceaa9004a26a237fa7ae571570e944ba46e7",
+   "kind": "damage",
+   "hits": 3,
+   "range": 24,
+   "rules": [
+    [
+     "Blast",
+     3
+    ]
+   ]
+  },
+  "koM0N:5b90f2b2e5": {
+   "name": "Cursed Stride",
+   "text_sha1": "5b90f2b2e53b673f280063cb586ea1ca57c442c9",
+   "kind": "no_combat_effect",
+   "note": "A Dangerous Terrain Test outside an attack."
+  },
+  "2cJLM:c55dac185f": {
+   "name": "Havoc Fog",
+   "text_sha1": "c55dac185f6a9c2b0b070d3400460283451eb7c9",
+   "kind": "damage",
+   "hits": 3,
+   "range": 6,
+   "rules": [
+    [
+     "Scourge",
+     null
+    ]
+   ]
+  },
+  "WqVYV:7631a307d1": {
+   "name": "Dark Assault",
+   "text_sha1": "7631a307d14a00f77e3b032db88ee716c91b1b64",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Shred",
+     "to": "weapons",
+     "attack": "melee"
+    }
+   ]
+  },
+  "ETqFz:aea9c2c038": {
+   "name": "Havoc Terror",
+   "text_sha1": "aea9c2c0381a4420e36f9d7452145b1c7a54281e",
+   "kind": "damage",
+   "hits": 4,
+   "range": 9,
+   "rules": [],
+   "note": "Up to two units take 4 hits each: the Analyzer resolves the hits on its target."
+  },
+  "UD96W:0acb7607dc": {
+   "name": "Havoc Boon",
+   "text_sha1": "0acb7607dc9b6c46a8bababb4c15d22cb6eb4a89",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Havocbound"
+    }
+   ]
+  },
+  "EMMnm:9bfbd7c461": {
+   "name": "Havoc Trauma",
+   "text_sha1": "9bfbd7c461651249fd804663ed9b2342303b73a6",
+   "kind": "damage",
+   "hits": 6,
+   "range": 18,
+   "rules": [
+    [
+     "AP",
+     2
+    ]
+   ]
+  },
+  "EMMnm:2078cab8c5": {
+   "name": "Brutal Massacre",
+   "text_sha1": "2078cab8c5644b225febf8944eaa55f2c9d44f0d",
+   "kind": "damage",
+   "hits": 3,
+   "range": 6,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Purge",
+     null
+    ]
+   ]
+  },
+  "JQL2J:cc16a0b9ef": {
+   "name": "Beautiful Pain",
+   "text_sha1": "cc16a0b9efefe0c8189fe4d774d89d5187813ac1",
+   "kind": "damage",
+   "hits": 4,
+   "range": 12,
+   "rules": [
+    [
+     "Obliterate",
+     null
+    ]
+   ]
+  },
+  "L2MLJCql:cc16a0b9ef": {
+   "name": "Beautiful Pain",
+   "text_sha1": "cc16a0b9efefe0c8189fe4d774d89d5187813ac1",
+   "kind": "damage",
+   "hits": 4,
+   "range": 12,
+   "rules": [
+    [
+     "Obliterate",
+     null
+    ]
+   ]
+  },
+  "L2MLJCql:81ac2e7974": {
+   "name": "Rapid Putrefaction",
+   "text_sha1": "81ac2e79745bdaf7d1e168a643d68cbad8991156",
+   "kind": "damage",
+   "hits": 2,
+   "range": 12,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Decimate",
+     null
+    ]
+   ]
+  },
+  "EMMnm:cc16a0b9ef": {
+   "name": "Beautiful Pain",
+   "text_sha1": "cc16a0b9efefe0c8189fe4d774d89d5187813ac1",
+   "kind": "damage",
+   "hits": 4,
+   "range": 12,
+   "rules": [
+    [
+     "Obliterate",
+     null
+    ]
+   ]
+  },
+  "lpVma:b142287ed9": {
+   "name": "Storm of Power",
+   "text_sha1": "b142287ed97e50f1b4a46a30107262ad2c57ec56",
+   "kind": "damage",
+   "hits": 4,
+   "range": 12,
+   "rules": [
+    [
+     "Surge",
+     null
+    ]
+   ],
+   "roll_sixes": true,
+   "note": "One die per fixed hit: a 6 is a six-hit, so Surge adds a hit (the text makes this exception)."
+  },
+  "NLQai:81ac2e7974": {
+   "name": "Rapid Putrefaction",
+   "text_sha1": "81ac2e79745bdaf7d1e168a643d68cbad8991156",
+   "kind": "damage",
+   "hits": 2,
+   "range": 12,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Decimate",
+     null
+    ]
+   ]
+  },
+  "qvE1vtay:2078cab8c5": {
+   "name": "Brutal Massacre",
+   "text_sha1": "2078cab8c5644b225febf8944eaa55f2c9d44f0d",
+   "kind": "damage",
+   "hits": 3,
+   "range": 6,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Purge",
+     null
+    ]
+   ]
+  },
+  "2cJLM:81ac2e7974": {
+   "name": "Rapid Putrefaction",
+   "text_sha1": "81ac2e79745bdaf7d1e168a643d68cbad8991156",
+   "kind": "damage",
+   "hits": 2,
+   "range": 12,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Decimate",
+     null
+    ]
+   ]
+  },
+  "IaJa-:2078cab8c5": {
+   "name": "Brutal Massacre",
+   "text_sha1": "2078cab8c5644b225febf8944eaa55f2c9d44f0d",
+   "kind": "damage",
+   "hits": 3,
+   "range": 6,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Purge",
+     null
+    ]
+   ]
+  },
+  "98xBf:b142287ed9": {
+   "name": "Storm of Power",
+   "text_sha1": "b142287ed97e50f1b4a46a30107262ad2c57ec56",
+   "kind": "damage",
+   "hits": 4,
+   "range": 12,
+   "rules": [
+    [
+     "Surge",
+     null
+    ]
+   ],
+   "roll_sixes": true,
+   "note": "One die per fixed hit: a 6 is a six-hit, so Surge adds a hit (the text makes this exception)."
+  },
+  "wp5FZ:893d8275fc": {
+   "name": "Terror Seeker",
+   "text_sha1": "893d8275fca5139abac8430e1dad1f9b0fce13fe",
+   "kind": "no_combat_effect",
+   "note": "Hit & Run Fighter: movement."
+  },
+  "5wvl3:1ba867bb20": {
+   "name": "Hive Shriek",
+   "text_sha1": "1ba867bb20bb939b748fa6b71d6a4041120cacba",
+   "kind": "damage",
+   "hits": 2,
+   "range": 18,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "note": "Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "4qi6f:013a6da594": {
+   "name": "Animate Spirit",
+   "text_sha1": "013a6da5945709d5ededae4a394a6b7becd88f04",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Hive Bond"
+    }
+   ]
+  },
+  "K6cik:107bec189d": {
+   "name": "Overwhelming Strike",
+   "text_sha1": "107bec189d40869c505483a2996a56416987c076",
+   "kind": "damage",
+   "hits": 4,
+   "range": 12,
+   "rules": [
+    [
+     "Fragment",
+     null
+    ]
+   ]
+  },
+  "KRMqK:6e5a431454": {
+   "name": "Infuse Bloodthirst",
+   "text_sha1": "6e5a4314545f1994d755919d21311eaab1509fe0",
+   "kind": "mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "DEeVIJcfNfS6"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "melee"
+   },
+   "note": "Unpredictable Fighter on friendly attacks against the target."
+  },
+  "G0b6O:9bfbd7c461": {
+   "name": "Psychic Blast",
+   "text_sha1": "9bfbd7c461651249fd804663ed9b2342303b73a6",
+   "kind": "damage",
+   "hits": 6,
+   "range": 18,
+   "rules": [
+    [
+     "AP",
+     2
+    ]
+   ]
+  },
+  "J0DHx:108a652988": {
+   "name": "Burn the Heretic",
+   "text_sha1": "108a65298863d45dd4418534f6102a6553428c08",
+   "kind": "no_combat_effect",
+   "note": "Spell tokens lost: the Analyzer's token inputs."
+  },
+  "e1cKU:90795a09c7": {
+   "name": "Eternal Flame",
+   "text_sha1": "90795a09c76f920d1dafcdfcb288d2555abd9595",
+   "kind": "damage",
+   "hits": 3,
+   "range": 12,
+   "rules": [
+    [
+     "Purge",
+     null
+    ]
+   ]
+  },
+  "PXKkZ:b4617e2021": {
+   "name": "Holy Rage",
+   "text_sha1": "b4617e2021adc22b8218bc3a70f955023ebfbaf0",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Piercing Marksman"
+    }
+   ]
+  },
+  "Ppwg0:e9d3c54684": {
+   "name": "Searing Admonition",
+   "text_sha1": "e9d3c54684998615bc484cc4138c8f934ee9b642",
+   "kind": "damage",
+   "hits": 2,
+   "range": 18,
+   "rules": [
+    [
+     "Blast",
+     3
+    ]
+   ]
+  },
+  "FlokU:2657903b16": {
+   "name": "Litanies of War",
+   "text_sha1": "2657903b169e43111d00276b70420f9e8a744809",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Devout"
+    }
+   ]
+  },
+  "WojQ5:661d798daa": {
+   "name": "Righteous Wrath",
+   "text_sha1": "661d798daaf85e41080d45179a3e0f23796523cc",
+   "kind": "damage",
+   "hits": 3,
+   "range": 24,
+   "rules": [
+    [
+     "AP",
+     4
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "note": "Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "gwOV3:0be1d1d405": {
+   "name": "Guardian Protection",
+   "text_sha1": "0be1d1d405b94ea292e50f0db18f6d125ff6de4c",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Guardian"
+    }
+   ]
+  },
+  "YFdQT:5d369cbc40": {
+   "name": "Dread Strike",
+   "text_sha1": "5d369cbc40cf6c11ed66c0c0e9675e43a983142b",
+   "kind": "damage",
+   "hits": 1,
+   "range": 18,
+   "rules": [
+    [
+     "AP",
+     2
+    ],
+    [
+     "Disintegrate",
+     null
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "note": "Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "YexgZ:4365a9e734": {
+   "name": "The Founder's Curse",
+   "text_sha1": "4365a9e734c6451f2ae87511770fb14fb40cb799",
+   "kind": "mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "IEJp3a4vE0CB"
+     }
+    }
+   ],
+   "note": "Shred on friendly weapons against the target."
+  },
+  "GZvZ5:efbb6e7ed3": {
+   "name": "Thunderous Mist",
+   "text_sha1": "efbb6e7ed33c1f4e46848cdad1ab7180b3475776",
+   "kind": "damage",
+   "hits": 4,
+   "range": 18,
+   "rules": []
+  },
+  "lQtJR:89d9eea43b": {
+   "name": "Focused Defender",
+   "text_sha1": "89d9eea43b3e0b3bc63a59d49f2c2592879b611e",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Unpredictable Fighter"
+    }
+   ]
+  },
+  "pJ1_V:56a6acd7ac": {
+   "name": "Mind Gash",
+   "text_sha1": "56a6acd7ac37b89ea3acc44f269996774914d056",
+   "kind": "damage",
+   "hits": 6,
+   "range": 18,
+   "rules": [
+    [
+     "Shred",
+     null
+    ]
+   ]
+  },
+  "C7o9-:108a652988": {
+   "name": "Shifting Form",
+   "text_sha1": "108a65298863d45dd4418534f6102a6553428c08",
+   "kind": "no_combat_effect",
+   "note": "Spell tokens lost: the Analyzer's token inputs."
+  },
+  "o7wR7:ef0789ae38": {
+   "name": "Sky Blaze",
+   "text_sha1": "ef0789ae38f9192f036f1eafce7703f92a456e70",
+   "kind": "damage",
+   "hits": 3,
+   "range": 12,
+   "rules": [
+    [
+     "Lacerate",
+     null
+    ]
+   ]
+  },
+  "NoUXs:cf5a049ae0": {
+   "name": "Breath of Change",
+   "text_sha1": "cf5a049ae07e21feca8c5b86f317bdeaf054af6a",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Bane when Shooting"
+    }
+   ]
+  },
+  "o5PK5:e52e1d0a00": {
+   "name": "Power Bolt",
+   "text_sha1": "e52e1d0a00843a8a1c90a6a826117f6faac13a41",
+   "kind": "damage",
+   "hits": 4,
+   "range": 12,
+   "rules": [
+    [
+     "AP",
+     2
+    ]
+   ]
+  },
+  "3ajfB:25ad877d15": {
+   "name": "Change Boon",
+   "text_sha1": "25ad877d15fc9d637a1b303f72d2e97e14dae8ea",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Changebound"
+    }
+   ]
+  },
+  "cu5MA:cadee86e98": {
+   "name": "Mutating Inferno",
+   "text_sha1": "cadee86e98c06bdd06490fea932d2046a62f005f",
+   "kind": "damage",
+   "hits": 3,
+   "range": 24,
+   "rules": [],
+   "note": "Up to two units take 3 hits each: the Analyzer resolves the hits on its target."
+  },
+  "g5Pm-:8718ec62e8": {
+   "name": "Combat Ecstasy",
+   "text_sha1": "8718ec62e8b445fef433d1ab81905228ce148830",
+   "kind": "no_combat_effect",
+   "note": "Quick Shot against the target: shooting after Rush, the Analyzer's action input."
+  },
+  "ygs3s:1ba867bb20": {
+   "name": "Total Seizure",
+   "text_sha1": "1ba867bb20bb939b748fa6b71d6a4041120cacba",
+   "kind": "damage",
+   "hits": 2,
+   "range": 18,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "note": "Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "iLecu:bdce84f6f6": {
+   "name": "Lust Boon",
+   "text_sha1": "bdce84f6f651a3e806903070292e00f913595691",
+   "kind": "no_combat_effect",
+   "note": "Enhanced Lustbound: movement."
+  },
+  "hEwY0:a209c835c8": {
+   "name": "Blissful Dance",
+   "text_sha1": "a209c835c871be7ef8ba42498b8ae01687085a49",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Melee Evasion"
+    }
+   ]
+  },
+  "OyF32:56a6acd7ac": {
+   "name": "Overpowering Lash",
+   "text_sha1": "56a6acd7ac37b89ea3acc44f269996774914d056",
+   "kind": "damage",
+   "hits": 6,
+   "range": 18,
+   "rules": [
+    [
+     "Shred",
+     null
+    ]
+   ]
+  },
+  "RoTN4:edfde1855f": {
+   "name": "Aura of Pestilence",
+   "text_sha1": "edfde1855fe62f8aa9f89143d0934bf7409a436b",
+   "kind": "no_combat_effect",
+   "note": "Difficult Terrain: movement."
+  },
+  "J49Dl:627f29c7aa": {
+   "name": "Blessed Virus",
+   "text_sha1": "627f29c7aae23ca6d7de4ab11360c3dc6a9d5a18",
+   "kind": "no_combat_effect",
+   "note": "Rapid Rush: movement."
+  },
+  "tB0nB:efbb6e7ed3": {
+   "name": "Rot Wave",
+   "text_sha1": "efbb6e7ed33c1f4e46848cdad1ab7180b3475776",
+   "kind": "damage",
+   "hits": 4,
+   "range": 18,
+   "rules": []
+  },
+  "QTyGH:6215dc9e80": {
+   "name": "Plague Boon",
+   "text_sha1": "6215dc9e80ddfa469043a9adbea7cd5cab62ac36",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Plaguebound"
+    }
+   ]
+  },
+  "wOq34:661d798daa": {
+   "name": "Plague Malediction",
+   "text_sha1": "661d798daaf85e41080d45179a3e0f23796523cc",
+   "kind": "damage",
+   "hits": 3,
+   "range": 24,
+   "rules": [
+    [
+     "AP",
+     4
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "note": "Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "YsVNA:91457ad5ad": {
+   "name": "Terrifying Fury",
+   "text_sha1": "91457ad5adf6cb7da29e2c9f193ec4d08bf6e59f",
+   "kind": "no_combat_effect",
+   "note": "A Morale Test outside an attack; Fatigued is the Analyzer's input."
+  },
+  "x63P6:d9571d8265": {
+   "name": "Fiery Protection",
+   "text_sha1": "d9571d8265aa7802dc28f1cb9074792b13a02d06",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Melee Evasion"
+    }
+   ]
+  },
+  "cm7ec:a3cb9c86bc": {
+   "name": "Headtaker Strike",
+   "text_sha1": "a3cb9c86bc2e450cb9aaacb784f7a03472fdb4b4",
+   "kind": "damage",
+   "hits": 4,
+   "range": 6,
+   "rules": [
+    [
+     "AP",
+     2
+    ]
+   ],
+   "note": "Up to two units take 4 hits each: the Analyzer resolves the hits on its target."
+  },
+  "jLEBT:ef1294be4a": {
+   "name": "War Boon",
+   "text_sha1": "ef1294be4a7009cee28413decee458406dbcc2a7",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Warbound"
+    }
+   ]
+  },
+  "RDJmq:0495ceaa90": {
+   "name": "Flame of Destruction",
+   "text_sha1": "0495ceaa9004a26a237fa7ae571570e944ba46e7",
+   "kind": "damage",
+   "hits": 3,
+   "range": 24,
+   "rules": [
+    [
+     "Blast",
+     3
+    ]
+   ]
+  },
+  "j6oLQ:0f85bdf917": {
+   "name": "Psy-Adrenaline",
+   "text_sha1": "0f85bdf917bbdd51d9f6d7c3fbc95fb102a85b09",
+   "kind": "no_combat_effect",
+   "note": "Enhanced Harassing: movement."
+  },
+  "fgyPU:2686757152": {
+   "name": "Art of Pain",
+   "text_sha1": "26867571529395fe598cc37c88da5934718c99a2",
+   "kind": "damage",
+   "hits": 1,
+   "range": 6,
+   "rules": [
+    [
+     "AP",
+     2
+    ],
+    [
+     "Deadly",
+     3
+    ]
+   ]
+  },
+  "3ORBa:dcf06de67f": {
+   "name": "Raiding Drugs",
+   "text_sha1": "dcf06de67f16fea329482827611a171c655bc808",
+   "kind": "mark",
+   "effects": [
+    {
+     "primitive": "hit_mod",
+     "value": 1
+    }
+   ],
+   "conditions": {
+    "attack": "melee"
+   },
+   "note": "+1 to hit in melee for friendly attacks against the target."
+  },
+  "tcH3w:23420d7127": {
+   "name": "Snake Bite",
+   "text_sha1": "23420d7127290042c03a01eb8d4feebfb3f3992d",
+   "kind": "damage",
+   "hits": 4,
+   "range": 18,
+   "rules": [
+    [
+     "Lacerate",
+     null
+    ]
+   ]
+  },
+  "cP2qf:e12d35a216": {
+   "name": "Fade in the Dark",
+   "text_sha1": "e12d35a21683dae8d69b2313bac5aaa7a30b3312",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Stealth"
+    }
+   ]
+  },
+  "z431N:e8badbb059": {
+   "name": "Holistic Suffering",
+   "text_sha1": "e8badbb059b1ddbdc252dcbfda77251dcc82204a",
+   "kind": "damage",
+   "hits": 9,
+   "range": 18,
+   "rules": []
+  },
+  "3Rm66:f268e98b89": {
+   "name": "Deceleration Rune ",
+   "text_sha1": "f268e98b89a6758e16468cd306977d12ee899bf2",
+   "kind": "no_combat_effect",
+   "note": "Slower moves: movement."
+  },
+  "vAujA:be44e7d1f0": {
+   "name": "Cleaving Rune ",
+   "text_sha1": "be44e7d1f0659eba8377ea9902e34d7764771dd2",
+   "kind": "damage",
+   "hits": 1,
+   "range": 18,
+   "rules": [
+    [
+     "Blast",
+     3
+    ]
+   ]
+  },
+  "6RfYW:dc7c1e17bf": {
+   "name": "Battle Rune ",
+   "text_sha1": "dc7c1e17bfd97f814760fd47b7d82753490c7270",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Increased Shooting Range"
+    }
+   ]
+  },
+  "plGib:b07d48b040": {
+   "name": "Smiting Rune ",
+   "text_sha1": "b07d48b0401c60e67673a1b2a7b21a70ded3ca0b",
+   "kind": "damage",
+   "hits": 4,
+   "range": 12,
+   "rules": [
+    [
+     "Scourge",
+     null
+    ]
+   ]
+  },
+  "xQ-Dv:43d06ccbae": {
+   "name": "Armor Rune ",
+   "text_sha1": "43d06ccbae5639f239dc01b42f922eac3bf69118",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Sturdy"
+    }
+   ]
+  },
+  "taC_s:661d798daa": {
+   "name": "Breaking Rune ",
+   "text_sha1": "661d798daaf85e41080d45179a3e0f23796523cc",
+   "kind": "damage",
+   "hits": 3,
+   "range": 24,
+   "rules": [
+    [
+     "AP",
+     4
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "note": "Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "_E7yk:090c617d58": {
+   "name": "Asphyxiating Fog",
+   "text_sha1": "090c617d58d7fcc4aa2364f736202933b7b70ce0",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Counter in Melee"
+    }
+   ]
+  },
+  "X1iYd:2686757152": {
+   "name": "Blades of Discord",
+   "text_sha1": "26867571529395fe598cc37c88da5934718c99a2",
+   "kind": "damage",
+   "hits": 1,
+   "range": 6,
+   "rules": [
+    [
+     "AP",
+     2
+    ],
+    [
+     "Deadly",
+     3
+    ]
+   ]
+  },
+  "QDWBm:d4c95acda5": {
+   "name": "Veil of Madness",
+   "text_sha1": "d4c95acda5ee15af85a841e22f94a17eccfa2b74",
+   "kind": "mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "27DHOeVHMwrj"
+     }
+    }
+   ],
+   "note": "Slayer on friendly weapons against the target."
+  },
+  "VJ0vg:9d3ebc0fc5": {
+   "name": "Light Fragments",
+   "text_sha1": "9d3ebc0fc587d6504d85b11f6589df8ea8c7bcac",
+   "kind": "damage",
+   "hits": 6,
+   "range": 12,
+   "rules": [
+    [
+     "Destructive",
+     null
+    ]
+   ]
+  },
+  "cHPRj:2e79233fa2": {
+   "name": "Shadow Dance",
+   "text_sha1": "2e79233fa27b40593758ff3e5241912f8c926d53",
+   "kind": "no_combat_effect",
+   "note": "Enhanced Rapid Blink: movement."
+  },
+  "N7LHJ:90e9249daa": {
+   "name": "Fatal Sorrow",
+   "text_sha1": "90e9249daacf2f4812535f2cfacce77a4ede7e54",
+   "kind": "damage",
+   "hits": 6,
+   "range": 24,
+   "rules": []
+  },
+  "cxXYp:8fbc80728c": {
+   "name": "Spirit Power",
+   "text_sha1": "8fbc80728c30ffe62ea3a7366c5721ab28bab138",
+   "kind": "no_combat_effect",
+   "note": "Flying: movement."
+  },
+  "trKS8:7f6f290a7d": {
+   "name": "Dragon Breath",
+   "text_sha1": "7f6f290a7d3a20746a0c215d2282ec1cbca12ae9",
+   "kind": "damage",
+   "hits": 3,
+   "range": 12,
+   "rules": []
+  },
+  "W-9aP:48e6629b91": {
+   "name": "Eternal Guidance",
+   "text_sha1": "48e6629b91aadf718a37a2e1d06f2e21fbf8d302",
+   "kind": "mark",
+   "effects": [
+    {
+     "primitive": "range_mod",
+     "value": 6
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   },
+   "note": "+6\" range on friendly weapons shooting at the target."
+  },
+  "_hB0l:a3cb9c86bc": {
+   "name": "Mind Vortex",
+   "text_sha1": "a3cb9c86bc2e450cb9aaacb784f7a03472fdb4b4",
+   "kind": "damage",
+   "hits": 4,
+   "range": 6,
+   "rules": [
+    [
+     "AP",
+     2
+    ]
+   ],
+   "note": "Up to two units take 4 hits each: the Analyzer resolves the hits on its target."
+  },
+  "G-gJZ:68a68942b0": {
+   "name": "Spirit Resolve",
+   "text_sha1": "68a68942b0c758ddb41cb0e6b65d51533d8f3592",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Clan Warrior"
+    }
+   ]
+  },
+  "pgW4u:783bd66642": {
+   "name": "Soul Spear",
+   "text_sha1": "783bd666427d5a7bf4d4a78bd8fac45b147c6085",
+   "kind": "damage",
+   "hits": 3,
+   "range": 30,
+   "rules": [
+    [
+     "AP",
+     3
+    ],
+    [
+     "Destructive",
+     null
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "note": "Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "mfx9y:ca6af95f75": {
+   "name": "Shroud Field",
+   "text_sha1": "ca6af95f7586e8195f6d343616bc2a897984438a",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Defense",
+     "rating": 1
+    }
+   ]
+  },
+  "pMFQu:be44e7d1f0": {
+   "name": "Boom!",
+   "text_sha1": "be44e7d1f0659eba8377ea9902e34d7764771dd2",
+   "kind": "damage",
+   "hits": 1,
+   "range": 18,
+   "rules": [
+    [
+     "Blast",
+     3
+    ]
+   ]
+  },
+  "dm709:06477e2472": {
+   "name": "Mob Frenzy",
+   "text_sha1": "06477e2472e6e0fba98dd37b7b25dc870468a397",
+   "kind": "mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "eOGs64JpVsP3"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "shooting"
+   },
+   "note": "Unpredictable Shooter on friendly attacks against the target."
+  },
+  "x4Szf:b142287ed9": {
+   "name": "Zap!",
+   "text_sha1": "b142287ed97e50f1b4a46a30107262ad2c57ec56",
+   "kind": "damage",
+   "hits": 4,
+   "range": 12,
+   "rules": [
+    [
+     "Surge",
+     null
+    ]
+   ],
+   "roll_sixes": true,
+   "note": "One die per fixed hit: a 6 is a six-hit, so Surge adds a hit (the text makes this exception)."
+  },
+  "bBHHA:37aa1298ec": {
+   "name": "Ammo Boost",
+   "text_sha1": "37aa1298ec8c05044e71ccc185126df26be050a9",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Mischievous"
+    }
+   ]
+  },
+  "UVq_l:20de870f31": {
+   "name": "Creator of Illusions",
+   "text_sha1": "20de870f3133da13468f869730d21eefec67e220",
+   "kind": "debuff",
+   "grants": [
+    {
+     "rule": "Unwieldy",
+     "attack": "melee"
+    }
+   ],
+   "note": "The enemy's melee strikes come last when it charges."
+  },
+  "Hql50:be44e7d1f0": {
+   "name": "Elemental Seeker",
+   "text_sha1": "be44e7d1f0659eba8377ea9902e34d7764771dd2",
+   "kind": "damage",
+   "hits": 1,
+   "range": 18,
+   "rules": [
+    [
+     "Blast",
+     3
+    ]
+   ]
+  },
+  "f-bwL:925c5adfb3": {
+   "name": "Blessing of Souls",
+   "text_sha1": "925c5adfb34fdb1ff62ac6baf3fa338336d3b4af",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Highborn"
+    }
+   ]
+  },
+  "mtWSY:161d07b207": {
+   "name": "Shattering Curse",
+   "text_sha1": "161d07b207dbec5d251551d3570d2f3d2a9437a2",
+   "kind": "damage",
+   "hits": 4,
+   "range": 18,
+   "rules": [
+    [
+     "Fracture",
+     null
+    ]
+   ],
+   "roll_sixes": true,
+   "note": "One die per fixed hit: a 6 is a six-hit."
+  },
+  "BWlZI:578cb9a034": {
+   "name": "Hidden Spirits",
+   "text_sha1": "578cb9a034d73ea20a254445fb515ac88491467c",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Unpredictable Shooter"
+    }
+   ]
+  },
+  "CvffV:661d798daa": {
+   "name": "Psy-Destruction",
+   "text_sha1": "661d798daaf85e41080d45179a3e0f23796523cc",
+   "kind": "damage",
+   "hits": 3,
+   "range": 24,
+   "rules": [
+    [
+     "AP",
+     4
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "note": "Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "u5dTO:21dc3c4377": {
+   "name": "Pow!",
+   "text_sha1": "21dc3c4377cde8c0a62cecc354f921f92f9da988",
+   "kind": "damage",
+   "hits": 6,
+   "range": 18,
+   "rules": [
+    [
+     "Hazardous",
+     null
+    ]
+   ],
+   "roll_sixes": true,
+   "note": "One die per fixed hit: its 1s wound the caster (Hazardous)."
+  },
+  "sC4Gz:51abd0eeea": {
+   "name": "Shock Speed",
+   "text_sha1": "51abd0eeea3c5ed58850fddf431a71ce68be0c7d",
+   "kind": "no_combat_effect",
+   "note": "Movement."
+  },
+  "CsJOp:1ba867bb20": {
+   "name": "Expel Threat",
+   "text_sha1": "1ba867bb20bb939b748fa6b71d6a4041120cacba",
+   "kind": "damage",
+   "hits": 2,
+   "range": 18,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "note": "Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "TzMwj:fee730d193": {
+   "name": "Calculated Foresight",
+   "text_sha1": "fee730d19347e38eb9e189ce38e52b0ea67748b8",
+   "kind": "mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "H9E9PIWpGRdw"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "shooting",
+    "range_over": 9
+   },
+   "note": "Relentless against the target (as Relentless Mark)."
+  },
+  "i1uZl:161d07b207": {
+   "name": "Electric Tempest",
+   "text_sha1": "161d07b207dbec5d251551d3570d2f3d2a9437a2",
+   "kind": "damage",
+   "hits": 4,
+   "range": 18,
+   "rules": [
+    [
+     "Fracture",
+     null
+    ]
+   ],
+   "roll_sixes": true,
+   "note": "One die per fixed hit: a 6 is a six-hit."
+  },
+  "ya8QP:3e9d141a6e": {
+   "name": "Psy-Injected Courage",
+   "text_sha1": "3e9d141a6e5b67f49a4dafd3b37acfcaa5eb29b0",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Hold the Line"
+    }
+   ]
+  },
+  "2u5gr:e8badbb059": {
+   "name": "Searing Burst",
+   "text_sha1": "e8badbb059b1ddbdc252dcbfda77251dcc82204a",
+   "kind": "damage",
+   "hits": 9,
+   "range": 18,
+   "rules": []
+  },
+  "4Wlcg:51abd0eeea": {
+   "name": "Shock Speed",
+   "text_sha1": "51abd0eeea3c5ed58850fddf431a71ce68be0c7d",
+   "kind": "no_combat_effect",
+   "note": "Movement."
+  },
+  "fboTC:1ba867bb20": {
+   "name": "Expel Threat",
+   "text_sha1": "1ba867bb20bb939b748fa6b71d6a4041120cacba",
+   "kind": "damage",
+   "hits": 2,
+   "range": 18,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "note": "Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "FNNTr:fee730d193": {
+   "name": "Calculated Foresight",
+   "text_sha1": "fee730d19347e38eb9e189ce38e52b0ea67748b8",
+   "kind": "mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "H9E9PIWpGRdw"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "shooting",
+    "range_over": 9
+   },
+   "note": "Relentless against the target (as Relentless Mark)."
+  },
+  "fjYgb:b142287ed9": {
+   "name": "Electric Tempest",
+   "text_sha1": "b142287ed97e50f1b4a46a30107262ad2c57ec56",
+   "kind": "damage",
+   "hits": 4,
+   "range": 12,
+   "rules": [
+    [
+     "Surge",
+     null
+    ]
+   ],
+   "roll_sixes": true,
+   "note": "One die per fixed hit: a 6 is a six-hit."
+  },
+  "T9CvX:6028a7132e": {
+   "name": "Psy-Injected Courage",
+   "text_sha1": "6028a7132e449e0dc395f738cedbb8ac430266a1",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Bravery Buff#effect"
+    }
+   ],
+   "note": "+1 to Morale Test rolls once: Bravery Buff's effect (same text), a source of its own next to Bravery Aura."
+  },
+  "cQil0:e8badbb059": {
+   "name": "Searing Burst",
+   "text_sha1": "e8badbb059b1ddbdc252dcbfda77251dcc82204a",
+   "kind": "damage",
+   "hits": 9,
+   "range": 18,
+   "rules": []
+  },
+  "XIFoj:a45c2e82df": {
+   "name": "Brain Infestation",
+   "text_sha1": "a45c2e82dfbff624b5b48415848cf5e5097b1e63",
+   "kind": "debuff",
+   "grants": [
+    {
+     "rule": "Imprecise"
+    }
+   ],
+   "note": "-1 to hit when attacking once: the enemy gets Imprecise (same text)."
+  },
+  "9xEir:2049500fab": {
+   "name": "Spread Plague",
+   "text_sha1": "2049500fab91d6b371a5a0d62b025c864c3f23cb",
+   "kind": "damage",
+   "hits": 1,
+   "range": 18,
+   "rules": [
+    [
+     "Blast",
+     3
+    ],
+    [
+     "Decimate",
+     null
+    ]
+   ]
+  },
+  "POEyK:52ab0333a2": {
+   "name": "Rapid Mutation",
+   "text_sha1": "52ab0333a24e0a852ae60d2a85da89919b97e4ec",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Regeneration"
+    }
+   ]
+  },
+  "Vg3yZ:44d04dbdaa": {
+   "name": "Volatile Infection",
+   "text_sha1": "44d04dbdaaad797c87dacce7e2bb668fdc3f1f63",
+   "kind": "damage",
+   "hits": 2,
+   "range": 6,
+   "rules": [
+    [
+     "AP",
+     2
+    ],
+    [
+     "Deadly",
+     3
+    ]
+   ]
+  },
+  "9kPTj:54eca1baca": {
+   "name": "Violent Onslaught",
+   "text_sha1": "54eca1bacae128ca90d5dd05d25a522b253bdc51",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Infected"
+    }
+   ]
+  },
+  "7VYGG:b2fbcf86ff": {
+   "name": "Bio-Horror",
+   "text_sha1": "b2fbcf86ff107c2847ce48213c25fbac12a16ae1",
+   "kind": "damage",
+   "hits": 6,
+   "range": 18,
+   "rules": [
+    [
+     "Surge",
+     null
+    ]
+   ],
+   "roll_sixes": true,
+   "note": "One die per fixed hit: a 6 is a six-hit."
+  },
+  "97u2H:ce85406401": {
+   "name": "Cyborg Assault",
+   "text_sha1": "ce854064010f8bf685633892e6fee2cfa55254b1",
+   "kind": "no_combat_effect",
+   "note": "Hit & Run Shooter: movement."
+  },
+  "QcEzl:1ba867bb20": {
+   "name": "Power Beam",
+   "text_sha1": "1ba867bb20bb939b748fa6b71d6a4041120cacba",
+   "kind": "damage",
+   "hits": 2,
+   "range": 18,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "note": "Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "6SpJk:dd32c67d5d": {
+   "name": "Corrode Weapons",
+   "text_sha1": "dd32c67d5d4e3057ec8e88c50eb0cc784461aaf8",
+   "kind": "debuff",
+   "grants": [
+    {
+     "rule": "Piercing Debuff#effect",
+     "attack": "shooting"
+    }
+   ],
+   "note": "The enemy loses AP(1) when shooting once: Piercing Debuff's effect, shooting only."
+  },
+  "7ToxY:431110d652": {
+   "name": "Shrouding Incense",
+   "text_sha1": "431110d652295c1f1e304cb6bdd756ebb97ab5f6",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Machine-Fog"
+    }
+   ]
+  },
+  "CGyt7:9bfbd7c461": {
+   "name": "Crushing Force",
+   "text_sha1": "9bfbd7c461651249fd804663ed9b2342303b73a6",
+   "kind": "damage",
+   "hits": 6,
+   "range": 18,
+   "rules": [
+    [
+     "AP",
+     2
+    ]
+   ]
+  },
+  "mfx9y:632439f104": {
+   "name": "Elder Protection",
+   "text_sha1": "632439f1043e18bd6ab0c0586d1e5df3a6f9b5d0",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Spell Resistance"
+    }
+   ]
+  },
+  "bBHHA:83c08324d2": {
+   "name": "Head Bang",
+   "text_sha1": "83c08324d27bc5a6cd841c245027b4e7282fcf01",
+   "kind": "mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "cavWDboL4ubs"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "melee"
+   },
+   "note": "Rending on friendly weapons in melee against the target."
+  },
+  "u5dTO:676ee26f3c": {
+   "name": "Death Bolt",
+   "text_sha1": "676ee26f3c5a719a3fd2a1ad15311af6a1f319de",
+   "kind": "damage",
+   "hits": 4,
+   "range": 12,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Pierce",
+     null
+    ]
+   ]
+  },
+  "dm709:5bb2ccbe87": {
+   "name": "Path of War",
+   "text_sha1": "5bb2ccbe876102b580ea10bdee56af24b44f4425",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Ferocious"
+    }
+   ]
+  },
+  "x4Szf:8639eb9526": {
+   "name": "Psychic Vomit",
+   "text_sha1": "8639eb95260dd15c6ca41652cbbc9a956f720de0",
+   "kind": "damage",
+   "hits": 9,
+   "range": 12,
+   "rules": [
+    [
+     "Bane",
+     null
+    ]
+   ]
+  },
+  "waUF_:89fd606f39": {
+   "name": "Triangulation Bots",
+   "text_sha1": "89fd606f39bc1b4c20c56bde1504a6f2761d452c",
+   "kind": "mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "8Ck9GAwUK824"
+     }
+    }
+   ],
+   "note": "Indirect on friendly weapons against the target (as Indirect Mark)."
+  },
+  "0XFYv:a6086386c8": {
+   "name": "Gauss Bots",
+   "text_sha1": "a6086386c8565395f4b17a8a511a744675ba70d6",
+   "kind": "damage",
+   "hits": 3,
+   "range": 6,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Shatter",
+     null
+    ]
+   ],
+   "roll_sixes": true,
+   "note": "One die per fixed hit: a 6 is a six-hit, Shatter's AP(+3)."
+  },
+  "kdAps:451830a40f": {
+   "name": "Inspiring Bots",
+   "text_sha1": "451830a40fda9f17b6ab1432ff3a0fc70b582598",
+   "kind": "no_combat_effect",
+   "note": "Rapid Advance: movement."
+  },
+  "F9cK8:aea9c2c038": {
+   "name": "Flame Bots",
+   "text_sha1": "aea9c2c0381a4420e36f9d7452145b1c7a54281e",
+   "kind": "damage",
+   "hits": 4,
+   "range": 9,
+   "rules": []
+  },
+  "aiS6M:d97c88e5a7": {
+   "name": "Mending Bots",
+   "text_sha1": "d97c88e5a79a01f7961a5adaf9333921219ac7bb",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Self-Repair"
+    }
+   ]
+  },
+  "rFGa0:9bfbd7c461": {
+   "name": "Piercing Bots",
+   "text_sha1": "9bfbd7c461651249fd804663ed9b2342303b73a6",
+   "kind": "damage",
+   "hits": 6,
+   "range": 18,
+   "rules": [
+    [
+     "AP",
+     2
+    ]
+   ]
+  },
+  "N6ZE8:7142027bb5": {
+   "name": "Searing Shrapnel",
+   "text_sha1": "7142027bb5778694d3981e01a4e9bd89baef6fa4",
+   "kind": "damage",
+   "hits": 4,
+   "range": 18,
+   "rules": [
+    [
+     "Demolish",
+     null
+    ]
+   ],
+   "note": "Demolish: AP(+1) when the target is within 1\" of terrain."
+  },
+  "1ncY3-OY:51abd0eeea": {
+   "name": "Shock Speed",
+   "text_sha1": "51abd0eeea3c5ed58850fddf431a71ce68be0c7d",
+   "kind": "no_combat_effect",
+   "note": "Movement."
+  },
+  "0_C3EPvs:1ba867bb20": {
+   "name": "Expel Threat",
+   "text_sha1": "1ba867bb20bb939b748fa6b71d6a4041120cacba",
+   "kind": "damage",
+   "hits": 2,
+   "range": 18,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "note": "Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "IMINHoAo:fee730d193": {
+   "name": "Calculated Foresight",
+   "text_sha1": "fee730d19347e38eb9e189ce38e52b0ea67748b8",
+   "kind": "mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "H9E9PIWpGRdw"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "shooting",
+    "range_over": 9
+   },
+   "note": "Relentless against the target (as Relentless Mark)."
+  },
+  "L2MLJCql:b142287ed9": {
+   "name": "Electric Tempest",
+   "text_sha1": "b142287ed97e50f1b4a46a30107262ad2c57ec56",
+   "kind": "damage",
+   "hits": 4,
+   "range": 12,
+   "rules": [
+    [
+     "Surge",
+     null
+    ]
+   ],
+   "roll_sixes": true,
+   "note": "One die per fixed hit: a 6 is a six-hit, so Surge adds a hit (the text makes this exception)."
+  },
+  "FyJX5mYR:6028a7132e": {
+   "name": "Psy-Injected Courage",
+   "text_sha1": "6028a7132e449e0dc395f738cedbb8ac430266a1",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Bravery Buff#effect"
+    }
+   ],
+   "note": "+1 to Morale Test rolls once: Bravery Buff's effect (same text), a source of its own next to Bravery Aura."
+  },
+  "qvE1vtay:e8badbb059": {
+   "name": "Searing Burst",
+   "text_sha1": "e8badbb059b1ddbdc252dcbfda77251dcc82204a",
+   "kind": "damage",
+   "hits": 9,
+   "range": 18,
+   "rules": []
+  },
+  "FyJX5mYR:8718ec62e8": {
+   "name": "Combat Ecstasy",
+   "text_sha1": "8718ec62e8b445fef433d1ab81905228ce148830",
+   "kind": "no_combat_effect",
+   "note": "Quick Shot against the target: shooting after Rush, the Analyzer's action input."
+  },
+  "qvE1vtay:1ba867bb20": {
+   "name": "Total Seizure",
+   "text_sha1": "1ba867bb20bb939b748fa6b71d6a4041120cacba",
+   "kind": "damage",
+   "hits": 2,
+   "range": 18,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "note": "Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "1ncY3-OY:bdce84f6f6": {
+   "name": "Lust Boon",
+   "text_sha1": "bdce84f6f651a3e806903070292e00f913595691",
+   "kind": "no_combat_effect",
+   "note": "Enhanced Lustbound: movement."
+  },
+  "IMINHoAo:a209c835c8": {
+   "name": "Blissful Dance",
+   "text_sha1": "a209c835c871be7ef8ba42498b8ae01687085a49",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Melee Evasion"
+    }
+   ]
+  },
+  "0_C3EPvs:56a6acd7ac": {
+   "name": "Overpowering Lash",
+   "text_sha1": "56a6acd7ac37b89ea3acc44f269996774914d056",
+   "kind": "damage",
+   "hits": 6,
+   "range": 18,
+   "rules": [
+    [
+     "Shred",
+     null
+    ]
+   ]
+  },
+  "FyJX5mYR:edfde1855f": {
+   "name": "Aura of Pestilence",
+   "text_sha1": "edfde1855fe62f8aa9f89143d0934bf7409a436b",
+   "kind": "no_combat_effect",
+   "note": "Difficult Terrain: movement."
+  },
+  "IMINHoAo:627f29c7aa": {
+   "name": "Blessed Virus",
+   "text_sha1": "627f29c7aae23ca6d7de4ab11360c3dc6a9d5a18",
+   "kind": "no_combat_effect",
+   "note": "Rapid Rush: movement."
+  },
+  "0_C3EPvs:efbb6e7ed3": {
+   "name": "Rot Wave",
+   "text_sha1": "efbb6e7ed33c1f4e46848cdad1ab7180b3475776",
+   "kind": "damage",
+   "hits": 4,
+   "range": 18,
+   "rules": []
+  },
+  "1ncY3-OY:6215dc9e80": {
+   "name": "Plague Boon",
+   "text_sha1": "6215dc9e80ddfa469043a9adbea7cd5cab62ac36",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Plaguebound"
+    }
+   ]
+  },
+  "qvE1vtay:661d798daa": {
+   "name": "Plague Malediction",
+   "text_sha1": "661d798daaf85e41080d45179a3e0f23796523cc",
+   "kind": "damage",
+   "hits": 3,
+   "range": 24,
+   "rules": [
+    [
+     "AP",
+     4
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "note": "Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "FyJX5mYR:91457ad5ad": {
+   "name": "Terrifying Fury",
+   "text_sha1": "91457ad5adf6cb7da29e2c9f193ec4d08bf6e59f",
+   "kind": "no_combat_effect",
+   "note": "A Morale Test outside an attack; Fatigued is the Analyzer's input."
+  },
+  "IMINHoAo:d9571d8265": {
+   "name": "Fiery Protection",
+   "text_sha1": "d9571d8265aa7802dc28f1cb9074792b13a02d06",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Melee Evasion"
+    }
+   ]
+  },
+  "0_C3EPvs:a3cb9c86bc": {
+   "name": "Headtaker Strike",
+   "text_sha1": "a3cb9c86bc2e450cb9aaacb784f7a03472fdb4b4",
+   "kind": "damage",
+   "hits": 4,
+   "range": 6,
+   "rules": [
+    [
+     "AP",
+     2
+    ]
+   ],
+   "note": "Up to two units take 4 hits each: the Analyzer resolves the hits on its target."
+  },
+  "1ncY3-OY:ef1294be4a": {
+   "name": "War Boon",
+   "text_sha1": "ef1294be4a7009cee28413decee458406dbcc2a7",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Warbound"
+    }
+   ]
+  },
+  "L2MLJCql:0495ceaa90": {
+   "name": "Flame of Destruction",
+   "text_sha1": "0495ceaa9004a26a237fa7ae571570e944ba46e7",
+   "kind": "damage",
+   "hits": 3,
+   "range": 24,
+   "rules": [
+    [
+     "Blast",
+     3
+    ]
+   ]
+  },
+  "FyJX5mYR:108a652988": {
+   "name": "Shifting Form",
+   "text_sha1": "108a65298863d45dd4418534f6102a6553428c08",
+   "kind": "no_combat_effect",
+   "note": "Spell tokens lost: the Analyzer's token inputs."
+  },
+  "L2MLJCql:ef0789ae38": {
+   "name": "Sky Blaze",
+   "text_sha1": "ef0789ae38f9192f036f1eafce7703f92a456e70",
+   "kind": "damage",
+   "hits": 3,
+   "range": 12,
+   "rules": [
+    [
+     "Lacerate",
+     null
+    ]
+   ]
+  },
+  "IMINHoAo:cf5a049ae0": {
+   "name": "Breath of Change",
+   "text_sha1": "cf5a049ae07e21feca8c5b86f317bdeaf054af6a",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Bane when Shooting"
+    }
+   ]
+  },
+  "0_C3EPvs:e52e1d0a00": {
+   "name": "Power Bolt",
+   "text_sha1": "e52e1d0a00843a8a1c90a6a826117f6faac13a41",
+   "kind": "damage",
+   "hits": 4,
+   "range": 12,
+   "rules": [
+    [
+     "AP",
+     2
+    ]
+   ]
+  },
+  "1ncY3-OY:25ad877d15": {
+   "name": "Change Boon",
+   "text_sha1": "25ad877d15fc9d637a1b303f72d2e97e14dae8ea",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Changebound"
+    }
+   ]
+  },
+  "qvE1vtay:cadee86e98": {
+   "name": "Mutating Inferno",
+   "text_sha1": "cadee86e98c06bdd06490fea932d2046a62f005f",
+   "kind": "damage",
+   "hits": 3,
+   "range": 24,
+   "rules": [],
+   "note": "Up to two units take 3 hits each: the Analyzer resolves the hits on its target."
+  },
+  "E2Hc6:03f8af03ef": {
+   "name": "Blessed Ammo",
+   "text_sha1": "03f8af03ef82d62faab9ff00be2ba96565f606f6",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Shred",
+     "to": "weapons",
+     "attack": "shooting"
+    }
+   ]
+  },
+  "Csg4G:647c60b925": {
+   "name": "Deep Hypnosis",
+   "text_sha1": "647c60b925dc5f66aa44930a39814959ac1accba",
+   "kind": "no_combat_effect",
+   "note": "A Morale Test outside an attack and a move."
+  },
+  "7Q5yY:1398e69779": {
+   "name": "Psychic Onslaught",
+   "text_sha1": "1398e697799bf73388b3626b626ccd3b4b7e6799",
+   "kind": "damage",
+   "hits": 3,
+   "range": 6,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Reap",
+     null
+    ]
+   ],
+   "roll_sixes": true,
+   "note": "Rolled for 6s as the text says; Reap acts on Defense, not on the 6s."
+  },
+  "T1VJR:e1f60cc721": {
+   "name": "Insidious Protection",
+   "text_sha1": "e1f60cc721ecebd70d91b873e1e99188e74aaa18",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Grounded Defense"
+    }
+   ],
+   "note": "+1 Defense near terrain (the target's input)."
+  },
+  "BeCQb:44d04dbdaa": {
+   "name": "Brain Burst",
+   "text_sha1": "44d04dbdaaad797c87dacce7e2bb668fdc3f1f63",
+   "kind": "damage",
+   "hits": 2,
+   "range": 6,
+   "rules": [
+    [
+     "AP",
+     2
+    ],
+    [
+     "Deadly",
+     3
+    ]
+   ]
+  },
+  "uE-8d:14154a4916": {
+   "name": "Bio-Displacer",
+   "text_sha1": "14154a491622694dd9143c5c7ec17941d3c58180",
+   "kind": "no_combat_effect",
+   "note": "Teleport: movement."
+  },
+  "ldu3h:b2fbcf86ff": {
+   "name": "Mind Corruption",
+   "text_sha1": "b2fbcf86ff107c2847ce48213c25fbac12a16ae1",
+   "kind": "damage",
+   "hits": 6,
+   "range": 18,
+   "rules": [
+    [
+     "Surge",
+     null
+    ]
+   ],
+   "roll_sixes": true,
+   "note": "One die per fixed hit: a 6 is a six-hit."
+  },
+  "jQz3l:fdfa0e0db4": {
+   "name": "Aura of Peace",
+   "text_sha1": "fdfa0e0db48158c7b536d5ff9fe9b7011f4990d3",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Bravery Buff#effect"
+    }
+   ],
+   "note": "+1 to Morale Test rolls once: Bravery Buff's effect (same text), a source of its own next to Bravery Aura."
+  },
+  "0gCXl:1398e69779": {
+   "name": "Wave of Discord",
+   "text_sha1": "1398e697799bf73388b3626b626ccd3b4b7e6799",
+   "kind": "damage",
+   "hits": 3,
+   "range": 6,
+   "rules": [
+    [
+     "AP",
+     1
+    ],
+    [
+     "Reap",
+     null
+    ]
+   ],
+   "roll_sixes": true,
+   "note": "Rolled for 6s as the text says; Reap acts on Defense, not on the 6s."
+  },
+  "FT9mv:95650a24ba": {
+   "name": "Bad Omen",
+   "text_sha1": "95650a24baeb6b5c7d28312e865e316219559fe1",
+   "kind": "mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "JoOCVPx1xT1G"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "melee",
+    "charging": true
+   },
+   "note": "Furious against the target (as Furious Mark)."
+  },
+  "awfOL:b142287ed9": {
+   "name": "Mind Breaker",
+   "text_sha1": "b142287ed97e50f1b4a46a30107262ad2c57ec56",
+   "kind": "damage",
+   "hits": 4,
+   "range": 12,
+   "rules": [
+    [
+     "Surge",
+     null
+    ]
+   ],
+   "roll_sixes": true,
+   "note": "One die per fixed hit: a 6 is a six-hit, so Surge adds a hit (the text makes this exception)."
+  },
+  "hzJMW:0a40d76b2a": {
+   "name": "Deep Meditation",
+   "text_sha1": "0a40d76b2abafa6a11adc4d8a801d3be366c3600",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Precision Shooter Buff#effect",
+     "attack": "shooting"
+    }
+   ],
+   "note": "+1 to hit when shooting once: Precision Shooter Buff's effect."
+  },
+  "NHCJb:661d798daa": {
+   "name": "Piercing Pulse",
+   "text_sha1": "661d798daaf85e41080d45179a3e0f23796523cc",
+   "kind": "damage",
+   "hits": 3,
+   "range": 24,
+   "rules": [
+    [
+     "AP",
+     4
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "note": "Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "qmDvb:335ed42b6c": {
+   "name": "Mind Shaper",
+   "text_sha1": "335ed42b6c1918fd8d322d597a5a1aa13787bd55",
+   "kind": "debuff",
+   "grants": [
+    {
+     "rule": "Morale Debuff#effect"
+    }
+   ],
+   "note": "-1 to Morale Test rolls once: Morale Debuff's effect."
+  },
+  "-BUjo:2686757152": {
+   "name": "Feral Strike",
+   "text_sha1": "26867571529395fe598cc37c88da5934718c99a2",
+   "kind": "damage",
+   "hits": 1,
+   "range": 6,
+   "rules": [
+    [
+     "AP",
+     2
+    ],
+    [
+     "Deadly",
+     3
+    ]
+   ]
+  },
+  "icwzh:2ee640264b": {
+   "name": "Power Field",
+   "text_sha1": "2ee640264bc370906ac4ef7d274c5d84eaad623c",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Shielded"
+    }
+   ]
+  },
+  "lJ385:a3cb9c86bc": {
+   "name": "Power Maw",
+   "text_sha1": "a3cb9c86bc2e450cb9aaacb784f7a03472fdb4b4",
+   "kind": "damage",
+   "hits": 4,
+   "range": 6,
+   "rules": [
+    [
+     "AP",
+     2
+    ]
+   ],
+   "note": "Up to two units take 4 hits each: the Analyzer resolves the hits on its target."
+  },
+  "JA8IE:191855b362": {
+   "name": "Psy-Hunter",
+   "text_sha1": "191855b3627f67ef7b8889802739b1e4951ba00c",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Scrapper"
+    }
+   ]
+  },
+  "u7epQ:a18e52f8be": {
+   "name": "Quill Blast",
+   "text_sha1": "a18e52f8be7d00a78fc108ebe9a3303120244472",
+   "kind": "damage",
+   "hits": 6,
+   "range": 18,
+   "rules": [
+    [
+     "Disintegrate",
+     null
+    ]
+   ]
+  },
+  "fUoPd:c8756b0846": {
+   "name": "Toxin Mist",
+   "text_sha1": "c8756b0846c8fbe9f13fa0a0b636c9a9ef453b1d",
+   "kind": "mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "Naqc5mga9Uha"
+     }
+    }
+   ],
+   "note": "Bane on friendly weapons against the target."
+  },
+  "V4SYz:b534dcc4d2": {
+   "name": "Serpent Comet",
+   "text_sha1": "b534dcc4d216665d0855fc135a155e265496d19b",
+   "kind": "damage",
+   "hits": 2,
+   "range": 12,
+   "rules": [
+    [
+     "Puncture",
+     null
+    ]
+   ]
+  },
+  "a1Oju:adbb48d657": {
+   "name": "Fateful Guidance",
+   "text_sha1": "adbb48d657162319c3301a56e1396e839cf7d10c",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Furious"
+    }
+   ]
+  },
+  "wuFws:aea9c2c038": {
+   "name": "Piranha Curse",
+   "text_sha1": "aea9c2c0381a4420e36f9d7452145b1c7a54281e",
+   "kind": "damage",
+   "hits": 4,
+   "range": 9,
+   "rules": [],
+   "note": "Up to two units take 4 hits each: the Analyzer resolves the hits on its target."
+  },
+  "a-Qnk:894279a4c7": {
+   "name": "Celestial Roar",
+   "text_sha1": "894279a4c7b6fcf2f091dcded0050de6459aa46e",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Primal"
+    }
+   ]
+  },
+  "D1Jcl:56a6acd7ac": {
+   "name": "Jaguar Blaze",
+   "text_sha1": "56a6acd7ac37b89ea3acc44f269996774914d056",
+   "kind": "damage",
+   "hits": 6,
+   "range": 18,
+   "rules": [
+    [
+     "Shred",
+     null
+    ]
+   ]
+  },
+  "j1paJ:72b796ee2e": {
+   "name": "Adrenal Booster",
+   "text_sha1": "72b796ee2ed37555b1369349eca50c2b0884d828",
+   "kind": "no_combat_effect",
+   "note": "Enhanced Scurry: movement."
+  },
+  "qBXWC:3107bda2a7": {
+   "name": "Power Surge",
+   "text_sha1": "3107bda2a7cbc39e83d946a90d64ee707702b035",
+   "kind": "damage",
+   "hits": 2,
+   "range": 18,
+   "rules": [
+    [
+     "Hazardous",
+     null
+    ],
+    [
+     "Takedown",
+     null
+    ]
+   ],
+   "roll_sixes": true,
+   "note": "One die per fixed hit: its 1s wound the caster (Hazardous); Resolved as if the target was a unit of [1]: Takedown on the chosen model."
+  },
+  "dpjQe:3959ff4efa": {
+   "name": "Tech-Sickness",
+   "text_sha1": "3959ff4efac822e79f05a2192252f5a12c4430d8",
+   "kind": "debuff",
+   "grants": [
+    {
+     "rule": "Defense Debuff#effect"
+    }
+   ],
+   "note": "-1 to Defense rolls once: Defense Debuff's effect."
+  },
+  "Y18p_:8c9d33024b": {
+   "name": "Focused Shock",
+   "text_sha1": "8c9d33024bce06cb74a97359e99f606c5717ec4a",
+   "kind": "damage",
+   "hits": 4,
+   "range": 12,
+   "rules": [
+    [
+     "Shred",
+     null
+    ]
+   ]
+  },
+  "MbwfE:91226a49f8": {
+   "name": "Enhanced Serum",
+   "text_sha1": "91226a49f8bf125bd266bb57e7d2db3e9eda98ba",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Regeneration"
+    }
+   ]
+  },
+  "Ho2jM:e8badbb059": {
+   "name": "System Takeover",
+   "text_sha1": "e8badbb059b1ddbdc252dcbfda77251dcc82204a",
+   "kind": "damage",
+   "hits": 9,
+   "range": 18,
+   "rules": []
+  },
+  "H-7Tm:7bd589bd47": {
+   "name": "Combat Psychosis",
+   "text_sha1": "7bd589bd47b4fcb964fc3afcc9c8c6d423270727",
+   "kind": "mark",
+   "effects": [
+    {
+     "primitive": "grant_rule",
+     "value": {
+      "rule": "DEeVIJcfNfS6"
+     }
+    }
+   ],
+   "conditions": {
+    "attack": "melee"
+   },
+   "note": "Unpredictable Fighter on friendly attacks against the target."
+  },
+  "J4KaX:2686757152": {
+   "name": "Cyber Shock",
+   "text_sha1": "26867571529395fe598cc37c88da5934718c99a2",
+   "kind": "damage",
+   "hits": 1,
+   "range": 6,
+   "rules": [
+    [
+     "AP",
+     2
+    ],
+    [
+     "Deadly",
+     3
+    ]
+   ]
+  },
+  "0sKLD:9c39ce2b83": {
+   "name": "Synaptic Stims",
+   "text_sha1": "9c39ce2b83e99eaa6556da2d2a19ecadf022a38a",
+   "kind": "no_combat_effect",
+   "note": "Movement."
+  },
+  "o3jjA:7142027bb5": {
+   "name": "Overheat Internals",
+   "text_sha1": "7142027bb5778694d3981e01a4e9bd89baef6fa4",
+   "kind": "damage",
+   "hits": 4,
+   "range": 18,
+   "rules": [
+    [
+     "Demolish",
+     null
+    ]
+   ],
+   "note": "Demolish: AP(+1) when the target is within 1\" of terrain."
+  },
+  "Z0ZTA:db69c1e60c": {
+   "name": "Optical Malfunction",
+   "text_sha1": "db69c1e60c9251c3b4cf6fa994dd4c38fe4683b1",
+   "kind": "grant",
+   "grants": [
+    {
+     "rule": "Enhanced Shadowborn"
+    }
+   ]
+  },
+  "hkaOy:e8badbb059": {
+   "name": "System Collapse",
+   "text_sha1": "e8badbb059b1ddbdc252dcbfda77251dcc82204a",
+   "kind": "damage",
+   "hits": 9,
+   "range": 18,
+   "rules": []
+  }
+ }
+}
