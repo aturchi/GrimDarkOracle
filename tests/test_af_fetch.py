@@ -1,4 +1,5 @@
 """Offline tests of tools/af_fetch.py (no network: get_json is faked)."""
+import copy
 import io
 import json
 import os
@@ -29,7 +30,17 @@ def fake_get_json(url, delay):
     if "/rules/common/" in url:
         return SERVER["rules"]
     uid = url.split("/army-books/")[1].split("?")[0]
-    return SERVER[uid]
+    return regen_section_ids(SERVER[uid])
+
+
+def regen_section_ids(book):
+    """As Army Forge does: a new section 'id' at every request (the
+    section 'uid' stays)."""
+    book = copy.deepcopy(book)
+    for p in book.get("upgradePackages", []):
+        for s in p["sections"]:
+            s["id"] = f"id{len(CALLS)}"
+    return book
 
 
 af.get_json = fake_get_json
@@ -61,6 +72,29 @@ try:
     # Forced refresh of identical content: no .prev.json is created.
     assert af.main(["--out", out, "--delay", "0", "--force"]) == 0
     assert not os.path.exists(os.path.join(out, "books", "aaa.prev.json"))
+
+    # Volatile section ids: a forced refresh does not rotate .prev.json;
+    # a real change of a section does.
+    PKG = {"uid": "p1", "sections": [{"uid": "s1", "label": "Replace"}]}
+    SERVER["bbb"] = {"uid": "bbb", "versionString": "3.6.0", "units": [2],
+                     "upgradePackages": [PKG]}
+    bprev = os.path.join(out, "books", "bbb.prev.json")
+    assert af.main(["--out", out, "--delay", "0", "--force",
+                    "--only", "Beta", "--no-report"]) == 0
+    assert json.load(open(bprev))["units"] == [2]       # rotated once
+    os.remove(bprev)
+    buf = io.StringIO()
+    with redirect_stdout(buf):
+        assert af.main(["--out", out, "--delay", "0", "--force",
+                        "--only", "Beta", "--no-report"]) == 0
+    assert "(content unchanged)" in buf.getvalue(), buf.getvalue()
+    assert not os.path.exists(bprev)
+    PKG["sections"][0]["label"] = "Upgrade"
+    assert af.main(["--out", out, "--delay", "0", "--force",
+                    "--only", "Beta", "--no-report"]) == 0
+    assert json.load(open(bprev))["upgradePackages"][0]["sections"][0][
+        "label"] == "Replace"
+    assert af.stable_view({"rules": []}) == {"rules": []}
 
     # Changed content: the old copy is rotated to .prev.json.
     SERVER["aaa"] = {"uid": "aaa", "versionString": "3.6.0", "units": [9]}

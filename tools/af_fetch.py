@@ -103,12 +103,32 @@ def local_version(path):
     return data.get("versionString") if isinstance(data, dict) else None
 
 
+def stable_view(data):
+    """Copy of a downloaded document without the fields Army Forge
+    regenerates on every request: the 'id' of each upgrade package
+    section (observed 2026-11-02: new values at every download of the same
+    book, while the section 'uid' the importer reads stays the same). Used
+    only to compare two downloads; the file saved stays the raw payload."""
+    if not isinstance(data, dict) or "upgradePackages" not in data:
+        return data
+    def package(p):
+        if not isinstance(p, dict) or "sections" not in p:
+            return p
+        return {**p, "sections": [
+            {k: v for k, v in s.items() if k != "id"}
+            if isinstance(s, dict) else s for s in p["sections"]]}
+
+    return {**data, "upgradePackages": [package(p)
+                                        for p in data["upgradePackages"]]}
+
+
 def store_file(path, data):
     """Save a JSON file, rotating the old copy to .prev.json only if the content
-    really changed: a forced refresh of identical content must not
-    overwrite the previous revision. Returns True when the file changed."""
+    really changed (volatile fields aside, see stable_view): a forced
+    refresh of identical content must not overwrite the previous revision.
+    Returns True when the file changed."""
     old = load_local(path)
-    if old == data:
+    if old is not None and stable_view(old) == stable_view(data):
         return False
     if old is not None:
         # Keep the previous copy: Army Forge serves no history.

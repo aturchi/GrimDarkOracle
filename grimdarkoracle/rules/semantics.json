@@ -1797,7 +1797,7 @@
   },
   "a6Ze2uaBlNHX": {
    "name": "Mind Control",
-   "text_sha1": "f746804faeb7c24f98a4371295039d61a59e767b",
+   "text_sha1": "3785da5e5e5b24e09295499d2bc715b5075789ec",
    "impl": "no_combat_effect",
    "note": "A Morale Test outside an attack: no effect on the attack maths."
   },
